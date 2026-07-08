@@ -17,30 +17,34 @@ namespace Sitecore.Demo.Init.Jobs
 
 		public async Task Run()
 		{
-			if (this.IsCompleted())
-			{
-				Log.LogWarning($"{this.GetType().Name} is already complete, it will not execute this time");
-				return;
-			}
+			// XGEN disabled — Experience Generator assets and API are not deployed
+			Log.LogInformation("ExperienceGenerator skipped (XGEN disabled)");
+			await Task.CompletedTask;
 
-			var hostCM = Environment.GetEnvironmentVariable("HOST_CM");
+			//if (this.IsCompleted())
+			//{
+			//	Log.LogWarning($"{this.GetType().Name} is already complete, it will not execute this time");
+			//	return;
+			//}
 
-			Log.LogInformation($"RunExperienceGenerator() started on {hostCM}");
-			using var client = new HttpClient { BaseAddress = new Uri(hostCM) };
-			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+			//var hostCM = Environment.GetEnvironmentVariable("HOST_CM");
 
-			var content = File.ReadAllText("data/xGenerator.json");
-			content = content.Replace("{START_DATE}", DateTime.UtcNow.AddYears(-1).ToString("u"));
-			content = content.Replace("{END_DATE}", DateTime.UtcNow.ToString("u"));
+			//Log.LogInformation($"RunExperienceGenerator() started on {hostCM}");
+			//using var client = new HttpClient { BaseAddress = new Uri(hostCM) };
+			//client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-			HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "/clientapi/xgen/jobs")
-			{
-				Content = new StringContent(content, Encoding.UTF8, "application/json")
-			};
+			//var content = File.ReadAllText("data/xGenerator.json");
+			//content = content.Replace("{START_DATE}", DateTime.UtcNow.AddYears(-1).ToString("u"));
+			//content = content.Replace("{END_DATE}", DateTime.UtcNow.ToString("u"));
 
-			var response = await client.SendAsync(request);
-			var contents = await response.Content.ReadAsStringAsync();
-			Log.LogInformation($"{response.StatusCode} {contents}");
+			//HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "/clientapi/xgen/jobs")
+			//{
+			//	Content = new StringContent(content, Encoding.UTF8, "application/json")
+			//};
+
+			//var response = await client.SendAsync(request);
+			//var contents = await response.Content.ReadAsStringAsync();
+			//Log.LogInformation($"{response.StatusCode} {contents}");
 		}
 	}
 }

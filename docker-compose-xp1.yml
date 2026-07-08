@@ -86,6 +86,7 @@ services:
       - "traefik.http.routers.id-secure.entrypoints=websecure"
       - "traefik.http.routers.id-secure.rule=Host(`${ID_HOST}`)"
       - "traefik.http.routers.id-secure.tls=true"
+      - "traefik.http.services.id-secure.loadbalancer.server.port=80"
   cd:
     isolation: ${ISOLATION}
     image: ${SITECORE_DOCKER_REGISTRY}sitecore-xp1-cd:${SITECORE_VERSION}
@@ -126,6 +127,7 @@ services:
       - "traefik.http.routers.cd-secure.entrypoints=websecure"
       - "traefik.http.routers.cd-secure.rule=Host(`${CD_HOST}`)"
       - "traefik.http.routers.cd-secure.tls=true"
+      - "traefik.http.services.cd-secure.loadbalancer.server.port=80"
   cm:
     isolation: ${ISOLATION}
     image: ${SITECORE_DOCKER_REGISTRY}sitecore-xp1-cm:${SITECORE_VERSION}
@@ -186,6 +188,7 @@ services:
       - "traefik.http.routers.cm-secure.rule=Host(`${CM_HOST}`)"
       - "traefik.http.routers.cm-secure.tls=true"
       - "traefik.http.routers.cm-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.cm-secure.loadbalancer.server.port=80"
   prc:
     isolation: ${ISOLATION}
     image: ${SITECORE_DOCKER_REGISTRY}sitecore-xp1-prc:${SITECORE_VERSION}

@@ -1,7 +1,7 @@
 services:
   traefik:
     isolation: ${TRAEFIK_ISOLATION}
-    image: traefik:v2.2.0-windowsservercore-1809
+    image: ${TRAEFIK_IMAGE}
     command:
       - "--ping"
       - "--api.insecure=true"
@@ -76,6 +76,7 @@ services:
       - "traefik.http.routers.id-secure.entrypoints=websecure"
       - "traefik.http.routers.id-secure.rule=Host(`${ID_HOST}`)"
       - "traefik.http.routers.id-secure.tls=true"
+      - "traefik.http.services.id-secure.loadbalancer.server.port=80"
   cm:
     isolation: ${ISOLATION}
     image: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
@@ -121,6 +122,7 @@ services:
       - "traefik.http.routers.cm-secure.rule=Host(`${CM_HOST}`)"
       - "traefik.http.routers.cm-secure.tls=true"
       - "traefik.http.routers.cm-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.cm-secure.loadbalancer.server.port=80"
   xconnect:
     isolation: ${ISOLATION}
     image: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}

@@ -36,7 +36,7 @@ namespace Sitecore.Demo.Init.Services
 				logger.LogInformation($"{DateTime.UtcNow} Init started.");
 
 				var indexRebuildAsyncJob = new IndexRebuild(initContext);
-				var experienceGeneratorAsyncJob = new ExperienceGenerator(initContext);
+				//var experienceGeneratorAsyncJob = new ExperienceGenerator(initContext);
 				await new WaitForContextDatabase(initContext).Run();
 				await new PushSerialized(initContext).Run();
 				await new PublishItems(initContext).Run();
@@ -55,18 +55,20 @@ namespace Sitecore.Demo.Init.Services
 
 				logger.LogInformation($"Preparing. Elapsed: {watch.Elapsed:m\\:ss}");
 				await stateService.SetState(InstanceState.Preparing);
-				await Task.WhenAll(indexRebuildAsyncJob.Run(), experienceGeneratorAsyncJob.Run());
+				await indexRebuildAsyncJob.Run();
+				//await Task.WhenAll(indexRebuildAsyncJob.Run(), experienceGeneratorAsyncJob.Run());
 
 				logger.LogInformation($"{DateTime.UtcNow} All init tasks complete. See the background jobs status below. Elapsed: {watch.Elapsed:m\\:ss}");
 
 				var asyncJobList = new List<TaskBase>
 				                   {
 					                   indexRebuildAsyncJob,
-					                   experienceGeneratorAsyncJob,
+					                   //experienceGeneratorAsyncJob,
 								   };
 
 				var runningJobs = await JobStatus.Run();
-				while (runningJobs.Any(x => x.Title.Contains("IndexRebuild") || x.Title.Contains("ExperienceGenerator")))
+				while (runningJobs.Any(x => x.Title.Contains("IndexRebuild")))
+				//while (runningJobs.Any(x => x.Title.Contains("IndexRebuild") || x.Title.Contains("ExperienceGenerator")))
 				{
 					var completedJobs = asyncJobList.Where(
 						asyncJob => runningJobs.All(runningJob => runningJob.Title != asyncJob.TaskName)).ToList();

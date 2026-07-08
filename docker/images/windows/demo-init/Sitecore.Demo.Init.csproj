@@ -11,7 +11,7 @@
     <None Remove="data\publishingservice-fix.json" />
     <None Remove="data\publishingservice.json" />
     <None Remove="data\warmup-config.json" />
-    <None Remove="data\xGenerator.json" />
+    <!--<None Remove="data\xGenerator.json" />-->
   </ItemGroup>
 
   <ItemGroup>
@@ -24,9 +24,9 @@
     <Content Include="data\warmup-config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\xGenerator.json">
+    <!--<Content Include="data\xGenerator.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Content>-->
   </ItemGroup>
 
   <ItemGroup>

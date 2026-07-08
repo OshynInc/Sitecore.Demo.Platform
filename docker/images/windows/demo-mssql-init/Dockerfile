@@ -3,9 +3,9 @@
 ARG PARENT_IMAGE
 ARG SOLUTION_IMAGE
 
-ARG XGEN_ASSETS
+#ARG XGEN_ASSETS
 
-FROM ${XGEN_ASSETS} as xgen_assets
+#FROM ${XGEN_ASSETS} as xgen_assets
 FROM ${SOLUTION_IMAGE} as solution
 FROM ${PARENT_IMAGE}
 
@@ -17,7 +17,7 @@ RUN Install-PackageProvider -Name NuGet -Force; `
     Set-PackageSource -Name PSGallery -Trusted ; `
     Install-Module -Name SqlServer;
 
-COPY --from=xgen_assets /module/db /xgen_assets
+#COPY --from=xgen_assets /module/db /xgen_assets
 
 COPY --from=solution /solution/db /solution_data
 

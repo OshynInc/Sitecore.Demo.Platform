@@ -92,6 +92,7 @@ services:
       HOST_CD: http://cd
       OPENCALAIS_ACCESSTOKEN: ${OPENCALAIS_ACCESSTOKEN}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
+      LOG_LEVEL_VALUE: ${LOG_LEVEL_VALUE}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\cm\src:C:\src
@@ -167,6 +168,7 @@ services:
       Sitecore_ConnectionStrings_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
       EXM_RENDERER_URL: http://cm
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
+      LOG_LEVEL_VALUE: ${LOG_LEVEL_VALUE}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\cd\src:C:\src
@@ -188,6 +190,7 @@ services:
       - "traefik.http.routers.cd-secure.rule=Host(`${CD_HOST}`)"
       - "traefik.http.routers.cd-secure.tls=true"
       - "traefik.http.routers.cd-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.cd-secure.loadbalancer.server.port=80"
     networks:
       demo:
         aliases:
