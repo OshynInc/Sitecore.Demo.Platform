@@ -9,6 +9,7 @@ FROM $BASE_IMAGE
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 COPY --from=sxa_assets C:\module\solr\cores-sxa.json C:\data\cores-sxa.json
+COPY Patch-SolrConfig.ps1 C:\Patch-SolrConfig.ps1
 
 ENTRYPOINT ["powershell.exe", ".\\Start.ps1", "-SitecoreSolrConnectionString $env:SITECORE_SOLR_CONNECTION_STRING", `
     "-SolrCorePrefix $env:SOLR_CORE_PREFIX_NAME", `
