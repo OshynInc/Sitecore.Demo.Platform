@@ -1,0 +1,17 @@
+---
+ID: "b1e130e1-f849-4c1d-ba44-fe33ad3df4b5"
+Parent: "e4f3a2b1-c0d9-48ee-b098-76543210abcd"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Hero/NYSIF Homepage Hero
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "hero nysif-hero-homepage"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0825d57d-eaee-4410-97dd-96483e0d1746"

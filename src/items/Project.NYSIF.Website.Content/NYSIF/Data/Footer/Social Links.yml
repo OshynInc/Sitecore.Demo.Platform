@@ -1,0 +1,16 @@
+---
+ID: "c1d2e3f4-a5b6-4789-c012-345678901240"
+Parent: "c1d2e3f4-a5b6-4789-c012-345678901200"
+Template: "f7561ffc-c0d8-477f-b53d-2703a4060be1"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Footer/Social Links
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c1d2e3f4-a5b6-4789-c012-345678901241"
+    - ID: "aa9c8d1c-b210-4efa-86db-83e8fa32c672"
+      Hint: Title
+      Value: Follow us

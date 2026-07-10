@@ -1,0 +1,19 @@
+---
+ID: "a4b3c2d1-e0f9-4aaa-d098-765432abcdef"
+Parent: "f3a2b1c0-d9e8-4fff-c987-876543abcdef"
+Template: "01e31002-4c71-4819-868e-3d8347679310"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Service Alerts/Homepage Alerts/Portal Maintenance
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "49b8a287-83f5-4f0d-8277-0ad12fa85c5f"
+      Hint: Date
+      Value: Apr 7, 2026
+    - ID: "a20bd625-9c9b-4c17-a119-ad803caadf29"
+      Hint: Text
+      Value: Online portal maintenance Saturday, April 12 from 8am–12pm ET.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "be6441f0-fc5d-409a-86d1-2ad8e0ba4d96"

@@ -1,0 +1,13 @@
+---
+ID: "a3f41ad4-d1f3-4603-a868-51cf3246d416"
+Parent: "01e31002-4c71-4819-868e-3d8347679310"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Service Alerts/Service Alerts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "sa-section-rev-001"

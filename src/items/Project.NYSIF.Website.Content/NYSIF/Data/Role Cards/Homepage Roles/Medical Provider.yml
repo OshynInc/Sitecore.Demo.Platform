@@ -1,0 +1,22 @@
+---
+ID: "b1c0d9e8-f7a6-4bbb-d765-098765abcdef"
+Parent: "d7e6f5a4-b3c2-4ddd-a321-432109abcdef"
+Template: "1fed9a01-e7be-440d-b3e2-c7c34615e796"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards/Homepage Roles/Medical Provider
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "b9611f0f-969a-4211-b34b-123afe0b33b0"
+      Hint: Icon
+      Value: medical
+    - ID: "2f0714df-c1fb-4571-a26c-69fd7d222b5b"
+      Hint: Title
+      Value: Medical Provider
+    - ID: "22388074-4fcd-4bac-b870-46df899a61d2"
+      Hint: Description
+      Value: Submit bills, get claim status
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "db5d60fe-09d2-4de3-b2aa-724b4256b1f6"

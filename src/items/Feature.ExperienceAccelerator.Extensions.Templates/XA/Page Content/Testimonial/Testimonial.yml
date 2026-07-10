@@ -1,0 +1,13 @@
+---
+ID: "4af63135-a8d0-4b61-81ab-454e5e753bbe"
+Parent: "3dd8b1fe-6820-433b-900f-4810d91ae581"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Testimonial/Testimonial
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "tm-section-rev-001"

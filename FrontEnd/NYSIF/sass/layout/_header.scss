@@ -1,0 +1,150 @@
+@import "../abstracts/vars-nysif";
+
+// Flatten SXA nested column-splitters into static .header-inner:
+// logo (left) | nav (flex grow) | Login + Get a Quote (right)
+#header {
+	.component.container.row-dark {
+		> .component-content {
+			padding-top: 18px;
+			padding-bottom: 0;
+		}
+
+		// Kill Bootstrap 50/50 col floats so flex can own the row
+		.row.column-splitter {
+			display: flex !important;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			width: 100%;
+
+			&::before,
+			&::after {
+				display: none !important;
+				content: none !important;
+			}
+
+			> [class*="col-"] {
+				float: none !important;
+				width: auto !important;
+				max-width: none !important;
+				flex: 0 0 auto;
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+
+		// Outer: logo | (nav + actions wrapper grows)
+		> .component-content > .row.column-splitter {
+			> [class*="col-"]:first-child {
+				flex: 0 0 auto;
+			}
+
+			> [class*="col-"]:last-child {
+				flex: 1 1 auto;
+				min-width: 0;
+			}
+		}
+
+		// Middle wrapper must fill its column so the inner splitter can grow
+		> .component-content > .row.column-splitter > [class*="col-"]:last-child > .component.container {
+			width: 100%;
+			float: none;
+
+			> .component-content {
+				padding: 0;
+				width: 100%;
+			}
+		}
+
+		// Inner: nav grows | actions hug trailing edge
+		.component.container > .component-content > .row.column-splitter {
+			> [class*="col-"]:first-child {
+				flex: 1 1 auto;
+				min-width: 0;
+			}
+
+			> [class*="col-"]:last-child {
+				flex: 0 0 auto;
+				margin-left: auto;
+			}
+		}
+
+		.component.image.logo {
+			float: none;
+			margin: 0;
+
+			> .component-content {
+				padding: 0;
+			}
+
+			.footer-brand-text {
+				display: none;
+			}
+
+			.logo,
+			h3.logo {
+				font-size: 22px;
+				font-weight: 800;
+				letter-spacing: 0.5px;
+				color: $nysif-text-on-dark;
+				white-space: nowrap;
+				margin: 0;
+			}
+		}
+
+		.navigation.nysif-mega-nav {
+			float: none;
+			width: 100%;
+			padding-top: 0;
+
+			> .component-content {
+				padding: 0;
+			}
+
+			.main-nav {
+				margin-left: 48px;
+			}
+		}
+
+		// Actions nest: container whose direct children are Link components
+		.header-actions > .component-content,
+		.component.container > .component-content:has(> .component.link) {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 14px;
+			padding: 0;
+			flex-wrap: nowrap;
+		}
+
+		.component.link {
+			float: none;
+			margin: 0;
+			width: auto;
+
+			> .component-content {
+				padding: 0;
+			}
+
+			.btn,
+			.field-link {
+				display: inline-block;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@media (max-width: $nysif-bp-nav) {
+		.component.container.row-dark {
+			.navigation.nysif-mega-nav .main-nav {
+				margin-left: 16px;
+			}
+		}
+	}
+}

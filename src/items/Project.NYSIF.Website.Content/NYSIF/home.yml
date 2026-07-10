@@ -1,0 +1,131 @@
+---
+ID: "d1e0f9a8-b7c6-4543-6543-210987fedcba"
+Parent: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+Template: "2c6679f9-65b4-4437-8a4c-be4c790b16e0"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Home
+SharedFields:
+- ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
+  Hint: Page Design
+  Value: "{E8F7A6B5-C4D3-4298-7654-543210FEDCBA}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        p:after="*[1=2]">
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0001-543210FEDCBA}"
+          p:before="*"
+          s:ds=""
+          s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7Bfdd06d09-fa96-4e4b-b1e8-f8a0a3f61c28%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=1"
+          s:ph="main" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0002-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0001-543210FEDCBA}']"
+          s:ds=""
+          s:id="{C25766C8-9AFD-4D28-87FE-147774F6806D}"
+          s:par="ColumnWidth1=%7B1E34DFC6-3B3F-4AC0-AC85-6B8F577C6587%7D&amp;ColumnWidth2=%7B4D4B771B-9954-430E-AEE1-E76C54BD50C3%7D&amp;EnabledPlaceholders=1%2C2&amp;SplitterSize=2&amp;Reset Caching Options&amp;DynamicPlaceholderId=2&amp;Styles1&amp;Styles2&amp;Styles3&amp;Styles4&amp;Styles5&amp;Styles6&amp;Styles7&amp;Styles8&amp;ColumnWidth3&amp;ColumnWidth4&amp;ColumnWidth5&amp;ColumnWidth6&amp;ColumnWidth7&amp;ColumnWidth8&amp;CSSStyles"
+          s:ph="/main/container-1" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0003-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0002-543210FEDCBA}']"
+          s:ds="{E2F1A0B9-C8D7-4EEE-B876-987654ABCDEF}"
+          s:id="{6BCF8D8E-0A28-4844-BFB4-96C852BAD2DC}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;Styles=%7B27285b44-052a-401a-a35c-63e800084165%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=18"
+          s:ph="/main/container-1/column-1-2" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0004-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0003-543210FEDCBA}']"
+          s:ds="{F3A2B1C0-D9E8-4FFF-C987-876543ABCDEF}"
+          s:id="{F8247C34-E05E-4E8C-B94A-C5F1640C885F}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=8"
+          s:ph="/main/container-1/column-2-2" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0005-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0004-543210FEDCBA}']"
+          s:ds=""
+          s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7B098ebe01-3596-4635-9e34-73ead662268f%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=3"
+          s:ph="main" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0006-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0005-543210FEDCBA}']"
+          s:ds="{D7E6F5A4-B3C2-4DDD-A321-432109ABCDEF}"
+          s:id="{77413562-534F-48E6-BE34-C24F99108F42}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=9"
+          s:ph="/main/container-3" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0007-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0006-543210FEDCBA}']"
+          s:ds=""
+          s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7Bd6851f26-3b59-4f25-a445-a7cad108763b%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=4"
+          s:ph="main" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0008-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0007-543210FEDCBA}']"
+          s:ds="{B9C8D7E6-F5A4-4BBB-E543-210987ABCDEF}"
+          s:id="{A1B2C3D4-E5F6-4A01-B001-00000000F004}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;Styles&amp;RenderingIdentifier&amp;DynamicPlaceholderId=10"
+          s:ph="/main/container-4" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-000C-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0008-543210FEDCBA}']"
+          s:ds=""
+          s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7B098ebe01-3596-4635-9e34-73ead662268f%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=5"
+          s:ph="main" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-000D-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-000C-543210FEDCBA}']"
+          s:ds=""
+          s:id="{C25766C8-9AFD-4D28-87FE-147774F6806D}"
+          s:par="ColumnWidth1=%7B1E34DFC6-3B3F-4AC0-AC85-6B8F577C6587%7D&amp;ColumnWidth2=%7B4D4B771B-9954-430E-AEE1-E76C54BD50C3%7D&amp;EnabledPlaceholders=1%2C2&amp;SplitterSize=2&amp;Reset Caching Options&amp;DynamicPlaceholderId=6&amp;Styles1&amp;Styles2&amp;Styles3&amp;Styles4&amp;Styles5&amp;Styles6&amp;Styles7&amp;Styles8&amp;ColumnWidth3&amp;ColumnWidth4&amp;ColumnWidth5&amp;ColumnWidth6&amp;ColumnWidth7&amp;ColumnWidth8&amp;CSSStyles"
+          s:ph="/main/container-5" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-000E-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-000D-543210FEDCBA}']"
+          s:ds="{C0D9E8F7-A6B5-4CCC-F654-109876ABCDEF}"
+          s:id="{A1B2C3D4-E5F6-4A01-B001-00000000F002}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=14"
+          s:ph="/main/container-5/column-1-6" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-000F-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-000E-543210FEDCBA}']"
+          s:ds="{A1B2C3D4-E5F6-4789-A012-34567890B001}"
+          s:id="{A1B2C3D4-E5F6-4A01-B001-00000000F005}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;Styles&amp;RenderingIdentifier&amp;DynamicPlaceholderId=15"
+          s:ph="/main/container-5/column-2-6" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0011-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-000F-543210FEDCBA}']"
+          s:ds=""
+          s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7Bd6851f26-3b59-4f25-a445-a7cad108763b%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=7"
+          s:ph="main" />
+        <r
+          uid="{E8F7A6B5-C4D3-4001-0012-543210FEDCBA}"
+          p:after="r[@uid='{E8F7A6B5-C4D3-4001-0011-543210FEDCBA}']"
+          s:ds="{E4F3A2B1-C0D9-4EEE-A098-765432ABCDEF}"
+          s:id="{0CDA0FA9-6C25-488C-8B76-1295B9E384C2}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=17"
+          s:ph="/main/container-7" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Home
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c4d5e6f7-a8b9-4012-c345-678901e30004"
+    - ID: "e2a634fd-5177-46de-b629-5393caed77d7"
+      Hint: Title
+      Value: NYSIF Home

@@ -1,0 +1,13 @@
+---
+ID: "a1b2c3d4-e5f6-4789-a012-34567890b001"
+Parent: "e2f1a0b9-c8d7-4654-5432-109876fedcba"
+Template: "5ecd34f4-b36f-4533-9643-df41cd8b5036"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Sidebar
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1b2c3d4-e5f6-4789-a012-34567890b002"

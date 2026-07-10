@@ -1,0 +1,17 @@
+---
+ID: "50f16ab2-3a71-49f7-8609-c27a1c30d244"
+Parent: "f5a4b3c2-d1e0-49ff-c109-6543210abcde"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Promo/NYSIF Quick Action
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "promo nysif-quick-action qa-card"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b125ddee-9a1e-41ed-bb80-11b2276c7e14"

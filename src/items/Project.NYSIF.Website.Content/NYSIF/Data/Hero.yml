@@ -1,0 +1,13 @@
+---
+ID: "d5e4f3a2-b1c0-4ddd-a109-654321abcdef"
+Parent: "e2f1a0b9-c8d7-4654-5432-109876fedcba"
+Template: "81135769-7593-4ada-a4cb-72404f74a921"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Hero
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "785b3b1c-0c01-4cbf-89f7-4404e3044627"

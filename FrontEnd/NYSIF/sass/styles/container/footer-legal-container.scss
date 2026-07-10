@@ -1,0 +1,29 @@
+.footer-legal-container {
+	min-height: 44px;
+	max-width: none !important;
+	width: 100vw !important;
+	padding-left: 0px;
+	padding-right: 0px;
+
+	> .component-content {
+		margin: auto;
+		padding: 0 15px;
+		max-width: 1500px;
+	}
+
+	.copyrights {
+		color: $nav-footer-legal;
+		padding: 2rem 0;
+		font-size: 1.4rem;
+		border-top: 1px solid $nav-footer-legal;
+
+		p {
+			font-size: $navigation-font-small;
+			margin: 0;
+		}
+
+		a {
+			color: $nav-footer-legal;
+		}
+	}
+}

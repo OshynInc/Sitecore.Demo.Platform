@@ -1,0 +1,17 @@
+---
+ID: "e575f886-aa64-4bb3-b2e0-a2c7889afea7"
+Parent: "a6b5c4d3-e2f1-a0aa-d210-543210abcdef"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Page List/NYSIF Row
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "page-list nysif-news-row"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "06de167a-642d-4406-9148-0cbeb1a99c80"

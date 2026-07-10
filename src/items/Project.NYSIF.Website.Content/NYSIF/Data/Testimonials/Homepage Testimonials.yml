@@ -1,0 +1,19 @@
+---
+ID: "e4f3a2b1-c0d9-4eee-a098-765432abcdef"
+Parent: "a8b7c6d5-e4f3-4aaa-d432-321098abcdef"
+Template: "3dd8b1fe-6820-433b-900f-4810d91ae581"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Testimonials/Homepage Testimonials
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "37cb8301-8902-42b5-930c-f0db255c3f9d"
+      Hint: Eyebrow
+      Value: What employers and workers say
+    - ID: "c16be7ab-1e8c-4fb8-834b-9497ebfbc71c"
+      Hint: Title
+      Value: Trusted by businesses of every size across New York State.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "78da72a8-7d38-4983-9fea-e8df972d3e5b"

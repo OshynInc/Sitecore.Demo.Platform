@@ -1,0 +1,25 @@
+---
+ID: "f5a4b3c2-d1e0-4fff-b109-654321abcdef"
+Parent: "e4f3a2b1-c0d9-4eee-a098-765432abcdef"
+Template: "f7b8dea7-c26a-4604-873d-2d9c3e426ec1"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Testimonials/Homepage Testimonials/Maria Rivera
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "6c7d2d54-19c8-4c51-86d1-bca9531487c8"
+      Hint: Quote
+      Value: NYSIF made the audit process completely painless. We scheduled everything online and had our results within a week.
+    - ID: "ef7905d5-4805-4645-b4ad-b45b7c0e08b9"
+      Hint: Name
+      Value: Maria Rivera
+    - ID: "e1a2b3c4-d5e6-4789-a012-3456789abcde"
+      Hint: Role
+      Value: Owner, Rivera Construction - Brooklyn, NY
+    - ID: "f2b3c4d5-e6f7-4890-b123-456789abcdef"
+      Hint: Initials
+      Value: MR
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b64fd9ee-fc6e-4873-8e13-537827077500"

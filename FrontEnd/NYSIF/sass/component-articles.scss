@@ -1,0 +1,136 @@
+@import "vars";
+@import "mixins";
+@import "base/fontawesome/font-awesome-mix-var";
+
+main {
+	.article-list {
+		@include proxima-font;
+
+		.items {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			.item {
+				@include border-basic;
+				display: flex;
+				flex-direction: column;
+				max-width: 440px;
+				margin: 20px;
+				padding: 1.5rem;
+
+				> div:nth-child(2) {
+					height: 100%;
+				}
+
+				div.col-text {
+					color: $text-basic;
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+
+					h3 {
+						@include proxima-font(bold);
+						font-size: 3.2rem;
+						margin: 1rem 0 1.6rem;
+					}
+
+					p {
+						font-size: 1.6rem;
+						line-height: 1.4;
+						margin: 1.6rem 0 auto;
+					}
+
+					.field-publish-date {
+						font-size: 1.4rem;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+					}
+
+					> div:last-child {
+						align-self: flex-end;
+					}
+
+					a {
+						@include btn-arrow(32px);
+						filter: invert(180);
+						margin-top: 1.6rem;
+					}
+				}
+
+				.field-image {
+					width: 100%;
+					margin-bottom: 2.4rem;
+
+					img {
+						width: 100%;
+						height: unset;
+						aspect-ratio: 4 / 3;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+	}
+
+	.article-content {
+		font-size: $font-big;
+		padding: 0 2em;
+
+		.field-publish-date {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: 1.6rem;
+		}
+
+		.article-body {
+			margin-top: 4rem;
+		}
+
+		h1 {
+			@include proxima-font(bold);
+			font-size: 6rem;
+		}
+
+		p {
+			font-size: $font-big;
+		}
+
+		@include respond-to(tablet) {
+			padding: 0 2em;
+		}
+
+		@include respond-to(desktop) {
+			padding: 0 2em;
+		}
+	}
+
+	.article-author {
+		display: flex;
+		flex-direction: column;
+		background-color: $primary-color;
+		color: $on-primary;
+
+		.field-author-image {
+			img {
+				width: 100%;
+				height: unset;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
+			}
+		}
+
+		.author-details {
+			padding: 4rem;
+			p {
+				font-size: 1.6rem;
+			}
+
+			.field-author-name {
+				@include proxima-font(bold);
+				font-size: 3.2rem;
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+}

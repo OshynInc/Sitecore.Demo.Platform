@@ -1,0 +1,78 @@
+@import "../abstracts/vars-nysif";
+
+.container,
+.component.container .component-content {
+	max-width: $nysif-container-max;
+	margin: 0 auto;
+	padding: 0 $nysif-container-padding;
+}
+
+// Full-bleed band backgrounds: outer container keeps width 100%,
+// only the inner content is constrained.
+.component.container.row-dark,
+.component.container.row-light,
+.component.container.row-gray {
+	max-width: none;
+	width: 100%;
+	float: none;
+	margin: 0;
+
+	> .component-content {
+		max-width: $nysif-container-max;
+		margin: 0 auto;
+		padding: 0 $nysif-container-padding;
+	}
+}
+
+// Nested containers inside a band should not re-constrain
+.component.container.row-dark .component.container > .component-content,
+.component.container.row-light .component.container > .component-content,
+.component.container.row-gray .component.container > .component-content {
+	max-width: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: $nysif-bp-mobile) {
+	.container,
+	.component.container .component-content,
+	.component.container.row-dark > .component-content,
+	.component.container.row-light > .component-content,
+	.component.container.row-gray > .component-content {
+		padding: 0 20px;
+	}
+}
+
+// Neutralize Bootstrap row negative margins that pull content off-center
+#content > .row,
+#header > .row,
+#footer > .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+// Homepage bands: full-bleed containers — strip Bootstrap col gutters that shrink sections
+#content > .row > .component.container[class*="col-"] {
+	float: none;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+
+	> .component-content > .component[class*="col-"] {
+		float: none;
+		width: 100%;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.component.container > .component-content > .row.column-splitter {
+	margin-left: -12px;
+	margin-right: -12px;
+
+	> [class*="col-"] {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+}

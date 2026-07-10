@@ -1,0 +1,26 @@
+---
+ID: "c2d1e0f9-a8b7-46dc-b987-654321abcdef"
+Parent: "b1c0d9e8-f7a6-45cb-a876-543210abcdef"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Available Renderings/SitecoreDemo
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {6BCF8D8E-0A28-4844-BFB4-96C852BAD2DC}
+    {F8247C34-E05E-4E8C-B94A-C5F1640C885F}
+    {77413562-534F-48E6-BE34-C24F99108F42}
+    {0CDA0FA9-6C25-488C-8B76-1295B9E384C2}
+    {A1B2C3D4-E5F6-4A01-B001-00000000F001}
+    {A1B2C3D4-E5F6-4A01-B001-00000000F004}
+    {A1B2C3D4-E5F6-4A01-B001-00000000F002}
+    {A1B2C3D4-E5F6-4A01-B001-00000000F005}
+    {A1B2C3D4-E5F6-4A01-B001-00000000F003}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c41a8026-fd92-4aa9-8c01-db767ba69fa4"

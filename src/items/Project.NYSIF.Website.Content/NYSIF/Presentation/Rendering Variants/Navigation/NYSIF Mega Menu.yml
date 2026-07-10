@@ -1,0 +1,17 @@
+---
+ID: "1ad00b2f-3945-4b2c-8f2b-26d6daa77512"
+Parent: "d3e2f1a0-b9c8-47dd-a987-876543210abc"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Navigation/NYSIF Mega Menu
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "navigation nysif-mega-nav"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "04e2f67c-30b5-4168-b390-ca79bf047eb5"

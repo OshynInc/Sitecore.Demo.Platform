@@ -1,0 +1,13 @@
+---
+ID: "e6f5a4b3-c2d1-4eee-b210-543210abcdef"
+Parent: "e2f1a0b9-c8d7-4654-5432-109876fedcba"
+Template: "bacf43ba-a24e-4727-8848-8531fae454b6"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Service Alerts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7aed1ac0-d0ad-41ec-9cdf-ba089871e387"

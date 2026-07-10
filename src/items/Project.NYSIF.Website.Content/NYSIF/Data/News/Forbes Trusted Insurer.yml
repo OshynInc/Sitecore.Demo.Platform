@@ -1,0 +1,32 @@
+---
+ID: "c4d3e2f1-a0b9-4ccc-e098-765432abcdef"
+Parent: "c0d9e8f7-a6b5-4ccc-f654-109876abcdef"
+Template: "a1b2c3d4-e5f6-4a02-c001-00000000a001"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/News/Forbes Trusted Insurer
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: NYSIF Named Among Forbes Most Trusted Insurers for Third Consecutive Year
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "forbes-news-p1-001"
+    - ID: "b9a7b9c1-2a0e-4c2a-9f7e-3e8b4d5f6a1b"
+      Hint: Category
+      Value: Industry News
+    - ID: "e2a634fd-5177-46de-b629-5393caed77d7"
+      Hint: Title
+      Value: NYSIF Named Among Forbes Most Trusted Insurers for Third Consecutive Year
+    - ID: "f6a8b5c2-3d1e-4f4a-8c7b-2e9d5a6b7c8d"
+      Hint: Summary
+      Value: Recognition highlights NYSIF commitment to employers and injured workers across New York.
+    - ID: "f7a8b5c3-3d1e-4f4a-8c7b-2e9d5a6b7c8e"
+      Hint: PublishDate
+      Value: March 12, 2026

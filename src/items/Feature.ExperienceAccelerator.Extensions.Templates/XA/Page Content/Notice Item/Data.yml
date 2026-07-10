@@ -1,0 +1,13 @@
+---
+ID: "a1b2c3d4-e5f6-4a02-c002-00000000b010"
+Parent: "a1b2c3d4-e5f6-4a02-c002-00000000b001"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Notice Item/Data
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "notice-section-001"

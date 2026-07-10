@@ -1,0 +1,13 @@
+---
+ID: "f7a6b5c4-d3e2-4fff-c321-432109abcdef"
+Parent: "e2f1a0b9-c8d7-4654-5432-109876fedcba"
+Template: "4e026766-053e-43ce-809e-c0f8393a8e23"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2097603f-7e79-4701-b7a1-45fbf91a4b1d"

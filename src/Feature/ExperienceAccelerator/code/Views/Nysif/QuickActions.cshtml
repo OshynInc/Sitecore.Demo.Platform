@@ -1,0 +1,30 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.QuickActionsModel
+
+<div class="component promo nysif-quick-actions col-sm-12">
+	<div class="component-content">
+		@if (Model.Item == null || Model.Cards == null || Model.Cards.Count == 0)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Quick Actions: select the Quick Actions folder datasource]</p>
+			}
+			return;
+		}
+
+		<section class="section-block">
+			<div class="section-heading">@Model.Heading</div>
+			<p class="section-sub">@Model.Subheading</p>
+			<div class="qa-grid">
+				@foreach (var card in Model.Cards)
+				{
+					<div class="qa-card">
+						<div class="qa-icon">@card.Icon</div>
+						<div class="qa-title">@card.Title</div>
+						<div class="qa-desc">@card.Description</div>
+						<a href="@card.LinkUrl" class="qa-link">@card.LinkText &rarr;</a>
+					</div>
+				}
+			</div>
+		</section>
+	</div>
+</div>

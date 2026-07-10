@@ -1,0 +1,19 @@
+---
+ID: "c6d5e4f3-a2b1-4ccc-f210-543210abcdef"
+Parent: "f3a2b1c0-d9e8-4fff-c987-876543abcdef"
+Template: "01e31002-4c71-4819-868e-3d8347679310"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Service Alerts/Homepage Alerts/WC Law Changes
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "49b8a287-83f5-4f0d-8277-0ad12fa85c5f"
+      Hint: Date
+      Value: Mar 15, 2026
+    - ID: "a20bd625-9c9b-4c17-a119-ad803caadf29"
+      Hint: Text
+      Value: 2026 Workers Compensation Law changes - what employers need to know.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "26e2685b-200c-4a0d-81fb-443b5b7b3249"

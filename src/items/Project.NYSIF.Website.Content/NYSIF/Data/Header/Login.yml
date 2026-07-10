@@ -1,0 +1,17 @@
+---
+ID: "b1a2c3d4-e5f6-4789-a012-345678901104"
+Parent: "b1a2c3d4-e5f6-4789-a012-345678901100"
+Template: "e24e0789-a058-48bf-abb6-c69c0e60b6b7"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Header/Login
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b1a2c3d4-e5f6-4789-a012-345678901105"
+    - ID: "dd05144a-bd66-4ea3-956a-4b7104daaba3"
+      Hint: Link
+      Value: |
+        <link text="Login" linktype="external" url="https://www.nysif.com" anchor="" title="Login" class="" target="_blank" />

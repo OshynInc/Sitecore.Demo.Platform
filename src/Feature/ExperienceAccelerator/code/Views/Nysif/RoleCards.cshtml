@@ -1,0 +1,38 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.RoleCardsModel
+
+<div class="component role-cards role-cards col-sm-12">
+	<div class="component-content">
+		@if (Model.Item == null)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Role Cards: select a datasource]</p>
+			}
+			return;
+		}
+		<section class="roles">
+			@if (!string.IsNullOrWhiteSpace(Model.Eyebrow))
+			{
+				<div class="roles-eyebrow">@Model.Eyebrow</div>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.Title))
+			{
+				<h2>@Model.Title</h2>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+			{
+				<p class="roles-sub">@Model.Subtitle</p>
+			}
+			<div class="role-grid">
+				@foreach (var card in Model.Cards)
+				{
+					<div class="role-card">
+						<div class="role-icon">@card.Icon</div>
+						<div class="role-title">@card.Title</div>
+						<div class="role-desc">@card.Description</div>
+					</div>
+				}
+			</div>
+		</section>
+	</div>
+</div>

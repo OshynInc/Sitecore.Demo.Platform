@@ -1,0 +1,33 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.ServiceAlertsModel
+
+<div class="component service-alerts service-alerts col-sm-12">
+	<div class="component-content">
+		@if (Model.Item == null)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Service Alerts: select a datasource]</p>
+			}
+			return;
+		}
+		<aside class="alerts">
+			@if (!string.IsNullOrWhiteSpace(Model.Badge))
+			{
+				<span class="alert-badge">@Model.Badge</span>
+			}
+			@foreach (var alert in Model.Alerts)
+			{
+				<div class="alert-item">
+					@if (!string.IsNullOrWhiteSpace(alert.Date))
+					{
+						<div class="alert-date">@alert.Date</div>
+					}
+					@if (!string.IsNullOrWhiteSpace(alert.Text))
+					{
+						<div class="alert-text">@alert.Text</div>
+					}
+				</div>
+			}
+		</aside>
+	</div>
+</div>

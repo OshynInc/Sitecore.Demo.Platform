@@ -1,0 +1,17 @@
+---
+ID: "bc0d35a2-c529-40d2-ae5c-f2d7e8c99712"
+Parent: "c8d7e6f5-a4b3-4ccc-f432-321098abcdef"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Role Cards/Default
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "role-cards"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9133a3cd-58d5-4f6c-a6fa-4af7af372f1f"

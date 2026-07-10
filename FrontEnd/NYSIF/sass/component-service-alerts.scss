@@ -1,0 +1,65 @@
+@import "../abstracts/vars-nysif";
+
+.service-alerts {
+	width: 100%;
+	max-width: 350px;
+	flex-shrink: 0;
+	background: $nysif-dark-surface;
+	border-radius: 12px;
+	padding: 26px 26px 22px;
+	margin-top: 6px;
+	margin-left: auto;
+	float: none;
+
+	> .component-content {
+		padding: 0;
+	}
+
+	.alert-badge,
+	.field-badge {
+		display: inline-block;
+		background: $nysif-alert-red;
+		color: $nysif-text-on-dark;
+		font-size: 13px;
+		font-weight: 700;
+		padding: 5px 13px;
+		border-radius: 999px;
+		margin-bottom: 20px;
+	}
+
+	.alert-item,
+	.field-alert-item {
+		padding: 14px 0;
+		border-bottom: 1px solid $nysif-dark-border-soft;
+
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 4px;
+		}
+
+		&:first-of-type {
+			padding-top: 0;
+		}
+	}
+
+	.alert-date,
+	.field-date {
+		color: $nysif-accent-light;
+		font-size: 13.5px;
+		font-weight: 500;
+		margin-bottom: 7px;
+	}
+
+	.alert-text,
+	.field-text {
+		color: #cfd9e6;
+		font-size: 15.5px;
+		line-height: 1.45;
+	}
+
+	@media (max-width: $nysif-bp-tablet) {
+		width: 100%;
+		margin-top: 28px;
+		margin-bottom: 8px;
+	}
+}

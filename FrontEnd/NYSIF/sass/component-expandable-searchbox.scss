@@ -1,0 +1,96 @@
+@import "mixins";
+@import "vars";
+@import "base/fontawesome/font-awesome-mix-var";
+
+.component.expandable-searchbox {
+	position: relative;
+	padding: 0 $small-margin;
+
+	&:before {
+		@include fa-icon();
+		height: $primary-nav-height - 8px;
+		display: flex;
+		align-items: center;
+		color: $text-passive;
+		font-size: $navigation-icon-size;
+		content: $fa-var-search;
+		padding: 0 1.25em;
+		cursor: pointer;
+		position: relative;
+		border-top: 4px solid transparent;
+		line-height: $primary-nav-height - 8px;
+		padding-bottom: 12px;
+	}
+
+	.component-content-open {
+		display: none;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		transform: translateY(100%);
+		width: $main-search-width;
+		padding: 1.5em;
+		background: $bg-basic-color;
+		border: 1px solid $nav-submenu-item-border;
+		border-bottom: 4px solid $nav-submenu-item-border;
+		z-index: 100;
+
+		.search-placeholder {
+			display: block;
+			position: relative;
+			width: 100%;
+		}
+	}
+
+	&.open {
+		&:before {
+			background-color: transparent;
+			color: $primary-color;
+			z-index: 400;
+		}
+
+		& > .component-content-open {
+			display: block;
+		}
+	}
+
+	&.footer {
+		position: relative;
+
+		&:before {
+			display: none;
+		}
+
+		.component-content-open {
+			display: inline;
+			position: relative;
+			width: 100%;
+			background: none;
+			border: none;
+			padding: $small-margin;
+			height: auto;
+
+			.search-placeholder {
+				height: auto;
+			}
+		}
+
+		.autocomplete-menu,
+		.autocomplete-menu__absolute {
+			@include border-basic(all, $on-primary, 1px);
+
+			position: absolute;
+			background-color: $secondary-color;
+			color: $on-secondary;
+
+			span a {
+				color: $on-secondary;
+			}
+		}
+
+		&.edit-mode {
+			background-color: $bg-light-gray-active;
+			color: $on-primary;
+		}
+	}
+}

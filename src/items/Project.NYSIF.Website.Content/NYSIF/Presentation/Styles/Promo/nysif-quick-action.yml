@@ -1,0 +1,23 @@
+---
+ID: "a7b3233d-c80b-4f69-9e99-f16dcb8ed4d2"
+Parent: "a2b1c0d9-e8f7-4aaa-d876-987654abcdef"
+Template: "6b8aabef-d650-46e0-97d0-c0b04f7f016b"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Styles/Promo/nysif-quick-action
+SharedFields:
+- ID: "09147fb2-ebfb-4949-8c8e-26a424409d5e"
+  Hint: Value
+  Value: "nysif-quick-action"
+- ID: "69bb49f3-da64-4b0e-abd6-184b832ff6ab"
+  Hint: Allowed Renderings
+  Value: "{51C13F03-8364-4F61-B860-2EC6CA7439B3}"
+- ID: "95579875-484e-41f0-b9c2-804eafaf3ccc"
+  Hint: IsVerifiedStyle
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "41deab3e-8ede-4bf1-9e05-b4afb3c67879"

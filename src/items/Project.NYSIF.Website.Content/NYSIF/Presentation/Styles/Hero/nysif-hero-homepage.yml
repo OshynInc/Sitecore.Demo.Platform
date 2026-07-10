@@ -1,0 +1,23 @@
+---
+ID: "27285b44-052a-401a-a35c-63e800084165"
+Parent: "f1a0b9c8-d7e6-4fff-c765-098765abcdef"
+Template: "6b8aabef-d650-46e0-97d0-c0b04f7f016b"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Styles/Hero/nysif-hero-homepage
+SharedFields:
+- ID: "09147fb2-ebfb-4949-8c8e-26a424409d5e"
+  Hint: Value
+  Value: "nysif-hero-homepage"
+- ID: "69bb49f3-da64-4b0e-abd6-184b832ff6ab"
+  Hint: Allowed Renderings
+  Value: "{6BCF8D8E-0A28-4844-BFB4-96C852BAD2DC}"
+- ID: "95579875-484e-41f0-b9c2-804eafaf3ccc"
+  Hint: IsVerifiedStyle
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "54a76cd9-cc85-4ec5-9f08-dc76921f2cf7"

@@ -1,0 +1,17 @@
+---
+ID: "4e026766-053e-43ce-809e-c0f8393a8e23"
+Parent: "59f84767-614b-451f-bc35-6f39234f0527"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Role Cards Folder
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: "{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "rc-folder-rev-001"

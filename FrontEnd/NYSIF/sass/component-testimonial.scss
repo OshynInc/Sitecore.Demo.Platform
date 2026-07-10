@@ -1,0 +1,117 @@
+@import "../abstracts/vars-nysif";
+
+.testimonial {
+	padding: 0;
+	float: none;
+	width: 100%;
+	max-width: none;
+
+	> .component-content {
+		padding: 0;
+		width: 100%;
+		max-width: none;
+	}
+
+	.section-block {
+		width: 100%;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.section-heading,
+	.testimonials-eyebrow,
+	.field-eyebrow {
+		font-size: 25px;
+		font-weight: 700;
+		color: $nysif-text-dark;
+		margin-bottom: 8px;
+		text-align: left;
+		letter-spacing: normal;
+		text-transform: none;
+	}
+
+	.section-sub,
+	h2,
+	.field-title {
+		font-size: 16px;
+		font-weight: 400;
+		color: $nysif-text-muted;
+		margin-bottom: 30px;
+		text-align: left;
+	}
+
+	.testimonial-grid,
+	.field-cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		width: 100%;
+	}
+
+	.testimonial-card,
+	.field-card {
+		background: $nysif-light-surface;
+		border: 1px solid $nysif-light-border;
+		border-radius: 10px;
+		padding: 28px 24px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.testimonial-quote,
+	.field-quote {
+		font-size: 15.5px;
+		font-style: italic;
+		line-height: 1.55;
+		color: #2c3646;
+		margin-bottom: 22px;
+		flex: 1;
+	}
+
+	.testimonial-person,
+	.testimonial-author,
+	.field-author {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.avatar,
+	.testimonial-avatar,
+	.field-initials {
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		background: #dce6f5;
+		color: $nysif-accent-blue;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 700;
+		flex-shrink: 0;
+	}
+
+	.person-name,
+	.testimonial-name,
+	.field-name {
+		font-size: 15px;
+		font-weight: 700;
+		color: $nysif-text-dark;
+	}
+
+	.person-role,
+	.testimonial-role,
+	.field-role {
+		font-size: 13.5px;
+		color: $nysif-text-muted;
+	}
+
+	@media (max-width: $nysif-bp-nav) {
+		.testimonial-grid,
+		.field-cards {
+			grid-template-columns: 1fr;
+		}
+	}
+}

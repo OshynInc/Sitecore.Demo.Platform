@@ -1,0 +1,373 @@
+@import "../abstracts/vars-nysif";
+
+// News band: white section (static .news-layout), gray panel only on .news-side
+.component.container.row-light {
+	&:has(.nysif-news-featured) {
+		> .component-content > .row.column-splitter {
+			align-items: stretch;
+			margin-left: 0;
+			margin-right: 0;
+
+			> [class*="col-"] {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.page-list {
+	&.nysif-news-featured,
+	&.nysif-news {
+		float: none;
+
+		> .component-content {
+			padding: 0;
+		}
+
+		.news-main {
+			background: $nysif-light-surface;
+			padding: 48px 40px 48px 0;
+		}
+
+		.section-heading {
+			font-size: 25px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			margin-bottom: 8px;
+		}
+
+		.section-sub {
+			font-size: 16px;
+			color: $nysif-text-muted;
+			margin-bottom: 28px;
+		}
+
+		.news-featured {
+			display: flex;
+			gap: 24px;
+			padding-bottom: 28px;
+			border-bottom: 1px solid #e1e7ee;
+			margin-bottom: 28px;
+		}
+
+		.thumb {
+			width: 210px;
+			height: 130px;
+			flex-shrink: 0;
+			background: #c9d4e2;
+			border-radius: 6px;
+		}
+
+		.thumb-sm {
+			width: 100px;
+			height: 66px;
+			flex-shrink: 0;
+			background: #c9d4e2;
+			border-radius: 6px;
+		}
+
+		.news-category {
+			color: $nysif-accent-blue;
+			font-size: 12.5px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+		}
+
+		.news-title {
+			font-size: 19px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			line-height: 1.35;
+			margin-bottom: 10px;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+
+		.news-title-sm {
+			font-size: 16px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			line-height: 1.3;
+			margin-bottom: 6px;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+
+		.news-desc {
+			font-size: 14.5px;
+			color: $nysif-text-muted;
+			line-height: 1.55;
+			margin-bottom: 10px;
+		}
+
+		.news-meta {
+			font-size: 13.5px;
+			color: $nysif-text-muted-light;
+		}
+
+		.news-row {
+			display: flex;
+			gap: 32px;
+			margin-bottom: 32px;
+		}
+
+		.news-row-item {
+			display: flex;
+			gap: 16px;
+			flex: 1;
+		}
+
+		.news-viewall {
+			text-align: center;
+
+			a {
+				color: $nysif-accent-blue;
+				font-size: 15px;
+				font-weight: 600;
+				text-decoration: none;
+			}
+		}
+
+		@media (max-width: $nysif-bp-mobile) {
+			.news-main {
+				padding: 36px 0;
+			}
+
+			.news-featured {
+				flex-direction: column;
+			}
+
+			.thumb {
+				width: 100%;
+				height: 160px;
+			}
+
+			.news-row {
+				flex-direction: column;
+				gap: 20px;
+			}
+		}
+	}
+
+	&.nysif-news {
+		.news-eyebrow,
+		.field-eyebrow {
+			color: #7a8798;
+			font-size: 13px;
+			font-weight: 700;
+			letter-spacing: 2.2px;
+			text-transform: uppercase;
+			margin-bottom: 13px;
+		}
+
+		h2,
+		.field-title {
+			font-size: 27px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			margin-bottom: 11px;
+		}
+
+		.news-sub,
+		.field-subtitle {
+			font-size: 17px;
+			color: $nysif-text-muted;
+			margin-bottom: 28px;
+		}
+
+		.featured-item,
+		.item:first-child {
+			display: flex;
+			gap: 24px;
+			padding-bottom: 28px;
+			margin-bottom: 28px;
+			border-bottom: 1px solid $nysif-light-border;
+
+			.field-image img {
+				width: 280px;
+				height: 180px;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+
+			.field-title a {
+				font-size: 22px;
+				font-weight: 700;
+				color: $nysif-text-dark;
+				text-decoration: none;
+				line-height: 1.35;
+			}
+
+			.field-date {
+				color: $nysif-accent-blue;
+				font-size: 13.5px;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+
+			.field-summary {
+				font-size: 15.5px;
+				color: $nysif-text-muted;
+				line-height: 1.55;
+				margin-top: 10px;
+			}
+		}
+
+		.item:not(:first-child) {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 18px 0;
+			border-bottom: 1px solid $nysif-light-border;
+			gap: 16px;
+
+			.field-title a {
+				font-size: 16.5px;
+				font-weight: 600;
+				color: $nysif-text-dark;
+				text-decoration: none;
+				line-height: 1.4;
+			}
+
+			.field-date {
+				color: $nysif-text-muted;
+				font-size: 13.5px;
+				white-space: nowrap;
+				flex-shrink: 0;
+			}
+		}
+
+		@media (max-width: $nysif-bp-mobile) {
+			.featured-item,
+			.item:first-child {
+				flex-direction: column;
+
+				.field-image img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.item:not(:first-child) {
+				flex-direction: column;
+				gap: 6px;
+			}
+		}
+	}
+}
+
+.nysif-news-sidebar {
+	float: none;
+	margin: 0;
+	height: 100%;
+
+	> .component-content {
+		padding: 0;
+		height: 100%;
+	}
+
+	.news-side {
+		background: $nysif-light-sidebar;
+		padding: 48px 32px;
+		min-height: 100%;
+		align-self: stretch;
+	}
+
+	.side-heading {
+		font-size: 19px;
+		font-weight: 700;
+		color: $nysif-text-dark;
+		margin-bottom: 20px;
+	}
+
+	.notice-item {
+		display: flex;
+		gap: 12px;
+		padding-bottom: 18px;
+		margin-bottom: 18px;
+		border-bottom: 1px solid #dbe3ec;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+
+	.notice-dot {
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		margin-top: 6px;
+		flex-shrink: 0;
+
+		&.dot-red { background: $nysif-alert-red; }
+		&.dot-orange { background: $nysif-notice-orange; }
+		&.dot-green { background: $nysif-notice-green; }
+	}
+
+	.notice-date {
+		font-size: 14px;
+		font-weight: 700;
+		color: $nysif-text-dark;
+		margin-bottom: 4px;
+	}
+
+	.notice-text {
+		font-size: 14px;
+		color: $nysif-text-muted;
+		line-height: 1.5;
+	}
+
+	.safety-heading {
+		font-size: 17px;
+		font-weight: 700;
+		color: $nysif-text-dark;
+		margin: 28px 0 18px;
+	}
+
+	.safety-item {
+		display: flex;
+		gap: 14px;
+		align-items: flex-start;
+		margin-bottom: 18px;
+	}
+
+	.safety-icon {
+		width: 38px;
+		height: 38px;
+		border-radius: 7px;
+		background: #dde4ec;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 17px;
+		flex-shrink: 0;
+	}
+
+	.safety-title {
+		color: $nysif-accent-blue;
+		font-size: 15px;
+		font-weight: 700;
+		margin-bottom: 3px;
+	}
+
+	.safety-sub {
+		font-size: 13.5px;
+		color: $nysif-text-muted;
+	}
+
+	@media (max-width: $nysif-bp-mobile) {
+		.news-side {
+			padding: 32px 0;
+			background: transparent;
+		}
+	}
+}

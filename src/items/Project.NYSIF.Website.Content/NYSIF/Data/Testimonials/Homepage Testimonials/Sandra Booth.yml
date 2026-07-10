@@ -1,0 +1,25 @@
+---
+ID: "b7c6d5e4-f3a2-4bbb-d321-432109abcdef"
+Parent: "e4f3a2b1-c0d9-4eee-a098-765432abcdef"
+Template: "f7b8dea7-c26a-4604-873d-2d9c3e426ec1"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Testimonials/Homepage Testimonials/Sandra Booth
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "6c7d2d54-19c8-4c51-86d1-bca9531487c8"
+      Hint: Quote
+      Value: As a broker I recommend NYSIF to clients who cannot find competitive rates elsewhere. The online quote tool saves us hours every week.
+    - ID: "ef7905d5-4805-4645-b4ad-b45b7c0e08b9"
+      Hint: Name
+      Value: Sandra Booth
+    - ID: "e1a2b3c4-d5e6-4789-a012-3456789abcde"
+      Hint: Role
+      Value: Licensed Broker - Albany Insurance Group
+    - ID: "f2b3c4d5-e6f7-4890-b123-456789abcdef"
+      Hint: Initials
+      Value: SB
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3b889be3-2015-4324-a96b-833702d0e2a7"

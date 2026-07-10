@@ -1,0 +1,30 @@
+---
+ID: "d9e8f7a6-b5c4-4ddd-f543-210987abcdef"
+Parent: "b9c8d7e6-f5a4-4bbb-e543-210987abcdef"
+Template: "324733cf-afec-4281-9a18-03b6cfc4e535"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Quick Actions/File a Claim
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14023dd5-30e7-4e3c-bf31-d835f3a87410"
+      Hint: PromoText
+      Value: File a Claim
+    - ID: "18f9beb8-0116-40fd-b47e-fd0a2327d7e0"
+      Hint: PromoIcon
+      Value: clipboard
+    - ID: "b59adc09-32a3-46f2-aede-b0c633979263"
+      Hint: PromoText2
+      Value: Report a workplace injury or disability claim online. Available 24/7.
+    - ID: "b8c1a9d2-de76-4519-aff4-1442525f32b0"
+      Hint: PromoLink
+      Value: |
+        <link text="File now" linktype="internal" url="" anchor="" title="" class="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4840dbf1-9ac3-4fed-83b2-5dfbbbad1a9d"

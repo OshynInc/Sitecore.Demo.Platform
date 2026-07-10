@@ -1,0 +1,22 @@
+---
+ID: "d7e6f5a4-b3c2-4ddd-a321-432109abcdef"
+Parent: "f7a6b5c4-d3e2-4fff-c321-432109abcdef"
+Template: "f54d02b5-2942-4f3f-9df6-b6a5eb6535ad"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards/Homepage Roles
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "ba652a90-f782-450f-890d-83ba3543c5ac"
+      Hint: Eyebrow
+      Value: WHO WE SERVE
+    - ID: "8eca82fa-512d-4181-a00c-3f953555a51c"
+      Hint: Title
+      Value: Insurance solutions for every role
+    - ID: "95048517-8cf3-4641-bfad-510f79509b02"
+      Hint: Subtitle
+      Value: Find resources tailored to how you work with NYSIF.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1928ba3b-fb56-4092-852a-1c9d650eec65"

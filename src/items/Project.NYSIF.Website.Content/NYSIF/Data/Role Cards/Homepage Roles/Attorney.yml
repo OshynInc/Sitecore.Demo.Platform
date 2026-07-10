@@ -1,0 +1,22 @@
+---
+ID: "c2d1e0f9-a8b7-4ccc-e876-987654abcdef"
+Parent: "d7e6f5a4-b3c2-4ddd-a321-432109abcdef"
+Template: "1fed9a01-e7be-440d-b3e2-c7c34615e796"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards/Homepage Roles/Attorney
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "b9611f0f-969a-4211-b34b-123afe0b33b0"
+      Hint: Icon
+      Value: legal
+    - ID: "2f0714df-c1fb-4571-a26c-69fd7d222b5b"
+      Hint: Title
+      Value: Attorney
+    - ID: "22388074-4fcd-4bac-b870-46df899a61d2"
+      Hint: Description
+      Value: Case info, forms, legal resources
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d9ad0faa-cfe9-4d35-ba6c-6b13da899ffa"

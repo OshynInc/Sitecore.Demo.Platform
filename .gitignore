@@ -2,6 +2,7 @@
 src/**/[Bb]in/
 **/bin/Debug/
 .nuget/
+.nuget-packages/
 _ReSharper.*
 *.user
 *.cache

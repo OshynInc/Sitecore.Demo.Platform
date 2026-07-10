@@ -1,0 +1,26 @@
+---
+ID: "a1b2c3d4-e5f6-4789-a012-34567890b012"
+Parent: "a1b2c3d4-e5f6-4789-a012-34567890b010"
+Template: "a1b2c3d4-e5f6-4a02-c002-00000000b001"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Sidebar/Important Notices/Portal Maintenance
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "notice-portal-001"
+    - ID: "a1b2c3d4-e5f6-4a02-c002-00000000b011"
+      Hint: Date
+      Value: Apr 7, 2026
+    - ID: "a1b2c3d4-e5f6-4a02-c002-00000000b012"
+      Hint: Text
+      Value: Portal maintenance Saturday 8am–12pm. Plan accordingly.
+    - ID: "a1b2c3d4-e5f6-4a02-c002-00000000b013"
+      Hint: DotColor
+      Value: red

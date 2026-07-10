@@ -1,0 +1,18 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.PromoModel
+
+<div class="component promo promo nysif-quick-action qa-card col-xs-12 nysif-quick-action">
+	<div class="component-content">
+		@if (Model.Item == null)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Promo: select a datasource]</p>
+			}
+			return;
+		}
+		<div class="qa-icon">@Model.Icon</div>
+		<div class="qa-title">@Model.Title</div>
+		<div class="qa-desc">@Model.Description</div>
+		<a href="@Model.LinkUrl" class="qa-link">@Model.LinkText &rarr;</a>
+	</div>
+</div>

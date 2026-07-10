@@ -1,0 +1,440 @@
+@import "../abstracts/vars-nysif";
+
+// Base navigation component — NYSIF mega menu + mobile panel
+// Markup hooks: .navigation.nysif-mega-nav (style) or variant CssClass
+
+.navigation {
+	&.nysif-mega-nav,
+	&.nysif-header-dark {
+		position: relative;
+		padding-top: 18px;
+
+		.component-content {
+			padding: 0;
+		}
+
+		.header-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.logo,
+		.field-logo a,
+		.field-logo img {
+			font-size: 22px;
+			font-weight: 800;
+			letter-spacing: 0.5px;
+			color: $nysif-text-on-dark;
+			white-space: nowrap;
+		}
+
+		.main-nav,
+		.navigation-main {
+			display: flex;
+			align-items: stretch;
+			gap: 2px;
+			flex: 1;
+			min-width: 0;
+			margin-left: 48px;
+		}
+
+		.nav-item,
+		> .component-content > ul > li {
+			position: relative;
+		}
+
+		.nav-tab,
+		.navigation-title > a,
+		> .component-content > ul > li > a {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			background: transparent;
+			border: none;
+			color: $nysif-text-on-dark-subtle;
+			font-family: inherit;
+			font-size: 13.5px;
+			font-weight: 700;
+			letter-spacing: 0.6px;
+			text-transform: uppercase;
+			white-space: nowrap;
+			padding: 24px 16px 22px;
+			cursor: pointer;
+			text-decoration: none;
+
+			&:hover,
+			&[aria-expanded="true"] {
+				color: $nysif-text-on-dark;
+				background: #232c48;
+			}
+		}
+
+		.mega-menu,
+		> .component-content > ul > li > ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background: $nysif-dark-surface;
+			box-shadow: 0 18px 34px rgba(6, 10, 24, 0.4);
+			border-radius: 0 0 10px 10px;
+			overflow: hidden;
+			z-index: 80;
+			min-width: 300px;
+			padding: 14px 0;
+			list-style: none;
+			margin: 0;
+		}
+
+		.nav-item:hover > .mega-menu,
+		.mega-menu.open,
+		> .component-content > ul > li:hover > ul {
+			display: flex;
+		}
+
+		.mega-col-1 {
+			width: 300px;
+			padding: 14px 0;
+			background: $nysif-dark-surface;
+		}
+
+		.mega-col-2 {
+			display: none;
+			width: 260px;
+			padding: 14px 0;
+			background: $nysif-dark-surface-alt;
+			border-left: 1px solid $nysif-dark-border-soft;
+
+			&.active {
+				display: block;
+			}
+		}
+
+		.mega-link,
+		.mega-menu a,
+		> .component-content > ul > li > ul a {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			width: 100%;
+			padding: 11px 24px;
+			background: none;
+			border: none;
+			font-family: inherit;
+			color: $nysif-text-on-dark-subtle;
+			font-size: 14.5px;
+			text-align: left;
+			text-decoration: none;
+			cursor: pointer;
+
+			.chev {
+				color: $nysif-accent-light;
+				font-size: 14px;
+			}
+
+			&:hover,
+			&.active-sub {
+				background: rgba(111, 159, 216, 0.14);
+				color: $nysif-text-on-dark;
+			}
+		}
+
+		.hamburger {
+			display: none;
+			width: 40px;
+			height: 40px;
+			align-items: center;
+			justify-content: center;
+			background: transparent;
+			border: 1.5px solid #5f7a9c;
+			border-radius: 8px;
+			color: $nysif-text-on-dark;
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		.header-actions {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.mobile-menu-panel {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100vw;
+			max-height: calc(100vh - 70px);
+			overflow-y: auto;
+			background: #182036;
+			box-shadow: 0 18px 34px rgba(6, 10, 24, 0.45);
+			z-index: 90;
+
+			&.open {
+				display: block;
+			}
+		}
+
+		.m-acc-item {
+			border-bottom: 1px solid $nysif-dark-border;
+		}
+
+		.m-acc-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			background: none;
+			border: none;
+			font-family: inherit;
+			color: $nysif-text-on-dark;
+			font-size: 14.5px;
+			font-weight: 700;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			padding: 17px 24px;
+			cursor: pointer;
+
+			.caret {
+				color: $nysif-accent-light;
+				font-size: 12px;
+				transition: transform 0.15s ease;
+			}
+
+			&[aria-expanded="true"] {
+				background: #223055;
+
+				.caret {
+					transform: rotate(90deg);
+				}
+			}
+		}
+
+		.m-acc-panel {
+			display: none;
+			background: #1c2846;
+			padding: 6px 0 12px;
+		}
+
+		.m-link {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			width: 100%;
+			background: none;
+			border: none;
+			font-family: inherit;
+			color: #cfd9e6;
+			font-size: 14.5px;
+			text-align: left;
+			text-decoration: none;
+			padding: 11px 24px 11px 36px;
+			cursor: pointer;
+
+			&:hover {
+				color: $nysif-text-on-dark;
+				background: rgba(111, 159, 216, 0.12);
+			}
+		}
+
+		.mobile-drilldown {
+			display: none;
+
+			&.open {
+				display: block;
+			}
+		}
+
+		.mobile-back {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			width: 100%;
+			background: #223055;
+			border: none;
+			color: #cfd9e6;
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 600;
+			padding: 15px 24px;
+			cursor: pointer;
+		}
+
+		.mobile-drilldown-title {
+			color: $nysif-accent-eyebrow;
+			font-size: 12.5px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			padding: 16px 24px 8px;
+		}
+
+		.mobile-menu-footer {
+			display: flex;
+			border-top: 1px solid $nysif-dark-border;
+		}
+
+		.mobile-util {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			color: $nysif-text-on-dark-subtle;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 600;
+			padding: 16px 10px;
+
+			&:hover {
+				background: #223055;
+				color: $nysif-text-on-dark;
+			}
+		}
+
+		@media (max-width: $nysif-bp-nav) {
+			.main-nav,
+			.navigation-main {
+				display: none;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+
+			.header-actions .btn-login {
+				display: none;
+			}
+		}
+
+		@media (max-width: $nysif-bp-mobile) {
+			padding-top: 16px;
+
+			.header-actions {
+				gap: 10px;
+			}
+		}
+	}
+
+	// Footer styling within navigation partial / link-list columns
+	&.nysif-footer-dark {
+		padding: 56px 0 0;
+
+		.footer-grid {
+			display: flex;
+			justify-content: space-between;
+			gap: 40px;
+			padding-bottom: 44px;
+		}
+
+		.footer-brand {
+			max-width: 320px;
+
+			p {
+				font-size: 14.5px;
+				color: #9fb0c7;
+				line-height: 1.6;
+			}
+		}
+
+		.footer-logo {
+			font-size: 22px;
+			font-weight: 800;
+			letter-spacing: 0.5px;
+			color: $nysif-text-on-dark;
+			margin-bottom: 16px;
+		}
+
+		.footer-col-title {
+			color: #7a8ea9;
+			font-size: 12.5px;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+
+		.footer-col a,
+		.field-link a {
+			display: block;
+			color: $nysif-text-on-dark-muted;
+			font-size: 14.5px;
+			text-decoration: none;
+			margin-bottom: 15px;
+		}
+
+		.footer-bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-top: 1px solid $nysif-dark-border;
+			padding: 22px 0;
+		}
+
+		.footer-bottom-links {
+			font-size: 13.5px;
+			color: #8593ab;
+
+			a {
+				color: #8593ab;
+				text-decoration: none;
+				margin-left: 18px;
+			}
+		}
+
+		.social-icons {
+			display: flex;
+			gap: 10px;
+		}
+
+		.social-icon {
+			width: 34px;
+			height: 34px;
+			border-radius: 50%;
+			border: 1px solid #3a4363;
+			color: $nysif-text-on-dark-muted;
+			font-size: 12px;
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+		}
+
+		@media (max-width: $nysif-bp-tablet) {
+			.footer-grid {
+				flex-wrap: wrap;
+				gap: 32px 40px;
+			}
+
+			.footer-brand {
+				max-width: 100%;
+				flex: 1 1 100%;
+			}
+		}
+
+		@media (max-width: $nysif-bp-mobile) {
+			.footer-grid {
+				flex-direction: column;
+				gap: 32px;
+				padding-bottom: 32px;
+			}
+
+			.footer-bottom {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 16px;
+			}
+
+			.footer-bottom-links a {
+				margin-left: 0;
+				margin-right: 16px;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+---
+ID: "e0f9a8b7-c6d5-4eee-a654-109876abcdef"
+Parent: "b9c8d7e6-f5a4-4bbb-e543-210987abcdef"
+Template: "324733cf-afec-4281-9a18-03b6cfc4e535"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Quick Actions/Schedule an Audit
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14023dd5-30e7-4e3c-bf31-d835f3a87410"
+      Hint: PromoText
+      Value: Schedule an Audit
+    - ID: "18f9beb8-0116-40fd-b47e-fd0a2327d7e0"
+      Hint: PromoIcon
+      Value: calendar
+    - ID: "b59adc09-32a3-46f2-aede-b0c633979263"
+      Hint: PromoText2
+      Value: Book your payroll verification appointment online using PASS - on your schedule.
+    - ID: "b8c1a9d2-de76-4519-aff4-1442525f32b0"
+      Hint: PromoLink
+      Value: |
+        <link text="Book appointment" linktype="internal" url="" anchor="" title="" class="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ab3601a0-b322-43f2-8c4e-95e53ec0bbff"

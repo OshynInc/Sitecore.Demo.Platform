@@ -1,0 +1,13 @@
+---
+ID: "365b3bf3-8b0a-4a16-9c9d-2dba5e65dfe6"
+Parent: "f7b8dea7-c26a-4604-873d-2d9c3e426ec1"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Testimonial Card/Testimonial Card
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "tmc-section-rev"

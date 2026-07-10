@@ -1,0 +1,22 @@
+---
+ID: "a0b9c8d7-e6f5-4aaa-c654-109876abcdef"
+Parent: "d7e6f5a4-b3c2-4ddd-a321-432109abcdef"
+Template: "1fed9a01-e7be-440d-b3e2-c7c34615e796"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards/Homepage Roles/Broker
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "b9611f0f-969a-4211-b34b-123afe0b33b0"
+      Hint: Icon
+      Value: suit
+    - ID: "2f0714df-c1fb-4571-a26c-69fd7d222b5b"
+      Hint: Title
+      Value: Broker or Agent
+    - ID: "22388074-4fcd-4bac-b870-46df899a61d2"
+      Hint: Description
+      Value: Quote tools, client management
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2208f6b2-6529-415c-86e9-bdb1447d6953"

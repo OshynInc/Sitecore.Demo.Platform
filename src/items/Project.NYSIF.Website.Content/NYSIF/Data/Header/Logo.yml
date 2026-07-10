@@ -1,0 +1,18 @@
+---
+ID: "b1a2c3d4-e5f6-4789-a012-345678901102"
+Parent: "b1a2c3d4-e5f6-4789-a012-345678901100"
+Template: "bb8a85ab-1f6d-4518-8772-1c9f4f8dac18"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Header/Logo
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "4f52b258-7b05-4d6c-8c96-2e2eac46dc1b"
+      Hint: ImageCaption
+      Value: |
+        <h3 class="logo">NYSIF</h3>
+        <p class="footer-brand-text">New York State Insurance Fund &mdash; the state&rsquo;s largest workers&rsquo; compensation and disability benefits insurer. Guaranteeing coverage to New York employers since 1914.</p>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b1a2c3d4-e5f6-4789-a012-345678901103"

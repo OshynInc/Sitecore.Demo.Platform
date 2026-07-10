@@ -1,0 +1,92 @@
+@import "abstracts/vars-nysif";
+@import "layout/container";
+@import "layout/header";
+@import "layout/footer";
+@import "base/buttons";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: $nysif-font-stack;
+	background: $nysif-light-bg;
+	color: $nysif-text-dark;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+}
+
+a {
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+// Page band backgrounds (applied via row styles or section wrappers)
+.nysif-band-dark,
+.row-dark > .component-content,
+.row-dark {
+	background: $nysif-dark-bg;
+	color: $nysif-text-on-dark;
+}
+
+.nysif-band-light,
+.row-light > .component-content,
+.row-light {
+	background: $nysif-light-surface;
+	color: $nysif-text-dark;
+}
+
+.nysif-band-gray,
+.row-gray > .component-content,
+.row-gray {
+	background: $nysif-light-bg;
+	color: $nysif-text-dark;
+}
+
+.dark {
+	background: $nysif-dark-bg;
+	color: $nysif-text-on-dark;
+}
+
+.light {
+	background: $nysif-light-surface;
+	color: $nysif-text-dark;
+}
+
+.section-block {
+	padding: 48px 0;
+
+	&.center .section-heading,
+	&.center .section-sub {
+		text-align: center;
+	}
+}
+
+.section-heading {
+	font-size: 25px;
+	font-weight: 700;
+	color: $nysif-text-dark;
+	margin-bottom: 8px;
+}
+
+.section-sub {
+	font-size: 16px;
+	color: $nysif-text-muted;
+	margin-bottom: 30px;
+}
+
+@media (max-width: $nysif-bp-mobile) {
+	.section-block {
+		padding: 36px 0;
+	}
+}

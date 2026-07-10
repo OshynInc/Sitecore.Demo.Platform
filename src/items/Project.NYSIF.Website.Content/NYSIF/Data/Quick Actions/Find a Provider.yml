@@ -1,0 +1,30 @@
+---
+ID: "f1a0b9c8-d7e6-4fff-b765-098765abcdef"
+Parent: "b9c8d7e6-f5a4-4bbb-e543-210987abcdef"
+Template: "324733cf-afec-4281-9a18-03b6cfc4e535"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Quick Actions/Find a Provider
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 400
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14023dd5-30e7-4e3c-bf31-d835f3a87410"
+      Hint: PromoText
+      Value: Find a Provider
+    - ID: "18f9beb8-0116-40fd-b47e-fd0a2327d7e0"
+      Hint: PromoIcon
+      Value: location
+    - ID: "b59adc09-32a3-46f2-aede-b0c633979263"
+      Hint: PromoText2
+      Value: Search NYSIF network of authorized medical providers across New York State.
+    - ID: "b8c1a9d2-de76-4519-aff4-1442525f32b0"
+      Hint: PromoLink
+      Value: |
+        <link text="Search providers" linktype="internal" url="" anchor="" title="" class="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "91e40e7a-1236-45f6-999c-1f326f80c42e"

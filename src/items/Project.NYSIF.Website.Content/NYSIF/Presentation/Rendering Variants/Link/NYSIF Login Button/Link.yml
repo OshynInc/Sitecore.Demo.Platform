@@ -1,0 +1,20 @@
+---
+ID: "a1b2c3d4-e5f6-4789-a012-345678901013"
+Parent: "a1b2c3d4-e5f6-4789-a012-345678901011"
+Template: "fcd285da-9ab2-4c8d-b185-5a7487a9ba1b"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Link/NYSIF Login Button/Link
+SharedFields:
+- ID: "4753764c-c05a-4623-841b-97f85135241c"
+  Hint: FieldName
+  Value: Link
+- ID: "7495124d-09b5-4cb3-b4a6-fe77a95827da"
+  Hint: CssClass
+  Value: "btn btn-login"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1b2c3d4-e5f6-4789-a012-345678901014"

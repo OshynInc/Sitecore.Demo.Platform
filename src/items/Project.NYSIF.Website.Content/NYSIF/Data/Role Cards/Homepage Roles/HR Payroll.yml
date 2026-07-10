@@ -1,0 +1,22 @@
+---
+ID: "d3e2f1a0-b9c8-4ddd-f987-876543abcdef"
+Parent: "d7e6f5a4-b3c2-4ddd-a321-432109abcdef"
+Template: "1fed9a01-e7be-440d-b3e2-c7c34615e796"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Role Cards/Homepage Roles/HR Payroll
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "b9611f0f-969a-4211-b34b-123afe0b33b0"
+      Hint: Icon
+      Value: document
+    - ID: "2f0714df-c1fb-4571-a26c-69fd7d222b5b"
+      Hint: Title
+      Value: HR / Payroll Manager
+    - ID: "22388074-4fcd-4bac-b870-46df899a61d2"
+      Hint: Description
+      Value: Manage claims on behalf of employer
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b143de57-f5b0-4690-a505-8a3e0eac3e48"

@@ -1,0 +1,13 @@
+---
+ID: "c4d3e2f1-a0b9-4ccc-f098-765432abcdef"
+Parent: "a0b9c8d7-e6f5-44ba-9876-543210abcdef"
+Template: "c6dc7393-15bb-4cd7-b798-ab63e77ebac4"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Styles/Link List
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a41dfd33-f647-41ca-b28a-c227e83649c7"

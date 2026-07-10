@@ -1,0 +1,17 @@
+---
+ID: "617d9f3f-4bfb-4ed7-afe4-fa95aa7646f8"
+Parent: "b7c6d5e4-f3a2-4bbb-e321-432109abcdef"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Service Alerts/Default
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "service-alerts"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d5b29d7f-6dd3-4a5b-b6a2-16b840684079"

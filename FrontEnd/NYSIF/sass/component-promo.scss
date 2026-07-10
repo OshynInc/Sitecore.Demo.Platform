@@ -1,0 +1,135 @@
+@import "../abstracts/vars-nysif";
+
+.promo {
+	&.nysif-quick-actions {
+		float: none;
+		margin: 0;
+
+		> .component-content {
+			padding: 0;
+		}
+
+		.qa-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 18px;
+		}
+
+		.qa-card {
+			background: $nysif-light-surface;
+			border: 1px solid $nysif-light-border;
+			border-radius: 10px;
+			padding: 24px 22px 26px;
+		}
+
+		.qa-icon {
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			background: #eef1f5;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+
+		.qa-title {
+			font-size: 17px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			margin-bottom: 9px;
+		}
+
+		.qa-desc {
+			font-size: 14.5px;
+			color: $nysif-text-muted;
+			line-height: 1.5;
+			margin-bottom: 16px;
+		}
+
+		.qa-link {
+			color: $nysif-accent-blue;
+			font-size: 14.5px;
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		@media (max-width: $nysif-bp-nav) {
+			.qa-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: $nysif-bp-mobile) {
+			.qa-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&.nysif-quick-action,
+	&.qa-card {
+		background: $nysif-light-surface;
+		border: 1px solid $nysif-light-border;
+		border-radius: 10px;
+		padding: 24px 22px 26px;
+		float: none;
+		margin: 0;
+
+		> .component-content {
+			padding: 0;
+		}
+
+		.qa-icon,
+		.field-promoicon {
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			background: #eef1f5;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+
+		.qa-title,
+		.field-promotext {
+			font-size: 17px;
+			font-weight: 700;
+			color: $nysif-text-dark;
+			margin-bottom: 9px;
+		}
+
+		.qa-desc,
+		.field-introduction {
+			font-size: 14.5px;
+			color: $nysif-text-muted;
+			line-height: 1.5;
+			margin-bottom: 16px;
+		}
+
+		.qa-link,
+		.field-promolink a {
+			color: $nysif-accent-blue;
+			font-size: 14.5px;
+			font-weight: 600;
+			text-decoration: none;
+		}
+	}
+}
+
+.qa-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 18px;
+
+	@media (max-width: $nysif-bp-nav) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: $nysif-bp-mobile) {
+		grid-template-columns: 1fr;
+	}
+}

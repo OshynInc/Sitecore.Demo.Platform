@@ -1,0 +1,13 @@
+---
+ID: "a2b3c4d5-e6f7-4890-b123-456789012122"
+Parent: "ed2c48eb-0015-401b-bee2-17e8389ac60f"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Link/NYSIF Quote Button
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a2b3c4d5-e6f7-4890-b123-456789012123"

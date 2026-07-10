@@ -1,0 +1,16 @@
+---
+ID: "a1b2c3d4-e5f6-4789-a012-34567890b010"
+Parent: "a1b2c3d4-e5f6-4789-a012-34567890b001"
+Template: "f7561ffc-c0d8-477f-b53d-2703a4060be1"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Sidebar/Important Notices
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "notices-folder-p1-001"
+    - ID: "aa9c8d1c-b210-4efa-86db-83e8fa32c672"
+      Hint: Title
+      Value: Important notices

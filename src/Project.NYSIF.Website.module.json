@@ -1,0 +1,13 @@
+{
+	"namespace": "Project.NYSIF.Website",
+	"references": ["Foundation.*", "Feature.*", "Project.Global.Website", "Project.SitecoreDemo.Website.Shared"],
+	"items": {
+		"includes": [
+			{
+				"name": "Project.NYSIF.Website.Content",
+				"path": "/sitecore/content/Demo SXA Sites/NYSIF",
+				"database": "master"
+			}
+		]
+	}
+}

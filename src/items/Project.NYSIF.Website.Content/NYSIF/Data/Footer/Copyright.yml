@@ -1,0 +1,18 @@
+---
+ID: "c1d2e3f4-a5b6-4789-c012-345678901202"
+Parent: "c1d2e3f4-a5b6-4789-c012-345678901200"
+Template: "b8f5894c-b493-4016-bf78-4090b0a2fd16"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Footer/Copyright
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c1d2e3f4-a5b6-4789-c012-345678901203"
+    - ID: "b3635965-6786-457c-9dee-28de73c0a331"
+      Hint: Text
+      Value: |
+        <p>Copyright &copy; 2026 New York State Insurance Fund | <a href="#">Legal Notice</a> | <a href="#">Privacy</a></p>
+        <p>NYSIF demo site for illustration purposes only.</p>

@@ -4,11 +4,18 @@ Param (
     [Parameter(HelpMessage = "Whether to skip building the Docker images.")]
     [switch]$SkipBuild,
 
+    [Parameter(HelpMessage = "Whether to skip populating Solr managed schemas.")]
+    [switch]$SkipIndexPopulation,
+
+    [Parameter(HelpMessage = "Whether to skip rebuilding search indexes.")]
+    [switch]$SkipIndexRebuild,
+
     [Parameter(HelpMessage = "Whether to set up the environment with pre-release version of Sitecore products (internal only) .")]
     [switch]$PreRelease
 )
 
 $ErrorActionPreference = "Stop";
+Push-Location $PSScriptRoot
 
 # Double check whether init has been run
 $envCheckVariable = "REPORTING_API_KEY"
@@ -88,13 +95,22 @@ try {
     }
 
     # Populate Solr managed schemas to avoid errors during item deploy
-    Write-Host "Populating Solr managed schema..." -ForegroundColor Green
-    # DEMO TEAM CUSTOMIZATION - Populate Solr managed schemas using Sitecore CLI.
-    dotnet sitecore index schema-populate
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "Populating Solr managed schema failed, see errors above."
+    if (-not $SkipIndexPopulation) {
+        Write-Host "Populating Solr managed schema..." -ForegroundColor Green
+        # DEMO TEAM CUSTOMIZATION - Populate Solr managed schemas using Sitecore CLI.
+        dotnet sitecore index schema-populate
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Populating Solr managed schema failed, see errors above."
+        }
+        # END CUSTOMIZATION
     }
-    # END CUSTOMIZATION
+    else {
+        Write-Host "Skipping Solr managed schema population (SkipIndexPopulation)." -ForegroundColor Yellow
+    }
+
+    # DEMO TEAM CUSTOMIZATION - Build NYSIF theme assets into serialized media items (Lighthouse pattern).
+    Write-Host "Building NYSIF theme..." -ForegroundColor Green
+    .\build-themes.ps1 -Themes @("NYSIF")
 
     # DEMO TEAM CUSTOMIZATION - Removed initial JSS app items deployment and serialization. We are developing in Sitecore-first mode.
     # Push the serialized items
@@ -108,14 +124,60 @@ try {
     if ($LASTEXITCODE -ne 0) {
         Write-Error "Serialization publish failed, see errors above."
     }
+
+    # NYSIF is a virtual-folder site; republish its tree and refresh CD so the site resolver picks it up.
+    Write-Host "Publishing NYSIF site to web..." -ForegroundColor Green
+    dotnet sitecore publish item -p "/sitecore/content/Demo SXA Sites/NYSIF" -r -sub -rel
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "NYSIF site publish failed, see errors above."
+    }
+
+    Write-Host "Publishing SXA site registry..." -ForegroundColor Green
+    dotnet sitecore publish item -p "/sitecore/system/Settings/Foundation/Experience Accelerator/Multisite/Management/Sites" -r
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "SXA site registry publish failed, see errors above."
+    }
+
+    Write-Host "Publishing NYSIF theme media to web..." -ForegroundColor Green
+    dotnet sitecore publish item -p "/sitecore/media library/Demo SXA Sites/NYSIF" -r -sub
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "NYSIF theme publish failed, see errors above."
+    }
+
+    Write-Host "Refreshing CD site cache..." -ForegroundColor Green
+    docker restart sitecore-xp0-cd-1 | Out-Null
+
+    Write-Host "Waiting for CD to become available..." -ForegroundColor Green
+    $cdStatus = $null
+    $cdStartTime = Get-Date
+    do {
+        Start-Sleep -Milliseconds 500
+        try {
+            $cdStatus = Invoke-RestMethod "http://localhost:8079/api/http/routers/cd-secure@docker"
+        }
+        catch {
+            if ($_.Exception.Response.StatusCode.value__ -ne 404) {
+                throw
+            }
+            $cdStatus = $null
+        }
+    } while ($cdStatus.status -ne "enabled" -and $cdStartTime.AddSeconds($timeoutSeconds) -gt (Get-Date))
+    if ($cdStatus.status -ne "enabled") {
+        $cdStatus
+        Write-Error "Timeout waiting for Sitecore CD to become available via Traefik proxy. Check CD container logs."
+    }
     # END CUSTOMIZATION
 
     # DEMO TEAM CUSTOMIZATION - Rebuild indexes using Sitecore CLI.
-    # Rebuild indexes
-    Write-Host "Rebuilding indexes ..." -ForegroundColor Green
-    dotnet sitecore index rebuild
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "Rebuild indexes failed, see errors above."
+    if (-not $SkipIndexRebuild) {
+        Write-Host "Rebuilding indexes ..." -ForegroundColor Green
+        dotnet sitecore index rebuild
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Rebuild indexes failed, see errors above."
+        }
+    }
+    else {
+        Write-Host "Skipping index rebuild (SkipIndexRebuild)." -ForegroundColor Yellow
     }
     # END CUSTOMIZATION
 }
@@ -130,3 +192,4 @@ Write-Host "Opening sites..." -ForegroundColor Green
 
 Start-Process https://cm.lighthouse.localhost/sitecore
 Start-Process https://cd.lighthouse.localhost
+Start-Process https://cd.lighthouse.localhost/nysif

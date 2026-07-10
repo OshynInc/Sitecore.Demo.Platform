@@ -1,0 +1,38 @@
+---
+ID: "a1b2c3d4-e5f6-4a01-b001-00000000f005"
+Parent: "3da38beb-16fd-4995-8593-f46f97f8d11d"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
+Path: /sitecore/layout/Renderings/Feature/Demo Shared/XA/NYSIF News Sidebar
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/list_style_numbered.png
+- ID: "13f89250-ad6b-4548-882e-118a12c18094"
+  Hint: Parameters Template
+  Value: "{0D00A090-B7CA-4296-9B6D-B0FCC0C34BB4}"
+- ID: "34e81e40-1d4d-45b0-bcf1-a0ffe5521685"
+  Hint: RenderingCssClass
+  Value: page-list
+- ID: "49b9d6c5-9551-4ba4-840e-74d5582256c0"
+  Hint: RenderingViewPath
+  Value: ~/Views/Nysif/NewsSidebar.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@name='Sidebar']"
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: NewsSidebar
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers.NysifController, Sitecore.Demo.Platform.Feature.ExperienceAccelerator
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "nysif-sidebar-razor-001"

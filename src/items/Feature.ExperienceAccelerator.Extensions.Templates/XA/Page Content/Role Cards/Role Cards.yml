@@ -1,0 +1,13 @@
+---
+ID: "5445c059-5c12-47e8-a0e9-3b29bb6c53fc"
+Parent: "f54d02b5-2942-4f3f-9df6-b6a5eb6535ad"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo Shared/XA/Page Content/Role Cards/Role Cards
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "rc-section-rev-001"

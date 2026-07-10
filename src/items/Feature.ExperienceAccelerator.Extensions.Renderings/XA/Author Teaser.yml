@@ -12,7 +12,7 @@ SharedFields:
   Value: "{45C8AF1D-B5B7-4FA0-947A-0C7DDAD32485}"
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: /sitecore/templates/Feature/SitecoreDemo/SitecoreDemo XA Extensions/Articles/Author
+  Value: /sitecore/templates/Feature/Demo Shared/XA/Articles/Author
 - ID: "34e81e40-1d4d-45b0-bcf1-a0ffe5521685"
   Hint: RenderingCssClass
   Value: 

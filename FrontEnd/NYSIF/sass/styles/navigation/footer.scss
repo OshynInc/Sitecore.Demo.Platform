@@ -1,0 +1,159 @@
+#footer {
+	margin: 0;
+	padding: 0;
+	background-color: $bg-charcoal;
+
+	.image img {
+		width: 60%;
+	}
+
+	.footer-links-container {
+		* {
+			float: none;
+		}
+
+		.row {
+			> div {
+				@include clearfix;
+			}
+		}
+
+		.link-list {
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				@include proxima-font(bold);
+				color: $on-secondary;
+				font-size: 2rem;
+			}
+
+			li {
+				a {
+					padding: 0.25em 0;
+					margin: 0 0 0.25em;
+				}
+			}
+
+			a {
+				display: inline-block;
+				color: $on-secondary;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.social-link-list {
+		li {
+			display: inline-block;
+
+			a {
+				font-size: 0;
+				&:before {
+					font-size: 20px;
+					padding: 0;
+				}
+			}
+		}
+
+		h3 {
+			color: $on-secondary;
+			font-size: 1.4rem;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
+		h3,
+		ul {
+			text-align: right;
+		}
+
+		a {
+			font-size: 0;
+			padding: 1em;
+			display: inline-block;
+			width: 32px;
+
+			&:hover {
+				border: 0;
+			}
+
+			&:before {
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: 20px;
+				color: $on-primary;
+				right: 0;
+				left: unset;
+			}
+
+			&.social-links-facebook:before {
+				content: "\f09a";
+			}
+			&.social-links-linkedin:before {
+				content: "\f0e1";
+			}
+			&.social-links-twitter:before {
+				content: "\f099";
+			}
+			&.social-links-youtube:before {
+				content: "\f167";
+			}
+		}
+	}
+
+	.search-box {
+		padding: 0;
+
+		.component-content {
+			> .twitter-typeahead {
+				margin: 0;
+			}
+
+			> label {
+				display: none;
+			}
+		}
+
+		button {
+			@include btn-secondary-light;
+		}
+
+		input[type="text"] {
+			@include border-basic(all, $on-primary, 1px);
+			font-size: $navigation-font-basic;
+			box-shadow: none;
+			background-color: $search-box-bg !important;
+			color: $on-secondary;
+
+			&::placeholder {
+				color: $on-secondary;
+			}
+		}
+	}
+
+	.logo-container {
+		ul {
+			margin: 0;
+
+			.logo {
+				h3 {
+					color: $on-secondary;
+
+					span {
+						background-color: $on-secondary;
+						color: $bg-charcoal;
+					}
+				}
+
+				p {
+					color: $on-secondary;
+				}
+			}
+		}
+	}
+}

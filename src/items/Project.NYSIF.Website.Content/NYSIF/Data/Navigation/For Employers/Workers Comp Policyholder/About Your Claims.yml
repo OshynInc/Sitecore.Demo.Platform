@@ -1,0 +1,17 @@
+---
+ID: "d2e3f4a5-b6c7-4890-d123-456789012341"
+Parent: "d2e3f4a5-b6c7-4890-d123-456789012305"
+Template: "e24e0789-a058-48bf-abb6-c69c0e60b6b7"
+Path: "/sitecore/content/Demo SXA Sites/NYSIF/Data/Navigation/For Employers/Workers Comp Policyholder/About Your Claims"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "wcp-claims-001"
+    - ID: "dd05144a-bd66-4ea3-956a-4b7104daaba3"
+      Hint: Link
+      Value: |
+        <link text="About Your Claims" linktype="anchor" url="#" anchor="" title="" class="" />

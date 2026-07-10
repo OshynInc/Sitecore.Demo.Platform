@@ -1,0 +1,39 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.TestimonialModel
+
+<div class="component testimonial testimonial col-sm-12">
+	<div class="component-content">
+		@if (Model.Item == null)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Testimonial: select a datasource]</p>
+			}
+			return;
+		}
+		<section class="section-block">
+			@if (!string.IsNullOrWhiteSpace(Model.Eyebrow))
+			{
+				<div class="section-heading">@Model.Eyebrow</div>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.Title))
+			{
+				<p class="section-sub">@Model.Title</p>
+			}
+			<div class="testimonial-grid">
+				@foreach (var card in Model.Cards)
+				{
+					<div class="testimonial-card">
+		<p class="testimonial-quote">@card.Quote</p>
+						<div class="testimonial-person">
+							<div class="avatar">@card.Initials</div>
+							<div>
+								<div class="person-name">@card.Name</div>
+								<div class="person-role">@card.Role</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</section>
+	</div>
+</div>

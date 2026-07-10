@@ -1,0 +1,17 @@
+---
+ID: "a67be4f6-ccec-42a0-b2a6-2c02354424bd"
+Parent: "d9e8f7a6-b5c4-4ddd-a543-210987abcdef"
+Template: "fb3e3034-33f8-4ce8-be98-dd05010f4c22"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Rendering Variants/Testimonial/Default
+SharedFields:
+- ID: "e1d5adba-8348-4127-9bb6-455936653839"
+  Hint: CssClass
+  Value: "testimonial"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "223b35e3-fa8c-43d2-b437-9a2c19cdb282"

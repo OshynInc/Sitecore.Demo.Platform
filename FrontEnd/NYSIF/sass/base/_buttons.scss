@@ -1,0 +1,61 @@
+@import "../abstracts/vars-nysif";
+
+.btn {
+	display: inline-block;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	font-family: inherit;
+}
+
+.btn-login {
+	color: $nysif-text-on-dark;
+	border: 1.5px solid #5f7a9c;
+	padding: 9px 22px;
+	background: transparent;
+}
+
+.btn-quote-header {
+	background: $nysif-accent-blue;
+	color: $nysif-text-on-dark;
+	padding: 10.5px 22px;
+}
+
+.btn-white {
+	background: $nysif-text-on-dark;
+	color: #12233b;
+	padding: 16.5px 34px;
+	font-size: 17px;
+}
+
+.btn-outline {
+	background: transparent;
+	color: $nysif-text-on-dark;
+	border: 1.5px solid $nysif-text-on-dark;
+	padding: 15px 32px;
+	font-size: 17px;
+}
+
+@media (max-width: $nysif-bp-mobile) {
+	.btn-quote-header {
+		padding: 9px 16px;
+		font-size: 14.5px;
+	}
+}
+
+@media (max-width: $nysif-bp-small) {
+	.btn-login,
+	.btn-quote-header {
+		padding: 8px 14px;
+		font-size: 14px;
+	}
+
+	.btn-white,
+	.btn-outline {
+		width: 100%;
+	}
+}

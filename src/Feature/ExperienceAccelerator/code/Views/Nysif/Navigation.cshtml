@@ -1,0 +1,94 @@
+@model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.NavigationModel
+
+<div class="component link-list col-xs-12 navigation nysif-mega-nav">
+	<div class="component-content">
+		@if (Model.Item == null || Model.Tabs == null || Model.Tabs.Count == 0)
+		{
+			if (Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				<p>[Navigation: select a navigation datasource]</p>
+			}
+			return;
+		}
+
+		<nav class="main-nav" aria-label="Main">
+			@foreach (var tab in Model.Tabs)
+			{
+				<div class="nav-item">
+					<button type="button" class="nav-tab" aria-expanded="false">@tab.Label</button>
+					@if (tab.Links.Count > 0)
+					{
+						<div class="mega-menu">
+							<div class="mega-col-1">
+								@foreach (var link in tab.Links)
+								{
+									if (link.IsExpandable)
+									{
+										<button type="button" class="mega-link mega-link-expand" data-sub="@link.PanelKey">
+											@link.Label <span class="chev">&rsaquo;</span>
+										</button>
+									}
+									else
+									{
+										<a href="@link.Url" class="mega-link">@link.Label</a>
+									}
+								}
+							</div>
+							@foreach (var panel in tab.Panels)
+							{
+								<div class="mega-col-2" data-sub-panel="@panel.Key">
+									@foreach (var link in panel.Links)
+									{
+										<a href="@link.Url" class="mega-link">@link.Label</a>
+									}
+								</div>
+							}
+						</div>
+					}
+				</div>
+			}
+		</nav>
+
+		<button type="button" class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+
+		<div class="mobile-menu-panel" id="mobileMenuPanel">
+			<div class="mobile-accordion" id="mobileAccordionRoot">
+				@{ var panelIndex = 0; }
+				@foreach (var tab in Model.Tabs)
+				{
+					var panelId = "m-panel-" + panelIndex;
+					<div class="m-acc-item">
+						<button type="button" class="m-acc-toggle" aria-expanded="@(panelIndex == 0 ? "true" : "false")" data-target="@panelId">
+							@tab.Label <span class="caret">&rsaquo;</span>
+						</button>
+						<div class="m-acc-panel" id="@panelId" style="display:@(panelIndex == 0 ? "block" : "none");">
+							@foreach (var link in tab.Links)
+							{
+								if (link.IsExpandable)
+								{
+									<button type="button" class="m-link m-drill" data-drill="@link.PanelKey">
+										@link.Label <span class="chev">&rsaquo;</span>
+									</button>
+								}
+								else
+								{
+									<a href="@link.Url" class="m-link">@link.Label</a>
+								}
+							}
+						</div>
+					</div>
+					panelIndex++;
+				}
+			</div>
+			<div class="mobile-drilldown" id="mobileDrilldown">
+				<button type="button" class="m-back" id="mobileBackBtn">&lsaquo; Back</button>
+				<div class="mobile-drilldown-title" id="mobileDrilldownTitle"></div>
+				<div class="mobile-drilldown-list" id="mobileDrilldownList"></div>
+			</div>
+			<div class="mobile-menu-footer">
+				<a href="#" class="btn btn-login">Log In</a>
+				<a href="#" class="btn btn-quote-header">Get a Quote</a>
+			</div>
+		</div>
+	</div>
+</div>

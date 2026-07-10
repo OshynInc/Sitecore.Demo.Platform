@@ -94,11 +94,22 @@
   <ItemGroup>
     <Content Include="Views\Link\Link.cshtml" />
     <Content Include="Views\ExpandableSearchbox\ExpandableSearchbox.cshtml" />
+    <Content Include="Views\Nysif\Hero.cshtml" />
+    <Content Include="Views\Nysif\ServiceAlerts.cshtml" />
+    <Content Include="Views\Nysif\RoleCards.cshtml" />
+    <Content Include="Views\Nysif\Testimonial.cshtml" />
+    <Content Include="Views\Nysif\Promo.cshtml" />
+    <Content Include="Views\Nysif\QuickActions.cshtml" />
+    <Content Include="Views\Nysif\PageList.cshtml" />
+    <Content Include="Views\Nysif\NewsSidebar.cshtml" />
+    <Content Include="Views\Nysif\Navigation.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ExpandableSearchboxController.cs" />
+    <Compile Include="Controllers\NysifController.cs" />
     <Compile Include="Models\ExpandableSearchboxModel.cs" />
+    <Compile Include="Models\NysifModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

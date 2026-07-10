@@ -1,0 +1,26 @@
+---
+ID: "a1b2c3d4-e5f6-4789-a012-34567890b026"
+Parent: "a1b2c3d4-e5f6-4789-a012-34567890b020"
+Template: "a1b2c3d4-e5f6-4a02-c003-00000000c001"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Sidebar/Safety Resources/Workplace Safety Guide
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "safety-guide-001"
+    - ID: "a1b2c3d4-e5f6-4a02-c003-00000000c011"
+      Hint: Title
+      Value: 2026 Workplace Safety Guide
+    - ID: "a1b2c3d4-e5f6-4a02-c003-00000000c012"
+      Hint: Subtitle
+      Value: PDF download
+    - ID: "a1b2c3d4-e5f6-4a02-c003-00000000c013"
+      Hint: Icon
+      Value: clipboard

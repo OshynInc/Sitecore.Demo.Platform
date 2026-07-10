@@ -1,0 +1,16 @@
+---
+ID: "f3a2b1c0-d9e8-4fff-c987-876543abcdef"
+Parent: "e6f5a4b3-c2d1-4eee-b210-543210abcdef"
+Template: "01e31002-4c71-4819-868e-3d8347679310"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Data/Service Alerts/Homepage Alerts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "6cd3fd2f-9266-43dd-a692-4d96bb0da3a5"
+      Hint: Badge
+      Value: Service Alerts
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6f4953be-59b9-468a-8951-6288dfe8f432"

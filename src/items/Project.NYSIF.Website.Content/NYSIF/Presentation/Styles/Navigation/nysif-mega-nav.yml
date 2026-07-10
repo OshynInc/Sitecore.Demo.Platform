@@ -1,0 +1,23 @@
+---
+ID: "1fec594e-be34-4ded-9fae-6fb46553ea2b"
+Parent: "e0f9a8b7-c6d5-4eee-b654-109876abcdef"
+Template: "6b8aabef-d650-46e0-97d0-c0b04f7f016b"
+Path: /sitecore/content/Demo SXA Sites/NYSIF/Presentation/Styles/Navigation/nysif-mega-nav
+SharedFields:
+- ID: "09147fb2-ebfb-4949-8c8e-26a424409d5e"
+  Hint: Value
+  Value: "nysif-mega-nav"
+- ID: "69bb49f3-da64-4b0e-abd6-184b832ff6ab"
+  Hint: Allowed Renderings
+  Value: "{9D3BA81A-EECE-4B5A-9862-0239A9D53EEC}"
+- ID: "95579875-484e-41f0-b9c2-804eafaf3ccc"
+  Hint: IsVerifiedStyle
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "42797b88-1318-4ea2-aabe-503f16140b1e"
