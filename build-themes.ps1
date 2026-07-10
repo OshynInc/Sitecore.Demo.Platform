@@ -116,9 +116,27 @@ function Build-ThemeWithDartSass {
   $cssParts = New-Object System.Collections.Generic.List[string]
   foreach ($scssFile in ($scssFiles | Sort-Object FullName -Unique)) {
     $tempCss = [System.IO.Path]::ChangeExtension([System.IO.Path]::GetTempFileName(), ".css")
-    $sassArgs = @("sass", $scssFile.FullName, $tempCss) + $loadPaths
-    & npx --yes @sassArgs 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) {
+    # NYSIF SCSS still uses @import; silence that deprecation and avoid treating sass stderr as a
+    # terminating error when up.ps1 runs with $ErrorActionPreference = Stop (common on Windows PS 5.1).
+    $sassArgs = @("sass", $scssFile.FullName, $tempCss, "--silence-deprecation=import") + $loadPaths
+    $prevEap = $ErrorActionPreference
+    $prevNativePref = $null
+    if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
+      $prevNativePref = $PSNativeCommandUseErrorActionPreference
+      $PSNativeCommandUseErrorActionPreference = $false
+    }
+    $ErrorActionPreference = "Continue"
+    try {
+      & npx --yes @sassArgs 2>&1 | Out-Null
+      $sassExit = $LASTEXITCODE
+    }
+    finally {
+      $ErrorActionPreference = $prevEap
+      if ($null -ne $prevNativePref) {
+        $PSNativeCommandUseErrorActionPreference = $prevNativePref
+      }
+    }
+    if ($sassExit -ne 0) {
       Write-Warning "Skipping $($scssFile.Name) (sass compile failed)"
       Remove-Item $tempCss -ErrorAction SilentlyContinue
       continue
