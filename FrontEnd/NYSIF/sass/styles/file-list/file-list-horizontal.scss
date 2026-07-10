@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .file-list {
     &.file-list-horizontal {
         .component-content>ul {

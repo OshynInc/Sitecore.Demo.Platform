@@ -1,6 +1,6 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
+@use "../../base/fontawesome/font-awesome-mix-var";
 .loupe-search-btn {
     .search-box-button-with-redirect {
         position: relative;

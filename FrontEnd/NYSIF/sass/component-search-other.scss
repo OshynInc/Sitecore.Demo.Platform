@@ -1,26 +1,31 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "styles/search";
+@use "vars";
+@use "mixins";
+@use "mixins" as mixins2;
+@use "variables";
+
 .facet-component,
 .facet-summary {
 	box-sizing: border-box;
 	background: transparent;
-	@import "base/reset/inputs";
-	@include clearfix();
+	@include meta.load-css("base/reset/inputs");
+	@include mixins.clearfix();
 	.bottom-filter-button {
 		float: right;
 	}
 	.filterButton {
-		@include btn-secondary;
+		@include mixins.btn-secondary;
 	}
 	.facet-heading {
-		@include border-basic(bottom, $search-title-border);
+		@include mixins.border-basic(bottom, vars.$search-title-border);
 		padding: 0 0 5px 0;
 		margin: 0 0 5px 0;
 		position: relative;
 		.facet-title {
 			display: inline-block;
 			vertical-align: middle;
-			color: $search-title-color;
+			color: vars.$search-title-color;
 			padding-right: 25px;
 		}
 		.clear-filter {
@@ -32,46 +37,45 @@
 			width: 15px;
 			cursor: pointer;
 			position: absolute;
-			color: $search-filter;
+			color: vars.$search-filter;
 			right: 3px;
 			top: 50%;
 			transform: translateY(-50%);
-			background: $search-btn-bg;
+			background: vars.$search-btn-bg;
 			&:hover {
-				background: $search-btn-active-bg;
-				border-color: $search-btn-active-border;
+				background: vars.$search-btn-active-bg;
+				border-color: vars.$search-btn-active-border;
 				text-decoration: none;
-				color: $search-filter;
+				color: vars.$search-filter;
 			}
 			&.has-active-facet {
-				background: $search-btn-active-bg;
-				color: $search-filter;
+				background: vars.$search-btn-active-bg;
+				color: vars.$search-filter;
 				&:hover {
-					background: $search-btn-active-bg;
-					color: $search-filter;
+					background: vars.$search-btn-active-bg;
+					color: vars.$search-filter;
 				}
 			}
 		}
 	}
 }
-@import "base/search/component-filter-checklist";
-@import "base/search/component-facet-summary";
-@import "base/search/component-filter-date";
-@import "base/search/component-filter-dropdown";
-@import "base/search/component-filter-managed-range";
-@import "base/search/component-filter-range-slider";
-@import "base/search/component-filter-radius";
-@import "base/search/component-filter-slider";
-@import "base/search/component-load-more";
-@import "base/search/component-location";
-@import "base/search/component-page-selector";
-@import "base/search/component-page-size";
-@import "base/search/component-results-count";
-@import "base/search/component-results-filter";
-@import "base/search/component-variant-selector";
-@import "base/search/component-search-box";
-@import "styles/search/*";
-@import "base/search/component-sort-results";
+@include meta.load-css("base/search/component-filter-checklist");
+@include meta.load-css("base/search/component-facet-summary");
+@include meta.load-css("base/search/component-filter-date");
+@include meta.load-css("base/search/component-filter-dropdown");
+@include meta.load-css("base/search/component-filter-managed-range");
+@include meta.load-css("base/search/component-filter-range-slider");
+@include meta.load-css("base/search/component-filter-radius");
+@include meta.load-css("base/search/component-filter-slider");
+@include meta.load-css("base/search/component-load-more");
+@include meta.load-css("base/search/component-location");
+@include meta.load-css("base/search/component-page-selector");
+@include meta.load-css("base/search/component-page-size");
+@include meta.load-css("base/search/component-results-count");
+@include meta.load-css("base/search/component-results-filter");
+@include meta.load-css("base/search/component-variant-selector");
+@include meta.load-css("base/search/component-search-box");
+@include meta.load-css("base/search/component-sort-results");
 
 .search-box.main-search {
 	position: relative;
@@ -83,9 +87,9 @@
 		right: 0;
 		bottom: 0;
 		transform: translateY(100%);
-		width: $main-search-width;
+		width: vars.$main-search-width;
 		z-index: 100;
-		background-color: $bg-basic-color;
+		background-color: vars.$bg-basic-color;
 		padding: 1.5em;
 		box-shadow: 0 2px 9px 0px #b3b3b3;
 
@@ -95,19 +99,19 @@
 			margin: 0;
 			height: 44px;
 			width: 100%;
-			font-size: $navigation-font-basic;
+			font-size: vars.$navigation-font-basic;
 		}
 
 		> button {
-			background-color: $btn-primary-bg !important;
-			border: 1px solid $btn-primary-bg;
-			color: $btn-primary;
+			background-color: vars.$btn-primary-bg !important;
+			border: 1px solid vars.$btn-primary-bg;
+			color: vars.$btn-primary;
 		}
 
 		input {
 			box-shadow: none;
-			background-color: $search-box-bg !important;
-			color: $text-basic;
+			background-color: vars.$search-box-bg !important;
+			color: vars.$text-basic;
 		}
 
 		> label {
@@ -130,25 +134,25 @@
 	}
 
 	&:before {
-		@include fa-icon();
-		height: $primary-nav-height - 8px;
+		@include mixins2.fa-icon();
+		height: vars.$primary-nav-height - 8px;
 		display: flex;
 		align-items: center;
-		color: $text-passive;
-		font-size: $navigation-icon-size;
-		content: $fa-var-search;
+		color: vars.$text-passive;
+		font-size: vars.$navigation-icon-size;
+		content: variables.$fa-var-search;
 		padding: 0 1.25em;
 		cursor: pointer;
 		position: relative;
 		border-top: 4px solid transparent;
-		line-height: $primary-nav-height - 8px;
+		line-height: vars.$primary-nav-height - 8px;
 		padding-bottom: 12px;
 	}
 
 	&.open {
 		&:before {
-			background-color: $nav-submenu-bg;
-			color: $primary-color;
+			background-color: vars.$nav-submenu-bg;
+			color: vars.$primary-color;
 			z-index: 400;
 		}
 

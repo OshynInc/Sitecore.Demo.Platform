@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .accordion-horizontal {
     perspective: 1000;
     -webkit-backface-visibility: hidden;
@@ -11,7 +11,7 @@
                 padding: 0 0 0 50px;
                 margin: 0;
                 min-height: 300px;
-                @include border-basic(right);
+                @include mixins.border-basic(right);
                 &.active {
                     .toggle-header {
                         background: transparent !important;
@@ -52,7 +52,7 @@
             position: relative;
             &.active {
                 .toggle-header {
-                    background: $accordion-header-bg-active;
+                    background: vars.$accordion-header-bg-active;
                 }
             }
             .toggle-header {
@@ -64,9 +64,9 @@
                 padding: 0;
                 width: 40px;
                 min-height: 100%;
-                border-right: 1px solid $accordion-header-border;
+                border-right: 1px solid vars.$accordion-header-border;
                 border-bottom: none;
-                background: $accordion-header-bg;
+                background: vars.$accordion-header-bg;
                 .component {
                     margin-top: 0px;
                 }

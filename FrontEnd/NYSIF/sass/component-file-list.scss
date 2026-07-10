@@ -1,23 +1,25 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "styles/file-list";
+@use "vars";
+@use "mixins";
 .file-list {
-    background: $file-list-bg;
+    background: vars.$file-list-bg;
     h1, h2, h3, h4, h5, h6 {
-        color: $file-list-title-color;
-        @include border-basic(bottom, $file-list-title-border);
+        color: vars.$file-list-title-color;
+        @include mixins.border-basic(bottom, vars.$file-list-title-border);
     }
     li {
         margin: 0 20px 5px 0;
         * {
-            color: $file-list-item-color;
+            color: vars.$file-list-item-color;
         }
     }
     .list-item {
-        background: $file-list-item-bg;
-		@include border-basic(bottom,$file-list-item-borer);
+        background: vars.$file-list-item-bg;
+		@include mixins.border-basic(bottom,vars.$file-list-item-borer);
 		a {
             &:hover {
-                color: $file-list-item-color-active;
+                color: vars.$file-list-item-color-active;
             }
         }
         >.scEnabledChrome {
@@ -46,15 +48,14 @@
         }
     }
     .field-linktext, .field-description, .field-customimage, .field-size {
-        color: $file-list-item-color;
-        font-size: $file-list-item-size;
+        color: vars.$file-list-item-color;
+        font-size: vars.$file-list-item-size;
     }
     .field-linktext {
         a {
             text-decoration: none;
         }
     }
-    @import "base/richtext/richtext-files-icons";
-    @import "variants/file-list/*";
+    @include meta.load-css("base/richtext/richtext-files-icons");
+    @include meta.load-css("variants/file-list");
 }
-@import "styles/file-list/*";

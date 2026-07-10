@@ -1,16 +1,17 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "sass:meta";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .location-filter {
 	position: relative;
 	padding: 5px 10px 15px 10px;
 	margin: 0 0 20px 0;
-	@import "../reset/inputs";
-	@import "../typehead/typehead";
+	@include meta.load-css("../reset/inputs");
+	@include meta.load-css("../typehead/typehead");
 	.component-content {
 		display: flex;
 
 		> button {
-			@include btn-secondary;
+			@include mixins.btn-secondary;
 			flex-shrink: 0;
 		}
 
@@ -18,7 +19,7 @@
 			flex-grow: 1;
 
 			> input {
-				@include border-basic();
+				@include mixins.border-basic();
 				height: 100%;
 
 				&::placeholder {

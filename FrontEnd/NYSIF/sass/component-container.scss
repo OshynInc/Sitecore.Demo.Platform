@@ -1,6 +1,6 @@
-@import "styles/container/*";
-@import "mixins";
-@import "vars";
+@use "styles/container";
+@use "mixins" as *;
+@use "vars" as *;
 .container {
 	@media (min-width: 1500px) {
 		width: 1440px;

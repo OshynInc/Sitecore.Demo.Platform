@@ -1,13 +1,16 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "vars";
+@use "mixins" as mixins2;
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "variables";
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $overlay-mask;
+    background-color: vars.$overlay-mask;
     z-index: 9999;
     display: none;
     width: 100%;
@@ -21,7 +24,7 @@
         background-color: #E6E6E6;
         padding: 10px;
         max-width: 90%;
-        background: $overlay-bg;
+        background: vars.$overlay-bg;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -64,10 +67,10 @@
         top: -20px;
         right: -10px;
         &:before {
-            content: $fa-var-times-circle-o;
-            background: $overlay-bg;
+            content: variables.$fa-var-times-circle-o;
+            background: vars.$overlay-bg;
             border-radius: 50%;
-            @include fa-icon();
+            @include mixins.fa-icon();
             line-height: 25px;
             width: 25px;
         }
@@ -115,7 +118,7 @@
         padding: 10px 10px 25px;
         margin: 100px 60px 60px;
         max-width: 90%;
-        background: $overlay-bg;
+        background: vars.$overlay-bg;
         .component {
             margin: 0;
             &.image {

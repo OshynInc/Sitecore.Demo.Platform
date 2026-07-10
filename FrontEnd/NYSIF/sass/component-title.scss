@@ -1,32 +1,33 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
 .title {
-	@include proxima-font(bold);
-	background: $title-bg;
+	@include mixins.proxima-font(bold);
+	background: vars.$title-bg;
 
 	.field-title a {
-		@include border-basic(bottom, $border-basic-color);
-		font-size: $font-extrabig;
-		margin-bottom: $small-margin;
-		color: $title-color;
+		@include mixins.border-basic(bottom, vars.$border-basic-color);
+		font-size: vars.$font-extrabig;
+		margin-bottom: vars.$small-margin;
+		color: vars.$title-color;
 		line-height: normal;
 		padding-bottom: 10px;
 		display: block;
 		text-decoration: none;
 		cursor: pointer;
 		&:hover {
-			color: $title-color-active;
+			color: vars.$title-color-active;
 		}
 	}
 
 	&.title-header {
-		@include full-width-container;
-		background-color: $primary-color;
+		@include mixins.full-width-container;
+		background-color: vars.$primary-color;
 		margin-right: 0 !important;
 		padding: 3rem;
 
 		> .component-content {
-			border: 1px solid $on-primary;
+			border: 1px solid vars.$on-primary;
 		}
 
 		h1 {
@@ -37,10 +38,10 @@
 		h2,
 		.field-title,
 		.field-title a {
-			color: $on-primary;
+			color: vars.$on-primary;
 			text-align: center;
 		}
 	}
 
-	@import "variants/title/*";
+	@include meta.load-css("variants/title");
 }

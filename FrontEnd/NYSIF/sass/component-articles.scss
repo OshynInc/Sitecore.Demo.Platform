@@ -1,10 +1,10 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
 
 main {
 	.article-list {
-		@include proxima-font;
+		@include mixins.proxima-font;
 
 		.items {
 			display: flex;
@@ -12,7 +12,7 @@ main {
 			justify-content: center;
 
 			.item {
-				@include border-basic;
+				@include mixins.border-basic;
 				display: flex;
 				flex-direction: column;
 				max-width: 440px;
@@ -24,13 +24,13 @@ main {
 				}
 
 				div.col-text {
-					color: $text-basic;
+					color: vars.$text-basic;
 					display: flex;
 					flex-direction: column;
 					height: 100%;
 
 					h3 {
-						@include proxima-font(bold);
+						@include mixins.proxima-font(bold);
 						font-size: 3.2rem;
 						margin: 1rem 0 1.6rem;
 					}
@@ -52,7 +52,7 @@ main {
 					}
 
 					a {
-						@include btn-arrow(32px);
+						@include mixins.btn-arrow(32px);
 						filter: invert(180);
 						margin-top: 1.6rem;
 					}
@@ -74,7 +74,7 @@ main {
 	}
 
 	.article-content {
-		font-size: $font-big;
+		font-size: vars.$font-big;
 		padding: 0 2em;
 
 		.field-publish-date {
@@ -88,19 +88,19 @@ main {
 		}
 
 		h1 {
-			@include proxima-font(bold);
+			@include mixins.proxima-font(bold);
 			font-size: 6rem;
 		}
 
 		p {
-			font-size: $font-big;
+			font-size: vars.$font-big;
 		}
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			padding: 0 2em;
 		}
 
-		@include respond-to(desktop) {
+		@include mixins.respond-to(desktop) {
 			padding: 0 2em;
 		}
 	}
@@ -108,8 +108,8 @@ main {
 	.article-author {
 		display: flex;
 		flex-direction: column;
-		background-color: $primary-color;
-		color: $on-primary;
+		background-color: vars.$primary-color;
+		color: vars.$on-primary;
 
 		.field-author-image {
 			img {
@@ -127,7 +127,7 @@ main {
 			}
 
 			.field-author-name {
-				@include proxima-font(bold);
+				@include mixins.proxima-font(bold);
 				font-size: 3.2rem;
 				margin-bottom: 0.5em;
 			}

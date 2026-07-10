@@ -1,8 +1,13 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "styles/play-list";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 .playlist {
-    background-color: $play-list-bg;
+    background-color: vars.$play-list-bg;
     padding: 20px 10px 0 10px;
     a:hover {
         text-decoration: none;
@@ -10,7 +15,7 @@
     .component-content {
         >h1, >h2, >h3, >h4, >h5, >h6 {
             margin: 0 0 10px 0;
-            @include border-basic(bottom, $play-list-title-border)
+            @include mixins.border-basic(bottom, vars.$play-list-title-border)
         }
     }
     .playlist-item {
@@ -46,19 +51,19 @@
                 }
             }
             .field-moviecaption {
-                font-size: $font-normal;
+                font-size: vars.$font-normal;
                 >a {
                     padding: 15px 10px;
                     display: block;
-                    color: $play-list-item-color;
+                    color: vars.$play-list-item-color;
                     font-size: 1em;
                 }
             }
         }
         &.active {
-            background-color: $play-list-item-active-bg;
+            background-color: vars.$play-list-item-active-bg;
             .field-moviecaption a {
-                color: $play-list-item-color-active;
+                color: vars.$play-list-item-color-active;
                 font-weight: bold;
             }
         }
@@ -80,8 +85,8 @@
         .playlist-next a, .playlist-prev a {
             position: relative;
             &:before {
-                @include fa-icon();
-                content: $fa-var-chevron-left;
+                @include mixins2.fa-icon();
+                content: variables.$fa-var-chevron-left;
                 position: absolute;
                 top: 50%;
                 left: 0;
@@ -89,21 +94,21 @@
                 text-indent: 0;
             }
             &:hover {
-                color: $play-list-nav-active;
+                color: vars.$play-list-nav-active;
             }
         }
         .playlist-prev a {
             &:before {
-                content: $fa-var-chevron-left;
+                content: variables.$fa-var-chevron-left;
             }
         }
         .playlist-next a {
             &:before {
-                content: $fa-var-chevron-right;
+                content: variables.$fa-var-chevron-right;
             }
         }
     }
-    @import "variants/play-list/*";
+    @include meta.load-css("variants/play-list");
 }
 .video-playlist {
     &.show {
@@ -115,4 +120,3 @@
         display: block;
     }
 }
-@import "styles/play-list/*";

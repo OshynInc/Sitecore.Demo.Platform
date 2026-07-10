@@ -1,10 +1,10 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 // Map SXA footer partial markup to static nysif_homepage.html layout
 #footer {
 	margin: 0;
 	padding: 0;
-	background-color: $nysif-dark-bg;
+	background-color: vars-nysif.$nysif-dark-bg;
 
 	// Neutralize inherited SXA demo footer theme rules
 	.image img {
@@ -28,9 +28,9 @@
 		padding: 56px 0 0;
 
 		> .component-content {
-			max-width: $nysif-container-max;
+			max-width: vars-nysif.$nysif-container-max;
 			margin: 0 auto;
-			padding: 0 $nysif-container-padding;
+			padding: 0 vars-nysif.$nysif-container-padding;
 		}
 
 		.row.column-splitter {
@@ -84,7 +84,7 @@
 				font-size: 22px;
 				font-weight: 800;
 				letter-spacing: 0.5px;
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 				margin: 0 0 16px;
 			}
 
@@ -127,14 +127,14 @@
 			.field-link a,
 			a {
 				display: block;
-				color: $nysif-text-on-dark-muted;
+				color: vars-nysif.$nysif-text-on-dark-muted;
 				font-size: 14.5px;
 				text-decoration: none;
 				margin-bottom: 15px;
 				padding: 0;
 
 				&:hover {
-					color: $nysif-text-on-dark;
+					color: vars-nysif.$nysif-text-on-dark;
 				}
 
 				&::before {
@@ -151,12 +151,12 @@
 	// ---- Copyright + social bottom bar ----
 	> .row > .component.container.row-dark:not(.nysif-footer-dark) {
 		float: none;
-		border-top: 1px solid $nysif-dark-border;
+		border-top: 1px solid vars-nysif.$nysif-dark-border;
 
 		> .component-content {
-			max-width: $nysif-container-max;
+			max-width: vars-nysif.$nysif-container-max;
 			margin: 0 auto;
-			padding: 0 $nysif-container-padding;
+			padding: 0 vars-nysif.$nysif-container-padding;
 		}
 
 		.component.container > .component-content {
@@ -235,7 +235,7 @@
 				height: 34px;
 				border-radius: 50%;
 				border: 1px solid #3a4363;
-				color: $nysif-text-on-dark-muted;
+				color: vars-nysif.$nysif-text-on-dark-muted;
 				font-size: 12px;
 				font-weight: 600;
 				display: flex;
@@ -252,7 +252,7 @@
 		}
 	}
 
-	@media (max-width: $nysif-bp-tablet) {
+	@media (max-width: vars-nysif.$nysif-bp-tablet) {
 		.navigation.nysif-footer-dark.row-dark {
 			.row.column-splitter {
 				flex-wrap: wrap;
@@ -266,7 +266,7 @@
 		}
 	}
 
-	@media (max-width: $nysif-bp-mobile) {
+	@media (max-width: vars-nysif.$nysif-bp-mobile) {
 		.navigation.nysif-footer-dark.row-dark {
 			padding-top: 36px;
 

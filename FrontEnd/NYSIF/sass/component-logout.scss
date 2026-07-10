@@ -1,7 +1,8 @@
-@import "mixins";
-@import "vars";
+@use "sass:meta";
+@use "mixins";
+@use "vars";
 .logout {
-    @import "base/reset/links";
+    @include meta.load-css("base/reset/links");
     .component-content {
         >a, >p {
             display: inline-block;

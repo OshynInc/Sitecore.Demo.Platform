@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .playlist.playlist-horizontal {
     .playlist-items {
         display: inline-flex;

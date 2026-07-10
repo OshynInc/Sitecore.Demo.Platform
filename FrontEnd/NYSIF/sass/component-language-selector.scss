@@ -1,10 +1,14 @@
-@import "mixins";
-@import "vars";
-@import "base/sprites/sprite-flag";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:color";
+@use "mixins" as mixins2;
+@use "vars";
+@use "base/sprites/sprite-flag";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "variables";
+
 .language-selector {
 	position: relative;
-	background-color: $lang-selector-bg;
+	background-color: vars.$lang-selector-bg;
 	text-transform: uppercase;
 
 	.language-selector-select-item {
@@ -20,19 +24,19 @@
 			}
 		}
 		&:after {
-			@include fa-icon();
-			content: $fa-var-caret-down;
+			@include mixins.fa-icon();
+			content: variables.$fa-var-caret-down;
 			position: absolute;
 			right: 10px;
 			top: 55%;
 			transform: translateY(-50%);
-			color: $text-passive;
+			color: vars.$text-passive;
 		}
 	}
 	.language-selector-item-container {
-		background: $nav-bg-submenu;
-		border: 1px solid $nav-submenu-item-border;
-		border-bottom: 4px solid $nav-submenu-item-border;
+		background: vars.$nav-bg-submenu;
+		border: 1px solid vars.$nav-submenu-item-border;
+		border-bottom: 4px solid vars.$nav-submenu-item-border;
 		padding: 0;
 		position: absolute;
 		top: 110%;
@@ -51,19 +55,19 @@
 		a {
 			text-decoration: none;
 			text-transform: uppercase;
-			color: $text-basic;
+			color: vars.$text-basic;
 			height: 100%;
 			display: block;
 			font-weight: normal;
 			padding: 10px 15px;
 			background-repeat: no-repeat;
-			font-size: $navigation-font-small;
+			font-size: vars.$navigation-font-small;
 			border-bottom: none;
 
 			&:hover {
 				border-bottom: none;
 				text-decoration: none;
-				color: lighten($lang-selector-text, 20);
+				color: color.adjust(vars.$lang-selector-text, $lightness: 20);
 			}
 		}
 		&:first-child {

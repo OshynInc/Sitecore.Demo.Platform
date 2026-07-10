@@ -1,6 +1,8 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "mixins" as *;
+@use "vars" as *;
+@use "base/fontawesome/font-awesome-mix-var" as *;
+
 .sxa-archive {
     .level-1 {
         display: block !important;
@@ -42,7 +44,6 @@
             margin: 0;
         }
         .archive-item {
-            //@import "base/reset/links";
             a {
                 display: inline-block;
                 position: relative;
@@ -67,5 +68,5 @@
             cursor: default;
         }
     }
-    @import "variants/archive/*";
+    @include meta.load-css("variants/archive");
 }

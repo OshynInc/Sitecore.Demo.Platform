@@ -1,4 +1,4 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .testimonial {
 	padding: 0;
@@ -24,7 +24,7 @@
 	.field-eyebrow {
 		font-size: 25px;
 		font-weight: 700;
-		color: $nysif-text-dark;
+		color: vars-nysif.$nysif-text-dark;
 		margin-bottom: 8px;
 		text-align: left;
 		letter-spacing: normal;
@@ -36,7 +36,7 @@
 	.field-title {
 		font-size: 16px;
 		font-weight: 400;
-		color: $nysif-text-muted;
+		color: vars-nysif.$nysif-text-muted;
 		margin-bottom: 30px;
 		text-align: left;
 	}
@@ -51,8 +51,8 @@
 
 	.testimonial-card,
 	.field-card {
-		background: $nysif-light-surface;
-		border: 1px solid $nysif-light-border;
+		background: vars-nysif.$nysif-light-surface;
+		border: 1px solid vars-nysif.$nysif-light-border;
 		border-radius: 10px;
 		padding: 28px 24px;
 		display: flex;
@@ -84,7 +84,7 @@
 		height: 42px;
 		border-radius: 50%;
 		background: #dce6f5;
-		color: $nysif-accent-blue;
+		color: vars-nysif.$nysif-accent-blue;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -98,17 +98,17 @@
 	.field-name {
 		font-size: 15px;
 		font-weight: 700;
-		color: $nysif-text-dark;
+		color: vars-nysif.$nysif-text-dark;
 	}
 
 	.person-role,
 	.testimonial-role,
 	.field-role {
 		font-size: 13.5px;
-		color: $nysif-text-muted;
+		color: vars-nysif.$nysif-text-muted;
 	}
 
-	@media (max-width: $nysif-bp-nav) {
+	@media (max-width: vars-nysif.$nysif-bp-nav) {
 		.testimonial-grid,
 		.field-cards {
 			grid-template-columns: 1fr;

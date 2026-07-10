@@ -1,12 +1,14 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "styles/media-link";
+@use "vars";
+@use "mixins";
 .media-link {
-    background: $media-link-bg;
-	@include border-basic(bottom,$media-link-border);
+    background: vars.$media-link-bg;
+	@include mixins.border-basic(bottom,vars.$media-link-border);
     a {
-        color: $media-link-color;
+        color: vars.$media-link-color;
         &:hover {
-            color: $media-link-color-active;
+            color: vars.$media-link-color-active;
             text-decoration: none;
         }
     }
@@ -48,7 +50,6 @@
             font-size: 1em;
         }
     }
-    @import "variants/media-link/*";
-    @import "base/richtext/richtext-files-icons";
+    @include meta.load-css("variants/media-link");
+    @include meta.load-css("base/richtext/richtext-files-icons");
 }
-@import "styles/media-link/*";

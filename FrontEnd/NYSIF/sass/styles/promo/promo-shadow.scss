@@ -1,10 +1,10 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .promo-shadow {
     max-width: 960px;
     padding: 0;
     border-top-width: 3px;
-    border-top-color: $promo-shadow-border;
+    border-top-color: vars.$promo-shadow-border;
     border-style: solid;
     overflow: visible;
     position: relative;
@@ -12,7 +12,7 @@
         float: left;
     }
     >.component-content {
-        @include respond-to(all-mobile) {
+        @include mixins.respond-to(all-mobile) {
             margin: 0 10px 30px 10px;
         }
         padding: 15px;

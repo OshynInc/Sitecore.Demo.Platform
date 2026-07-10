@@ -1,5 +1,6 @@
-@import "mixins";
-@import "vars";
+@use "styles/tabs";
+@use "mixins";
+@use "vars";
 .tabs {
     overflow: hidden;
     position: relative;
@@ -10,9 +11,9 @@
 }
 .tab-slider {
     position: absolute;
-    background: $tab-heading-bg;
+    background: vars.$tab-heading-bg;
     cursor: pointer;
-    border: 2px solid $border-basic-color;
+    border: 2px solid vars.$border-basic-color;
     vertical-align: center;
     width: 15px;
     text-indent: -9999px;
@@ -21,24 +22,24 @@
 .tabs-heading {
     overflow: hidden;
     li {
-        @include border-basic(top, $tab-heading-bg, 2px);
-        @include border-basic(left, $tab-heading-bg);
-        @include border-basic(right, $tab-heading-bg);
-        @include border-basic(bottom, $tab-container-border);
+        @include mixins.border-basic(top, vars.$tab-heading-bg, 2px);
+        @include mixins.border-basic(left, vars.$tab-heading-bg);
+        @include mixins.border-basic(right, vars.$tab-heading-bg);
+        @include mixins.border-basic(bottom, vars.$tab-container-border);
         float: left;
         display: block;
         margin-left: 1px;
-        background: $tab-heading-bg;
+        background: vars.$tab-heading-bg;
         width: auto;
         cursor: pointer;
         >div {
-            @include clearfix();
+            @include mixins.clearfix();
             padding: 3px 10px;
             display: block;
             text-decoration: none;
-            color: $tab-heading-color;
+            color: vars.$tab-heading-color;
             .field-heading {
-                font-size: $tab-font-header;
+                font-size: vars.$tab-font-header;
             }
             >.row {
                 display: block;
@@ -48,18 +49,18 @@
             margin: 5px 0;
         }
         &.active {
-            background: $tab-heading-active-bg;
-            @include border-basic(top, $tab-container-border, 2px);
-            @include border-basic(bottom, $tab-container-border);
-            @include border-basic(left);
-            @include border-basic(right);
+            background: vars.$tab-heading-active-bg;
+            @include mixins.border-basic(top, vars.$tab-container-border, 2px);
+            @include mixins.border-basic(bottom, vars.$tab-container-border);
+            @include mixins.border-basic(left);
+            @include mixins.border-basic(right);
             a {
-                color: $tab-heading-active-color;
+                color: vars.$tab-heading-active-color;
             }
         }
         &:hover {
-            @include border-basic(top, $tab-container-border, 2px);
-            background: $tab-heading-active-bg;
+            @include mixins.border-basic(top, vars.$tab-container-border, 2px);
+            background: vars.$tab-heading-active-bg;
         }
         &:first-child {
             margin-left: 0;
@@ -67,16 +68,16 @@
     }
 }
 .tabs-container {
-    @include border-basic(top, $tab-container-border);
-    background: $tab-container-bg;
+    @include mixins.border-basic(top, vars.$tab-container-border);
+    background: vars.$tab-container-bg;
     margin-top: -1px;
 }
 .tab {
-    @include clearfix();
+    @include mixins.clearfix();
     display: none;
     padding: 10px;
     &.active {
         display: block;
     }
 }
-@import "styles/tabs/*";
+

@@ -1,10 +1,10 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .container,
 .component.container .component-content {
-	max-width: $nysif-container-max;
+	max-width: vars-nysif.$nysif-container-max;
 	margin: 0 auto;
-	padding: 0 $nysif-container-padding;
+	padding: 0 vars-nysif.$nysif-container-padding;
 }
 
 // Full-bleed band backgrounds: outer container keeps width 100%,
@@ -18,9 +18,9 @@
 	margin: 0;
 
 	> .component-content {
-		max-width: $nysif-container-max;
+		max-width: vars-nysif.$nysif-container-max;
 		margin: 0 auto;
-		padding: 0 $nysif-container-padding;
+		padding: 0 vars-nysif.$nysif-container-padding;
 	}
 }
 
@@ -33,7 +33,7 @@
 	padding: 0;
 }
 
-@media (max-width: $nysif-bp-mobile) {
+@media (max-width: vars-nysif.$nysif-bp-mobile) {
 	.container,
 	.component.container .component-content,
 	.component.container.row-dark > .component-content,

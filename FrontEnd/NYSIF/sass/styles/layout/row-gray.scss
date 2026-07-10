@@ -1,6 +1,6 @@
-@import "../../abstracts/vars-nysif";
+@use "../../abstracts/vars-nysif";
 
 .row-gray {
-	background: $nysif-light-bg;
-	color: $nysif-text-dark;
+	background: vars-nysif.$nysif-light-bg;
+	color: vars-nysif.$nysif-text-dark;
 }

@@ -1,15 +1,15 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .boxed {
     box-sizing: border-box;
     margin: 20px 0;
-    @include respond-to(tablet) {
+    @include mixins.respond-to(tablet) {
         padding: 10px;
     }
-    @include respond-to(mobile) {
+    @include mixins.respond-to(mobile) {
         padding: 10px;
     }
     >div {
-        @include wrapper();
+        @include mixins.wrapper();
     }
 }

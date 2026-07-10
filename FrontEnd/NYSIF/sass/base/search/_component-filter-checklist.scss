@@ -1,3 +1,5 @@
+@use "vars";
+
 .facet-single-selection-list {
 	.facet-hided {
 		.hide-facet-value {
@@ -8,7 +10,7 @@
 		font-size: 12px;
 		padding-top: 3px;
 		padding-bottom: 3px;
-		color: $search-item-color;
+		color: vars.$search-item-color;
 		cursor: pointer;
 	}
 	.facet-dropdown {
@@ -22,7 +24,7 @@
 			display: none;
 		}
 		label {
-			color: $search-item-color;
+			color: vars.$search-item-color;
 		}
 		&.active-facet {
 			.facet-count {
@@ -30,7 +32,7 @@
 			label,
 			.facet-count.highlighted,
 			span {
-				color: $primary-color;
+				color: vars.$primary-color;
 			}
 		}
 	}

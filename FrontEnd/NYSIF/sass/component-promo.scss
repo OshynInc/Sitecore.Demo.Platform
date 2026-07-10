@@ -1,4 +1,4 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .promo {
 	&.nysif-quick-actions {
@@ -16,8 +16,8 @@
 		}
 
 		.qa-card {
-			background: $nysif-light-surface;
-			border: 1px solid $nysif-light-border;
+			background: vars-nysif.$nysif-light-surface;
+			border: 1px solid vars-nysif.$nysif-light-border;
 			border-radius: 10px;
 			padding: 24px 22px 26px;
 		}
@@ -37,31 +37,31 @@
 		.qa-title {
 			font-size: 17px;
 			font-weight: 700;
-			color: $nysif-text-dark;
+			color: vars-nysif.$nysif-text-dark;
 			margin-bottom: 9px;
 		}
 
 		.qa-desc {
 			font-size: 14.5px;
-			color: $nysif-text-muted;
+			color: vars-nysif.$nysif-text-muted;
 			line-height: 1.5;
 			margin-bottom: 16px;
 		}
 
 		.qa-link {
-			color: $nysif-accent-blue;
+			color: vars-nysif.$nysif-accent-blue;
 			font-size: 14.5px;
 			font-weight: 600;
 			text-decoration: none;
 		}
 
-		@media (max-width: $nysif-bp-nav) {
+		@media (max-width: vars-nysif.$nysif-bp-nav) {
 			.qa-grid {
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
-		@media (max-width: $nysif-bp-mobile) {
+		@media (max-width: vars-nysif.$nysif-bp-mobile) {
 			.qa-grid {
 				grid-template-columns: 1fr;
 			}
@@ -70,8 +70,8 @@
 
 	&.nysif-quick-action,
 	&.qa-card {
-		background: $nysif-light-surface;
-		border: 1px solid $nysif-light-border;
+		background: vars-nysif.$nysif-light-surface;
+		border: 1px solid vars-nysif.$nysif-light-border;
 		border-radius: 10px;
 		padding: 24px 22px 26px;
 		float: none;
@@ -98,21 +98,21 @@
 		.field-promotext {
 			font-size: 17px;
 			font-weight: 700;
-			color: $nysif-text-dark;
+			color: vars-nysif.$nysif-text-dark;
 			margin-bottom: 9px;
 		}
 
 		.qa-desc,
 		.field-introduction {
 			font-size: 14.5px;
-			color: $nysif-text-muted;
+			color: vars-nysif.$nysif-text-muted;
 			line-height: 1.5;
 			margin-bottom: 16px;
 		}
 
 		.qa-link,
 		.field-promolink a {
-			color: $nysif-accent-blue;
+			color: vars-nysif.$nysif-accent-blue;
 			font-size: 14.5px;
 			font-weight: 600;
 			text-decoration: none;
@@ -125,11 +125,11 @@
 	grid-template-columns: repeat(4, 1fr);
 	gap: 18px;
 
-	@media (max-width: $nysif-bp-nav) {
+	@media (max-width: vars-nysif.$nysif-bp-nav) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	@media (max-width: $nysif-bp-mobile) {
+	@media (max-width: vars-nysif.$nysif-bp-mobile) {
 		grid-template-columns: 1fr;
 	}
 }

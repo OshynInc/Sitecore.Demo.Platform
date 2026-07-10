@@ -1,3 +1,7 @@
+@use "sass:meta";
+@use "mixins";
+@use "vars";
+
 .column-header-search {
 	.search-box {
 		margin: 0;
@@ -5,8 +9,8 @@
 	}
 }
 .search-box {
-	@import "../reset/inputs";
-	@import "../typehead/typehead";
+	@include meta.load-css("../reset/inputs");
+	@include meta.load-css("../typehead/typehead");
 	position: relative;
 	box-sizing: border-box;
 	&.hide-button {
@@ -16,11 +20,11 @@
 	}
 
 	.search-box-button {
-		@include btn-primary;
+		@include mixins.btn-primary;
 	}
 
 	.search-box-button-with-redirect {
-		@include btn-secondary;
+		@include mixins.btn-secondary;
 	}
 
 	.component-content {
@@ -55,7 +59,7 @@
 		}
 	}
 	input.search-box-input {
-		@include border-basic;
+		@include mixins.border-basic;
 
 		position: relative;
 		align-self: center;
@@ -73,11 +77,11 @@
 	}
 	.autocomplete-menu,
 	.autocomplete-menu__absolute {
-		@include border-basic;
+		@include mixins.border-basic;
 
 		position: absolute;
 		background-color: white;
-		color: $on-surface;
+		color: vars.$on-surface;
 		top: calc(100% - 1px);
 		left: 0;
 		right: 0;
@@ -86,7 +90,7 @@
 		span {
 			display: block;
 			a {
-				color: $on-surface;
+				color: vars.$on-surface;
 			}
 
 			&:not(:first-child) {

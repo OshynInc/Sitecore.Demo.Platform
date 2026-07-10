@@ -1,7 +1,7 @@
-@import "mixins";
-@import "vars";
+@use "mixins";
+@use "vars";
 .social-media-share {
-    background: $social-media-share-bg;
+    background: vars.$social-media-share-bg;
     ul {
         overflow: hidden;
     }

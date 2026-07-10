@@ -1,4 +1,4 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .btn {
 	display: inline-block;
@@ -13,20 +13,20 @@
 }
 
 .btn-login {
-	color: $nysif-text-on-dark;
+	color: vars-nysif.$nysif-text-on-dark;
 	border: 1.5px solid #5f7a9c;
 	padding: 9px 22px;
 	background: transparent;
 }
 
 .btn-quote-header {
-	background: $nysif-accent-blue;
-	color: $nysif-text-on-dark;
+	background: vars-nysif.$nysif-accent-blue;
+	color: vars-nysif.$nysif-text-on-dark;
 	padding: 10.5px 22px;
 }
 
 .btn-white {
-	background: $nysif-text-on-dark;
+	background: vars-nysif.$nysif-text-on-dark;
 	color: #12233b;
 	padding: 16.5px 34px;
 	font-size: 17px;
@@ -34,20 +34,20 @@
 
 .btn-outline {
 	background: transparent;
-	color: $nysif-text-on-dark;
-	border: 1.5px solid $nysif-text-on-dark;
+	color: vars-nysif.$nysif-text-on-dark;
+	border: 1.5px solid vars-nysif.$nysif-text-on-dark;
 	padding: 15px 32px;
 	font-size: 17px;
 }
 
-@media (max-width: $nysif-bp-mobile) {
+@media (max-width: vars-nysif.$nysif-bp-mobile) {
 	.btn-quote-header {
 		padding: 9px 16px;
 		font-size: 14.5px;
 	}
 }
 
-@media (max-width: $nysif-bp-small) {
+@media (max-width: vars-nysif.$nysif-bp-small) {
 	.btn-login,
 	.btn-quote-header {
 		padding: 8px 14px;

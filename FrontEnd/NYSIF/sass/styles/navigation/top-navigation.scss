@@ -1,11 +1,11 @@
-@import "mixins";
-@import "vars";
+@use "mixins";
+@use "vars";
 .top-nav {
 	max-width: none !important;
 	width: 100vw !important;
-	height: $primary-nav-height;
-	background-color: $top-nav-bg;
-	border-top: 4px solid $primary-nav-border-color;
+	height: vars.$primary-nav-height;
+	background-color: vars.$top-nav-bg;
+	border-top: 4px solid vars.$primary-nav-border-color;
 
 	> .component-content > .component {
 		float: right;
@@ -15,10 +15,10 @@
 			text-decoration: none;
 			text-transform: uppercase;
 			padding: 10px 15px;
-			color: $text-passive;
+			color: vars.$text-passive;
 			height: 100%;
 			display: block;
-			font-size: $navigation-font-small;
+			font-size: vars.$navigation-font-small;
 			letter-spacing: 2px;
 			border-bottom: none;
 
@@ -29,7 +29,7 @@
 			&:hover {
 				border-bottom: none;
 				text-decoration: none;
-				color: $on-primary;
+				color: vars.$on-primary;
 			}
 		}
 	}

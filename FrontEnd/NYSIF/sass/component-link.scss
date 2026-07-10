@@ -1,7 +1,7 @@
-@import "mixins";
-@import "vars";
+@use "mixins";
+@use "vars";
 .link {
-    background: $link-bg;
+    background: vars.$link-bg;
     //@import "base/reset/links";
     font-size: 1em;
     a {
@@ -18,7 +18,7 @@
             content: "";
             font-size: 10px;
             margin-right: 0.25em;
-            color: $link-icon-color;
+            color: vars.$link-icon-color;
         }
         &:hover {
             text-decoration: none;

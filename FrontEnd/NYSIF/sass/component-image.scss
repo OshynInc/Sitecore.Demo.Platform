@@ -1,4 +1,6 @@
-@import "vars";
+@use "styles/image";
+@use "vars";
+
 .image {
     img {
         max-width: 100%;
@@ -11,8 +13,7 @@
     .image-caption {
         display: block;
         font-style: italic;
-        font-size: $font-small;
-        color: $image-caption-color;
+        font-size: vars.$font-small;
+        color: vars.$image-caption-color;
     }
 }
-@import "styles/image/*";

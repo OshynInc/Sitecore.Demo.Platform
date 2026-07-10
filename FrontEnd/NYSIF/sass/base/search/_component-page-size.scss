@@ -1,5 +1,6 @@
+@use "sass:meta";
 .page-size {
-    @import "../reset/inputs";
+    @include meta.load-css("../reset/inputs");
     label {
         margin-right: 5px;
     }

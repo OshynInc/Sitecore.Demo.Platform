@@ -1,15 +1,16 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
 .tag-cloud {
     .component-content {
         text-align: justify;
     }
     .tag-cloud-item {
         a {
-            color: $tag-color;
+            color: vars.$tag-color;
             &:hover {
-                color: $tag-color-active;
+                color: vars.$tag-color-active;
             }
         }
         &.xs {
@@ -31,5 +32,5 @@
             font-size: 2.0em;
         }
     }
-    @import "variants/tag-cloud/*";
+    @include meta.load-css("variants/tag-cloud");
 }

@@ -1,5 +1,6 @@
+@use "sass:meta";
 .sort-results {
-    @import "../reset/inputs";
+    @include meta.load-css("../reset/inputs");
     select {
         max-width: 100%;
         width: auto;

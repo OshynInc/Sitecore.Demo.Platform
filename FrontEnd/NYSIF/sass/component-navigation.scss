@@ -1,4 +1,4 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 // Base navigation component — NYSIF mega menu + mobile panel
 // Markup hooks: .navigation.nysif-mega-nav (style) or variant CssClass
@@ -25,7 +25,7 @@
 			font-size: 22px;
 			font-weight: 800;
 			letter-spacing: 0.5px;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 			white-space: nowrap;
 		}
 
@@ -52,7 +52,7 @@
 			height: 100%;
 			background: transparent;
 			border: none;
-			color: $nysif-text-on-dark-subtle;
+			color: vars-nysif.$nysif-text-on-dark-subtle;
 			font-family: inherit;
 			font-size: 13.5px;
 			font-weight: 700;
@@ -65,7 +65,7 @@
 
 			&:hover,
 			&[aria-expanded="true"] {
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 				background: #232c48;
 			}
 		}
@@ -76,7 +76,7 @@
 			position: absolute;
 			top: 100%;
 			left: 0;
-			background: $nysif-dark-surface;
+			background: vars-nysif.$nysif-dark-surface;
 			box-shadow: 0 18px 34px rgba(6, 10, 24, 0.4);
 			border-radius: 0 0 10px 10px;
 			overflow: hidden;
@@ -96,15 +96,15 @@
 		.mega-col-1 {
 			width: 300px;
 			padding: 14px 0;
-			background: $nysif-dark-surface;
+			background: vars-nysif.$nysif-dark-surface;
 		}
 
 		.mega-col-2 {
 			display: none;
 			width: 260px;
 			padding: 14px 0;
-			background: $nysif-dark-surface-alt;
-			border-left: 1px solid $nysif-dark-border-soft;
+			background: vars-nysif.$nysif-dark-surface-alt;
+			border-left: 1px solid vars-nysif.$nysif-dark-border-soft;
 
 			&.active {
 				display: block;
@@ -123,21 +123,21 @@
 			background: none;
 			border: none;
 			font-family: inherit;
-			color: $nysif-text-on-dark-subtle;
+			color: vars-nysif.$nysif-text-on-dark-subtle;
 			font-size: 14.5px;
 			text-align: left;
 			text-decoration: none;
 			cursor: pointer;
 
 			.chev {
-				color: $nysif-accent-light;
+				color: vars-nysif.$nysif-accent-light;
 				font-size: 14px;
 			}
 
 			&:hover,
 			&.active-sub {
 				background: rgba(111, 159, 216, 0.14);
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 			}
 		}
 
@@ -150,7 +150,7 @@
 			background: transparent;
 			border: 1.5px solid #5f7a9c;
 			border-radius: 8px;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 			font-size: 18px;
 			cursor: pointer;
 		}
@@ -180,7 +180,7 @@
 		}
 
 		.m-acc-item {
-			border-bottom: 1px solid $nysif-dark-border;
+			border-bottom: 1px solid vars-nysif.$nysif-dark-border;
 		}
 
 		.m-acc-toggle {
@@ -191,7 +191,7 @@
 			background: none;
 			border: none;
 			font-family: inherit;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 			font-size: 14.5px;
 			font-weight: 700;
 			letter-spacing: 0.5px;
@@ -200,7 +200,7 @@
 			cursor: pointer;
 
 			.caret {
-				color: $nysif-accent-light;
+				color: vars-nysif.$nysif-accent-light;
 				font-size: 12px;
 				transition: transform 0.15s ease;
 			}
@@ -237,7 +237,7 @@
 			cursor: pointer;
 
 			&:hover {
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 				background: rgba(111, 159, 216, 0.12);
 			}
 		}
@@ -266,7 +266,7 @@
 		}
 
 		.mobile-drilldown-title {
-			color: $nysif-accent-eyebrow;
+			color: vars-nysif.$nysif-accent-eyebrow;
 			font-size: 12.5px;
 			font-weight: 700;
 			letter-spacing: 1px;
@@ -276,7 +276,7 @@
 
 		.mobile-menu-footer {
 			display: flex;
-			border-top: 1px solid $nysif-dark-border;
+			border-top: 1px solid vars-nysif.$nysif-dark-border;
 		}
 
 		.mobile-util {
@@ -285,7 +285,7 @@
 			align-items: center;
 			justify-content: center;
 			gap: 8px;
-			color: $nysif-text-on-dark-subtle;
+			color: vars-nysif.$nysif-text-on-dark-subtle;
 			text-decoration: none;
 			font-size: 14px;
 			font-weight: 600;
@@ -293,11 +293,11 @@
 
 			&:hover {
 				background: #223055;
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 			}
 		}
 
-		@media (max-width: $nysif-bp-nav) {
+		@media (max-width: vars-nysif.$nysif-bp-nav) {
 			.main-nav,
 			.navigation-main {
 				display: none;
@@ -312,7 +312,7 @@
 			}
 		}
 
-		@media (max-width: $nysif-bp-mobile) {
+		@media (max-width: vars-nysif.$nysif-bp-mobile) {
 			padding-top: 16px;
 
 			.header-actions {
@@ -346,7 +346,7 @@
 			font-size: 22px;
 			font-weight: 800;
 			letter-spacing: 0.5px;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 			margin-bottom: 16px;
 		}
 
@@ -362,7 +362,7 @@
 		.footer-col a,
 		.field-link a {
 			display: block;
-			color: $nysif-text-on-dark-muted;
+			color: vars-nysif.$nysif-text-on-dark-muted;
 			font-size: 14.5px;
 			text-decoration: none;
 			margin-bottom: 15px;
@@ -372,7 +372,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			border-top: 1px solid $nysif-dark-border;
+			border-top: 1px solid vars-nysif.$nysif-dark-border;
 			padding: 22px 0;
 		}
 
@@ -397,7 +397,7 @@
 			height: 34px;
 			border-radius: 50%;
 			border: 1px solid #3a4363;
-			color: $nysif-text-on-dark-muted;
+			color: vars-nysif.$nysif-text-on-dark-muted;
 			font-size: 12px;
 			font-weight: 600;
 			display: flex;
@@ -406,7 +406,7 @@
 			text-decoration: none;
 		}
 
-		@media (max-width: $nysif-bp-tablet) {
+		@media (max-width: vars-nysif.$nysif-bp-tablet) {
 			.footer-grid {
 				flex-wrap: wrap;
 				gap: 32px 40px;
@@ -418,7 +418,7 @@
 			}
 		}
 
-		@media (max-width: $nysif-bp-mobile) {
+		@media (max-width: vars-nysif.$nysif-bp-mobile) {
 			.footer-grid {
 				flex-direction: column;
 				gap: 32px;

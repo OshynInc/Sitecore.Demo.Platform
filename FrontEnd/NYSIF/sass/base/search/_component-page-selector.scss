@@ -1,4 +1,6 @@
-@import "../../abstracts/vars";
+@use "../../abstracts/vars";
+@use "mixins";
+
 .page-selector {
     text-align: center;
     padding: 20px 0;
@@ -9,7 +11,7 @@
             margin: 0px 8px;
             &.inactive {
                 a {
-                    color: $text-disabled;
+                    color: vars.$text-disabled;
                     cursor: default;
                 }
             }
@@ -21,7 +23,7 @@
         font-size: 1em;
     }
     .page-selector-item-link {
-        @include border-basic();
+        @include mixins.border-basic();
         display: block;
         text-decoration: none;
         font-weight: normal;
@@ -31,17 +33,17 @@
         margin-left: 5px;
         &.active {
             font-weight: bold;
-            color: $search-pagination-hover-color;
-            border: 1px solid $search-pagination-hover-border;
-            background: $search-pagination-hover-bg;
+            color: vars.$search-pagination-hover-color;
+            border: 1px solid vars.$search-pagination-hover-border;
+            background: vars.$search-pagination-hover-bg;
         }
         &:hover {
-            color: $search-pagination-hover-color;
-            border: 1px solid $search-pagination-hover-border;
-            background: $search-pagination-hover-bg;
+            color: vars.$search-pagination-hover-color;
+            border: 1px solid vars.$search-pagination-hover-border;
+            background: vars.$search-pagination-hover-bg;
         }
         &.inactive {
-            color: $text-disabled;
+            color: vars.$text-disabled;
         }
     }
 }

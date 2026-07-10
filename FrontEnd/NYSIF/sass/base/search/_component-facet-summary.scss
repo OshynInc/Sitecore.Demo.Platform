@@ -1,18 +1,21 @@
+@use "mixins";
+@use "vars";
+
 .facet-summary {
     margin-bottom: 10px;
 
     .component-content {
         .facet-summary-wrapper {
-            background-color: $search-facet-summary-background;
+            background-color: vars.$search-facet-summary-background;
             padding: 10px;
-            @include clearfix;
+            @include mixins.clearfix;
 
             .active-facet-summary-element {
                 float: left;
                 font-size: 12px;
                 position: relative;
                 padding: 10px 15px 10px 0;
-                border-bottom: 1px solid $search-facet-summary-item-border;
+                border-bottom: 1px solid vars.$search-facet-summary-item-border;
                 width: 100%;
 
                 span {
@@ -20,7 +23,7 @@
                 }
 
                 .removeFacet {
-                    color: $search-facet-summary-clear-color;
+                    color: vars.$search-facet-summary-clear-color;
                     cursor: pointer;
                     position: absolute;
                     right: 5px;
@@ -43,7 +46,7 @@
                 font-size: 12px;
                 font-weight: bold;
                 cursor: pointer;
-                color: $search-facet-summary-clear-color;
+                color: vars.$search-facet-summary-clear-color;
                 border-color: transparent;
                 text-align: left;
                 text-indent: 10px;
@@ -56,7 +59,7 @@
                     position: absolute;
                     top: 50%;
                     left: 1px;
-                    color: $search-facet-summary-clear-color;
+                    color: vars.$search-facet-summary-clear-color;
                     transform: translate(-50%, -50%);
                 }
 
@@ -79,9 +82,9 @@
                 .active-facet-summary-element {
                     margin: 5px 5px 5px 0;
                     padding: 10px 35px 10px 15px;
-                    border: 1px solid $search-facet-summary-item-border-horizontal;
+                    border: 1px solid vars.$search-facet-summary-item-border-horizontal;
                     border-radius: 20px;
-                    color: $search-facet-summary-item-color-horizontal;
+                    color: vars.$search-facet-summary-item-color-horizontal;
                     width: auto;
 
                     .removeFacet {
@@ -102,7 +105,7 @@
                 font-size: 12px;
                 font-weight: bold;
                 cursor: pointer;
-                color: $search-facet-summary-item-color-horizontal;
+                color: vars.$search-facet-summary-item-color-horizontal;
                 border-color: transparent;
                 text-align: left;
                 text-indent: 10px;
@@ -115,7 +118,7 @@
                     position: absolute;
                     top: 50%;
                     left: 1px;
-                    color: $search-facet-summary-item-color-horizontal;
+                    color: vars.$search-facet-summary-item-color-horizontal;
                     transform: translate(-50%, -50%);
                 }
 

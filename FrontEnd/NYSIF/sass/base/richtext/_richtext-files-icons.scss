@@ -1,5 +1,6 @@
-@import "../fontawesome/font-awesome-mix-var";
-@import "../../abstracts/mixins";
+@use "../fontawesome/font-awesome-mix-var" as *;
+@use "../../abstracts/mixins" as *;
+
 //files icons
 .field-filetypeicon>a>span, .pdf, .xls, .xlsx, .pptx, .ppt, .docx, .doc, .bmp, .png, .jpg, .jpeg, .psd, .gif, .avi, .mp4, .wmv, .mov, .mp3, .wma, .txt, .zip {
     display: inline-block;

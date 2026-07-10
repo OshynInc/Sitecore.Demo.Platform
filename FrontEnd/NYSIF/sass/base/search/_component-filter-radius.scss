@@ -1,9 +1,12 @@
-@import "../../abstracts/vars";
+@use "sass:meta";
+@use "../../abstracts/vars";
+@use "mixins";
+
 .radius-filter {
-	@import "../reset/inputs";
+	@include meta.load-css("../reset/inputs");
 
 	.facet-title {
-		@include proxima-font(bold);
+		@include mixins.proxima-font(bold);
 		font-size: 2rem;
 		margin: 3.2rem 0 1rem;
 	}
@@ -18,12 +21,12 @@
 		margin-right: 2rem;
 
 		&:hover {
-			border-bottom: 1px solid $secondary-color;
+			border-bottom: 1px solid vars.$secondary-color;
 		}
 
 		&.selected {
-			@include proxima-font(bold);
-			border-bottom: 1px solid $secondary-color;
+			@include mixins.proxima-font(bold);
+			border-bottom: 1px solid vars.$secondary-color;
 		}
 	}
 	ul {
@@ -31,7 +34,7 @@
 			display: block;
 			border-width: 1px 1px 1px 0;
 			border-style: solid;
-			border-color: $search-filter-radius-border;
+			border-color: vars.$search-filter-radius-border;
 			float: left;
 			padding: 5px 5px;
 			cursor: pointer;

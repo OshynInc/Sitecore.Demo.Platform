@@ -1,17 +1,21 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "vars";
+@use "mixins" as mixins2;
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "variables";
+
 .toggle {
     details[open] summary:before {
-        content: $fa-var-minus-square;
+        content: variables.$fa-var-minus-square;
     }
     summary.toggle-header {
         &::-webkit-details-marker {
             display: none
         }
         &:before {
-            @include fa-icon();
-            content: $fa-var-plus-square;
+            @include mixins.fa-icon();
+            content: variables.$fa-var-plus-square;
             position: absolute;
             font-size: 17px;
             left: 0;
@@ -23,7 +27,7 @@
         vertical-align: middle;
         box-sizing: border-box;
         padding: 0 10px;
-        background: $toggle-header-bg;
+        background: vars.$toggle-header-bg;
         cursor: pointer;
         min-height: 25px;
         &.show {
@@ -39,7 +43,7 @@
         }
     }
     .show {
-        color: $toggle-show-color;
+        color: vars.$toggle-show-color;
     }
     .toggle-content {
         margin-top: -1px;
@@ -61,5 +65,5 @@
             display: block;
         }
     }
-    @import "base/animation/toggle";
+    @include meta.load-css("base/animation/toggle");
 }

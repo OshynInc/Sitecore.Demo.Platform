@@ -1,3 +1,4 @@
+@use "sass:list";
 // SCSS variables are information about icon's compiled state, stored under its original file name
 //
 // .icon-home {
@@ -2789,18 +2790,18 @@ $spritesheet: (20px, 6240px, '../images/sprite-flag', $spritesheet-sprites, );
 // // HTML
 // <i class="icon icon-home"></i>
 @mixin sprite-width($sprite) {
-    width: nth($sprite, 5);
+    width: list.nth($sprite, 5);
 }
 @mixin sprite-height($sprite) {
-    height: nth($sprite, 6);
+    height: list.nth($sprite, 6);
 }
 @mixin sprite-position($sprite) {
-    $sprite-offset-x: nth($sprite, 3);
-    $sprite-offset-y: nth($sprite, 4);
+    $sprite-offset-x: list.nth($sprite, 3);
+    $sprite-offset-y: list.nth($sprite, 4);
     background-position: $sprite-offset-x $sprite-offset-y;
 }
 @mixin sprite-image($sprite) {
-    $sprite-image: nth($sprite, 9);
+    $sprite-image: list.nth($sprite, 9);
     background-image: url(#{$sprite-image});
 }
 @mixin sprite($sprite) {
@@ -2815,7 +2816,7 @@ $spritesheet: (20px, 6240px, '../images/sprite-flag', $spritesheet-sprites, );
 // @include sprites($spritesheet-sprites);
 @mixin sprites($sprites) {
     @each $sprite in $sprites {
-        $sprite-name: nth($sprite, 10);
+        $sprite-name: list.nth($sprite, 10);
         .#{$sprite-name} {
             @include sprite($sprite);
         }

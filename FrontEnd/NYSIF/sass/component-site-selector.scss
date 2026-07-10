@@ -1,11 +1,12 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
 .market-selector {
-    @import "base/reset/inputs";
+    @include meta.load-css("base/reset/inputs");
     select {
         height: auto;
-        font-size: $font-normal;
-        color: $site-selector-color;
+        font-size: vars.$font-normal;
+        color: vars.$site-selector-color;
         padding: 5px 15px 5px 5px;
     }
 }

@@ -1,6 +1,6 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
 .component.video {
     .mejs-container {
         overflow: hidden;

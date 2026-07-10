@@ -1,7 +1,8 @@
-@import "mixins";
-@import "vars";
+@use "styles/flip";
+@use "mixins";
+@use "vars";
 .flip {
-    background: $flip-bg;
+    background: vars.$flip-bg;
     perspective: 1000;
 
     h2 {
@@ -9,10 +10,10 @@
     }
 
     .Side1, .Side0, .Side0_EDIT, .Side1_EDIT {
-        background: $flip-slides-bg;
+        background: vars.$flip-slides-bg;
         width: 96%;
         padding: 2%;
-        @include clearfix();
+        @include mixins.clearfix();
     }
 
     .Side0_EDIT, .Side1_EDIT {
@@ -28,7 +29,7 @@
     }
 
     .Side1, .Side0 {
-        @include border-basic();
+        @include mixins.border-basic();
         box-sizing: border-box;
         backface-visibility: hidden;
         transition-property: transform;
@@ -43,7 +44,7 @@
         width: 100%;
 
         .slide-heading, .slide-content {
-            @include clearfix();
+            @include mixins.clearfix();
         }
     }
 
@@ -64,7 +65,7 @@
         }
     }
 }
-@import "styles/flip/*";
+
 .no-csstransforms3d {
     .flip {
         .Side1 {

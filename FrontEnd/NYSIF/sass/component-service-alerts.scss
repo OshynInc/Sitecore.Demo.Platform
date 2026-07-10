@@ -1,10 +1,10 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .service-alerts {
 	width: 100%;
 	max-width: 350px;
 	flex-shrink: 0;
-	background: $nysif-dark-surface;
+	background: vars-nysif.$nysif-dark-surface;
 	border-radius: 12px;
 	padding: 26px 26px 22px;
 	margin-top: 6px;
@@ -18,8 +18,8 @@
 	.alert-badge,
 	.field-badge {
 		display: inline-block;
-		background: $nysif-alert-red;
-		color: $nysif-text-on-dark;
+		background: vars-nysif.$nysif-alert-red;
+		color: vars-nysif.$nysif-text-on-dark;
 		font-size: 13px;
 		font-weight: 700;
 		padding: 5px 13px;
@@ -30,7 +30,7 @@
 	.alert-item,
 	.field-alert-item {
 		padding: 14px 0;
-		border-bottom: 1px solid $nysif-dark-border-soft;
+		border-bottom: 1px solid vars-nysif.$nysif-dark-border-soft;
 
 		&:last-child {
 			border-bottom: none;
@@ -44,7 +44,7 @@
 
 	.alert-date,
 	.field-date {
-		color: $nysif-accent-light;
+		color: vars-nysif.$nysif-accent-light;
 		font-size: 13.5px;
 		font-weight: 500;
 		margin-bottom: 7px;
@@ -57,7 +57,7 @@
 		line-height: 1.45;
 	}
 
-	@media (max-width: $nysif-bp-tablet) {
+	@media (max-width: vars-nysif.$nysif-bp-tablet) {
 		width: 100%;
 		margin-top: 28px;
 		margin-bottom: 8px;

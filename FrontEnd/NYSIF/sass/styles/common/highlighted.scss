@@ -1,9 +1,9 @@
-@import "../../abstracts/vars";
+@use "../../abstracts/vars";
 $highlightedPosition: ("top", "bottom", "left", "right");
 @each $pos in $highlightedPosition {
 	.highlighted-#{$pos} {
 		border-#{$pos}-width: 1px;
-		border-#{$pos}-color: $border-basic-active;
+		border-#{$pos}-color: vars.$border-basic-active;
 		border-style: solid;
 		padding: 3rem;
 		padding-#{$pos}: 8rem;

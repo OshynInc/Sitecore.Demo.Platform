@@ -1,6 +1,7 @@
+@use "sass:meta";
 .facet-date-range {
     .from-date, .to-date {
         margin-bottom: 5px;
     }
 }
-@import "../reset/ui-datepicker"
+@include meta.load-css("../reset/ui-datepicker")

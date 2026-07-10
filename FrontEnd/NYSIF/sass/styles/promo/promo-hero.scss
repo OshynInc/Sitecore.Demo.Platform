@@ -1,5 +1,5 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 .promo {
 	&.promo-video {
 		float: none;
@@ -8,15 +8,15 @@
 		overflow-y: hidden;
 		height: 200px;
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			height: 300px;
 		}
 
-		@include respond-to(desktop) {
+		@include mixins.respond-to(desktop) {
 			height: 500px;
 		}
 
-		@include respond-to(desktop-large) {
+		@include mixins.respond-to(desktop-large) {
 			height: 600px;
 		}
 
@@ -46,16 +46,16 @@
 			justify-content: center;
 			margin: 0 auto;
 			padding: 0 15px;
-			max-width: $max-content-width;
+			max-width: vars.$max-content-width;
 			height: 100%;
 			position: relative;
 		}
 
 		.field-herosupertitle {
-			@include proxima-font;
+			@include mixins.proxima-font;
 			font-size: 1em;
 			text-transform: uppercase;
-			color: $promo-hero-video-secondary-text-color;
+			color: vars.$promo-hero-video-secondary-text-color;
 		}
 
 		.field-herotitle {
@@ -63,21 +63,21 @@
 			line-height: 0.9;
 			font-weight: bold;
 			margin-bottom: 0.25em;
-			color: $promo-hero-video-text-color;
+			color: vars.$promo-hero-video-text-color;
 
-			@include respond-to(tablet) {
+			@include mixins.respond-to(tablet) {
 				font-size: 5em;
 			}
 		}
 
 		.field-herolink {
 			a {
-				@include btn-primary;
+				@include mixins.btn-primary;
 				font-size: 1em;
 				min-width: 300px;
 				display: none;
 
-				@include respond-to(tablet) {
+				@include mixins.respond-to(tablet) {
 					display: inline;
 				}
 			}
@@ -87,7 +87,7 @@
 	&.promo-hero {
 		float: none;
 		position: relative;
-		min-height: $hero-height;
+		min-height: vars.$hero-height;
 		overflow-y: hidden;
 		margin-top: 0;
 		margin-bottom: 2em;
@@ -134,7 +134,7 @@
 			justify-content: center;
 			margin: 0 auto;
 			padding: 0 45px;
-			max-width: $max-content-width;
+			max-width: vars.$max-content-width;
 			height: 100%;
 			position: relative;
 		}
@@ -145,7 +145,7 @@
 			display: flex;
 
 			img {
-				@include object-fit;
+				@include mixins.object-fit;
 			}
 		}
 
@@ -153,33 +153,33 @@
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			color: $promo-hero-text-color;
+			color: vars.$promo-hero-text-color;
 			text-align: left;
 		}
 
 		.field-herosupertitle {
-			@include proxima-font;
+			@include mixins.proxima-font;
 			font-size: 1.6rem;
 			margin-bottom: 1em;
 			text-transform: uppercase;
 			letter-spacing: 3px;
-			color: $promo-hero-secondary-text-color;
+			color: vars.$promo-hero-secondary-text-color;
 		}
 
 		.field-herotitle {
-			@include proxima-font(bold);
+			@include mixins.proxima-font(bold);
 			font-size: 5rem;
 			line-height: 1;
-			color: $promo-hero-text-color;
+			color: vars.$promo-hero-text-color;
 
-			@include respond-to(tablet) {
+			@include mixins.respond-to(tablet) {
 				font-size: 8rem;
 			}
 		}
 
 		.field-herolink {
 			a {
-				@include btn-primary;
+				@include mixins.btn-primary;
 				font-size: 1em;
 				min-width: 300px;
 			}
@@ -187,15 +187,15 @@
 	}
 
 	&.image-top .field-heroimage img {
-		@include object-fit(cover, top);
+		@include mixins.object-fit(cover, top);
 	}
 
 	&.image-center .field-heroimage img {
-		@include object-fit(cover, center);
+		@include mixins.object-fit(cover, center);
 	}
 
 	&.image-bottom .field-heroimage img {
-		@include object-fit(cover, bottom);
+		@include mixins.object-fit(cover, bottom);
 	}
 
 	&.hero-large {

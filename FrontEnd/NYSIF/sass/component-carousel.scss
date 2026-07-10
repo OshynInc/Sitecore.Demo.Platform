@@ -1,13 +1,16 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "vars";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 
 .carousel {
 	position: relative;
 	box-sizing: border-box;
 	padding: 0;
 	text-align: center;
-	background: $carousel-bg;
+	background: vars.$carousel-bg;
 	float: none;
 
 	.content {
@@ -19,7 +22,7 @@
 	}
 	.slides {
 		position: relative;
-		@include clearfix;
+		@include mixins.clearfix;
 	}
 
 	.slide {
@@ -36,62 +39,62 @@
 		align-items: center;
 		position: absolute;
 		z-index: 1;
-		top: calc(50% + #{$primary-nav-height/2});
+		top: calc(50% + #{vars.$primary-nav-height/2});
 		transform: translateY(-50%);
 		text-align: left;
 		padding: 0 50px;
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			padding: 0 100px;
 		}
 	}
 
 	.field-slidetext {
-		@include proxima-font(bold);
-		max-width: $max-content-width;
+		@include mixins.proxima-font(bold);
+		max-width: vars.$max-content-width;
 		font-size: 4em;
-		color: $carousel-content;
+		color: vars.$carousel-content;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: $small-margin;
+		margin-bottom: vars.$small-margin;
 		text-align: center;
 
 		p {
 			font-size: unset;
 		}
 
-		@include respond-to(all-mobile) {
+		@include mixins.respond-to(all-mobile) {
 			font-size: 3.5em;
 		}
 	}
 
 	.field-slidelink {
 		a {
-			@include btn-secondary-light;
+			@include mixins.btn-secondary-light;
 		}
 	}
 
 	.field-slideimage {
-		height: $carousel-slide-height;
+		height: vars.$carousel-slide-height;
 		display: flex;
 		overflow-y: hidden;
 
 		img {
-			@include object-fit;
-			height: $carousel-slide-height;
+			@include mixins.object-fit;
+			height: vars.$carousel-slide-height;
 			width: 100%;
 		}
 
 		&.image-top img {
-			@include object-fit(cover, top);
+			@include mixins.object-fit(cover, top);
 		}
 
 		&.image-center img {
-			@include object-fit(cover, center);
+			@include mixins.object-fit(cover, center);
 		}
 
 		&.image-bottom img {
-			@include object-fit(cover, bottom);
+			@include mixins.object-fit(cover, bottom);
 		}
 
 		&:before {
@@ -116,16 +119,16 @@
 			.sxa-bullets,
 			.sxa-numbers {
 				position: relative;
-				color: $carousel-content;
+				color: vars.$carousel-content;
 			}
 
 			.sxa-bullets {
 				font-size: 0;
 				display: block;
-				height: $carousel-bullet-height;
-				width: $carousel-bullet-width;
+				height: vars.$carousel-bullet-height;
+				width: vars.$carousel-bullet-width;
 				margin: 0 4px;
-				background-color: $carousel-content;
+				background-color: vars.$carousel-content;
 				opacity: 0.5;
 
 				&.active {
@@ -138,7 +141,7 @@
 				padding: 5px;
 				opacity: 0.7;
 				&:hover {
-					color: $carousel-nav-active;
+					color: vars.$carousel-nav-active;
 					opacity: 1;
 				}
 				&.active {
@@ -159,7 +162,7 @@
 			transform: translateY(-50%);
 			justify-content: center;
 			z-index: 10;
-			color: $carousel-content;
+			color: vars.$carousel-content;
 		}
 
 		a.next-text {
@@ -168,11 +171,11 @@
 			&:hover,
 			&:active {
 				text-decoration: none;
-				color: $carousel-nav-active;
+				color: vars.$carousel-nav-active;
 			}
 			&:after {
-				content: $fa-var-chevron-right;
-				@include fa-icon();
+				content: variables.$fa-var-chevron-right;
+				@include mixins2.fa-icon();
 				display: block;
 				font-size: 40px;
 			}
@@ -183,11 +186,11 @@
 			&:hover,
 			&:active {
 				text-decoration: none;
-				color: $carousel-nav-active;
+				color: vars.$carousel-nav-active;
 			}
 			&:after {
-				@include fa-icon();
-				content: $fa-var-chevron-left;
+				@include mixins2.fa-icon();
+				content: variables.$fa-var-chevron-left;
 				display: block;
 				font-size: 40px;
 			}
@@ -215,13 +218,13 @@
 }
 
 .home-carousel {
-	$nav-clip-width: $home-carousel-nav-width * $home-carousel-nav-clip-height /
-		$home-carousel-nav-height;
+	$nav-clip-width: vars.$home-carousel-nav-width * vars.$home-carousel-nav-clip-height /
+		vars.$home-carousel-nav-height;
 
 	.field-slideimage {
-		height: $home-carousel-slide-height;
+		height: vars.$home-carousel-slide-height;
 		img {
-			height: $home-carousel-slide-height;
+			height: vars.$home-carousel-slide-height;
 		}
 	}
 	.nav {
@@ -239,9 +242,9 @@
 
 .footer-carousel {
 	.field-slideimage {
-		height: $footer-carousel-slide-height;
+		height: vars.$footer-carousel-slide-height;
 		img {
-			height: $footer-carousel-slide-height;
+			height: vars.$footer-carousel-slide-height;
 		}
 	}
 

@@ -68,6 +68,52 @@ function Build-ThemeWithGulp {
   }
 }
 
+$DartSassVersion = "1.77.0"
+
+function Invoke-DartSass {
+  param(
+    [string]$InputFile,
+    [string]$OutputFile,
+    [string[]]$LoadPaths
+  )
+
+  $sassArgs = @(
+    "sass@$DartSassVersion",
+    $InputFile,
+    $OutputFile,
+    "--style=expanded",
+    "--no-source-map"
+  ) + $LoadPaths
+
+  $prevEap = $ErrorActionPreference
+  $prevNativePref = $null
+  if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
+    $prevNativePref = $PSNativeCommandUseErrorActionPreference
+    $PSNativeCommandUseErrorActionPreference = $false
+  }
+  $ErrorActionPreference = "Continue"
+  $sassOutput = @()
+  try {
+    $sassOutput = & npx --yes @sassArgs 2>&1
+    $sassExit = $LASTEXITCODE
+  }
+  finally {
+    $ErrorActionPreference = $prevEap
+    if ($null -ne $prevNativePref) {
+      $PSNativeCommandUseErrorActionPreference = $prevNativePref
+    }
+  }
+
+  if ($sassExit -ne 0) {
+    $message = ($sassOutput | Out-String).Trim()
+    if ($message) {
+      Write-Warning $message
+    }
+  }
+
+  return $sassExit
+}
+
 function Build-ThemeWithDartSass {
   param([string]$ThemeRoot)
 
@@ -114,35 +160,22 @@ function Build-ThemeWithDartSass {
   }
 
   $cssParts = New-Object System.Collections.Generic.List[string]
+  $failedFiles = New-Object System.Collections.Generic.List[string]
   foreach ($scssFile in ($scssFiles | Sort-Object FullName -Unique)) {
     $tempCss = [System.IO.Path]::ChangeExtension([System.IO.Path]::GetTempFileName(), ".css")
-    # NYSIF SCSS still uses @import; silence that deprecation and avoid treating sass stderr as a
-    # terminating error when up.ps1 runs with $ErrorActionPreference = Stop (common on Windows PS 5.1).
-    $sassArgs = @("sass", $scssFile.FullName, $tempCss, "--silence-deprecation=import") + $loadPaths
-    $prevEap = $ErrorActionPreference
-    $prevNativePref = $null
-    if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
-      $prevNativePref = $PSNativeCommandUseErrorActionPreference
-      $PSNativeCommandUseErrorActionPreference = $false
-    }
-    $ErrorActionPreference = "Continue"
-    try {
-      & npx --yes @sassArgs 2>&1 | Out-Null
-      $sassExit = $LASTEXITCODE
-    }
-    finally {
-      $ErrorActionPreference = $prevEap
-      if ($null -ne $prevNativePref) {
-        $PSNativeCommandUseErrorActionPreference = $prevNativePref
-      }
-    }
+    $sassExit = Invoke-DartSass -InputFile $scssFile.FullName -OutputFile $tempCss -LoadPaths $loadPaths
     if ($sassExit -ne 0) {
-      Write-Warning "Skipping $($scssFile.Name) (sass compile failed)"
+      Write-Warning "Sass compile failed: $($scssFile.Name)"
+      $failedFiles.Add($scssFile.Name) | Out-Null
       Remove-Item $tempCss -ErrorAction SilentlyContinue
       continue
     }
     $cssParts.Add([IO.File]::ReadAllText($tempCss))
     Remove-Item $tempCss -ErrorAction SilentlyContinue
+  }
+
+  if ($failedFiles.Count -gt 0) {
+    throw "Sass compile failed for: $($failedFiles -join ', ')"
   }
 
   [IO.File]::WriteAllText($cssOut, ($cssParts -join "`n"))

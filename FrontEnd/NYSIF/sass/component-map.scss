@@ -1,11 +1,12 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
 .map {
 	overflow: hidden;
 	position: relative;
-	background: $map-bg;
+	background: vars.$map-bg;
 	> .component-content {
-		@include border-basic();
+		@include mixins.border-basic();
 	}
 	.map-canvas {
 		position: relative;
@@ -24,5 +25,5 @@
 		height: 100%;
 		box-sizing: border-box;
 	}
-	@import "variants/map/*";
+	@include meta.load-css("variants/map");
 }

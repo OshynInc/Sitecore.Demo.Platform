@@ -1,19 +1,19 @@
-@import "vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "vars";
+@use "../../abstracts/mixins";
+@use "../../base/fontawesome/font-awesome-mix-var";
 //Drop Down Navigation Common Part
 .navigation.navigation-main {
 	.component-content > nav {
 		position: relative;
 		ul {
-			@include clearfix();
+			@include mixins.clearfix();
 		}
 	}
 	.rel-level1 {
 		float: left;
 		&.active {
 			> .navigation-title > a {
-				border-color: $nav-border-root;
+				border-color: vars.$nav-border-root;
 			}
 		}
 		> .navigation-title > a {
@@ -38,11 +38,11 @@
 			z-index: 10;
 			position: absolute;
 			top: 100%;
-			background: $nav-bg-submenu;
+			background: vars.$nav-bg-submenu;
 			margin-left: 0;
 			margin-top: -$borderSize;
-			border: 1px solid $nav-submenu-item-border;
-			border-bottom: 4px solid $nav-submenu-item-border;
+			border: 1px solid vars.$nav-submenu-item-border;
+			border-bottom: 4px solid vars.$nav-submenu-item-border;
 		}
 		&.show {
 			> a {
@@ -63,11 +63,11 @@
 			> span {
 				display: block;
 				padding: 10px 20px;
-				color: $text-white;
+				color: vars.$text-white;
 			}
 		}
 		&.submenu.active {
-			border-color: $menu-active-color;
+			border-color: vars.$menu-active-color;
 		}
 	}
 	.rel-level2 {
@@ -78,11 +78,11 @@
 		div > a {
 			display: block;
 			font-weight: normal;
-			font-size: $navigation-font-basic;
+			font-size: vars.$navigation-font-basic;
 			text-align: left;
 			&:hover,
 			&:focus {
-				color: $nav-color-submenu;
+				color: vars.$nav-color-submenu;
 				text-decoration: none;
 				font-weight: 900;
 			}
@@ -129,7 +129,7 @@
 		.rel-level2 {
 			float: left;
 			padding: 10px;
-			@include border-basic(right, $nav-submenu-item-border, 1px);
+			@include mixins.border-basic(right, vars.$nav-submenu-item-border, 1px);
 			flex-grow: 1;
 			flex-basis: 23%;
 		}

@@ -1,8 +1,8 @@
-@import "abstracts/vars-nysif";
-@import "layout/container";
-@import "layout/header";
-@import "layout/footer";
-@import "base/buttons";
+@use "abstracts/vars-nysif";
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+@use "base/buttons";
 
 * {
 	box-sizing: border-box;
@@ -14,9 +14,9 @@ html {
 }
 
 body {
-	font-family: $nysif-font-stack;
-	background: $nysif-light-bg;
-	color: $nysif-text-dark;
+	font-family: vars-nysif.$nysif-font-stack;
+	background: vars-nysif.$nysif-light-bg;
+	color: vars-nysif.$nysif-text-dark;
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 }
@@ -35,32 +35,32 @@ img {
 .nysif-band-dark,
 .row-dark > .component-content,
 .row-dark {
-	background: $nysif-dark-bg;
-	color: $nysif-text-on-dark;
+	background: vars-nysif.$nysif-dark-bg;
+	color: vars-nysif.$nysif-text-on-dark;
 }
 
 .nysif-band-light,
 .row-light > .component-content,
 .row-light {
-	background: $nysif-light-surface;
-	color: $nysif-text-dark;
+	background: vars-nysif.$nysif-light-surface;
+	color: vars-nysif.$nysif-text-dark;
 }
 
 .nysif-band-gray,
 .row-gray > .component-content,
 .row-gray {
-	background: $nysif-light-bg;
-	color: $nysif-text-dark;
+	background: vars-nysif.$nysif-light-bg;
+	color: vars-nysif.$nysif-text-dark;
 }
 
 .dark {
-	background: $nysif-dark-bg;
-	color: $nysif-text-on-dark;
+	background: vars-nysif.$nysif-dark-bg;
+	color: vars-nysif.$nysif-text-on-dark;
 }
 
 .light {
-	background: $nysif-light-surface;
-	color: $nysif-text-dark;
+	background: vars-nysif.$nysif-light-surface;
+	color: vars-nysif.$nysif-text-dark;
 }
 
 .section-block {
@@ -75,17 +75,17 @@ img {
 .section-heading {
 	font-size: 25px;
 	font-weight: 700;
-	color: $nysif-text-dark;
+	color: vars-nysif.$nysif-text-dark;
 	margin-bottom: 8px;
 }
 
 .section-sub {
 	font-size: 16px;
-	color: $nysif-text-muted;
+	color: vars-nysif.$nysif-text-muted;
 	margin-bottom: 30px;
 }
 
-@media (max-width: $nysif-bp-mobile) {
+@media (max-width: vars-nysif.$nysif-bp-mobile) {
 	.section-block {
 		padding: 36px 0;
 	}

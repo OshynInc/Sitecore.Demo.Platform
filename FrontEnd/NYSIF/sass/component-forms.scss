@@ -1,6 +1,10 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "styles/forms";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 
 .form,
 form {
@@ -25,13 +29,13 @@ form {
 		}
 	}
 	.has-feedback {
-		@include clearfix();
+		@include mixins.clearfix();
 	}
 	.scfRequired {
 		display: none !important;
 	}
 	fieldset {
-		@include border-basic();
+		@include mixins.border-basic();
 		padding: 15px;
 		margin: 10px 0;
 		position: relative;
@@ -72,7 +76,7 @@ form {
 			font-size: 12px;
 			margin-left: 5px;
 			position: absolute;
-			@include border-basic();
+			@include mixins.border-basic();
 			left: 0px;
 			top: -15px;
 			padding: 4px 8px;
@@ -85,7 +89,7 @@ form {
 	input,
 	select,
 	textarea {
-		@include border-basic();
+		@include mixins.border-basic();
 		padding: 2px 4px;
 		max-width: 98%;
 	}
@@ -110,9 +114,9 @@ form {
 	}
 	input[type="submit"],
 	button {
-		@include border-basic();
+		@include mixins.border-basic();
 		border-radius: 0;
-		background: $bg-basic-color;
+		background: vars.$bg-basic-color;
 		cursor: pointer;
 		margin-left: 0;
 	}
@@ -121,7 +125,7 @@ form {
 	textarea,
 	input[type="file"],
 	.form-control {
-		@include border-basic();
+		@include mixins.border-basic();
 		border-radius: 0;
 		display: inline-block;
 		vertical-align: middle;
@@ -129,7 +133,7 @@ form {
 		width: 95%;
 
 		&:focus {
-			border-color: $text-basic;
+			border-color: vars.$text-basic;
 			box-shadow: none;
 		}
 
@@ -150,7 +154,7 @@ form {
 			display: block;
 			width: 16px;
 			height: 16px;
-			background-color: $bg-basic-color;
+			background-color: vars.$bg-basic-color;
 		}
 		& + label:after {
 			content: "";
@@ -172,7 +176,7 @@ form {
 		}
 	}
 	select {
-		@include border-basic();
+		@include mixins.border-basic();
 		max-height: 30px;
 		position: relative;
 		text-indent: 2px;
@@ -197,7 +201,7 @@ form {
 			grid-template-columns: repeat(3, 1fr);
 			gap: 2rem;
 
-			@include respond-to(mobile-horizontal) {
+			@include mixins.respond-to(mobile-horizontal) {
 				grid-template-columns: repeat(2, 1fr);
 			}
 
@@ -216,8 +220,8 @@ form {
 		}
 
 		.col-right > label {
-			@include border-basic;
-			@include proxima-font();
+			@include mixins.border-basic;
+			@include mixins.proxima-font();
 			display: inline-block;
 			vertical-align: top;
 			font-size: 2rem;
@@ -240,18 +244,18 @@ form {
 				display: block;
 				width: unset;
 				height: unset;
-				font-family: $demo-icons;
+				font-family: vars.$demo-icons;
 				font-weight: normal;
 				font-size: 84px;
 				line-height: 1;
 				margin-bottom: 1.6rem;
-				color: $primary-color;
+				color: vars.$primary-color;
 				background-color: transparent;
 			}
 		}
 
 		.col-right > input[type="radio"]:checked + label {
-			background: $primary-color;
+			background: vars.$primary-color;
 			color: white;
 
 			&:before {
@@ -264,7 +268,7 @@ form {
 		}
 
 		h3.question-title {
-			@include proxima-font(bold);
+			@include mixins.proxima-font(bold);
 			font-size: 3.2rem;
 			padding: 0;
 			margin: 0.5em 0 2em;
@@ -277,12 +281,12 @@ form {
 			flex-direction: column;
 			gap: 2rem;
 
-			@include respond-to(desktop) {
+			@include mixins.respond-to(desktop) {
 				flex-direction: row;
 			}
 		}
 
-		@include respond-to(desktop) {
+		@include mixins.respond-to(desktop) {
 			.col-left {
 				flex-basis: 33%;
 			}
@@ -295,62 +299,62 @@ form {
 		// Finders shared
 		label.n-a:before,
 		label.other:before {
-			content: $icon-dont-know;
+			content: vars.$icon-dont-know;
 		}
 
 		// Content finder page 1, interest
 		label.connected-home:before {
-			content: $icon-connected-home;
+			content: vars.$icon-connected-home;
 		}
 		label.child-safety:before {
-			content: $icon-child-safety;
+			content: vars.$icon-child-safety;
 		}
 		label.exercise:before {
-			content: $icon-Aerobics;
+			content: vars.$icon-Aerobics;
 			font-size: 72px;
 			line-height: 84px;
 		}
 		label.mental-health:before {
-			content: $icon-Yoga;
+			content: vars.$icon-Yoga;
 			font-size: 64px;
 			line-height: 84px;
 		}
 		label.nutrition:before {
-			content: $icon-kitchen;
+			content: vars.$icon-kitchen;
 		}
 
 		// Content finder page 2, stage of life
 		label.young-professional:before {
-			@include fa-icon();
-			content: $fa-var-black-tie;
+			@include mixins2.fa-icon();
+			content: variables.$fa-var-black-tie;
 			display: block;
 			font-size: 78px;
 			line-height: 84px;
 		}
 		label.family-kids:before {
-			@include fa-icon();
-			content: $fa-var-users;
+			@include mixins2.fa-icon();
+			content: variables.$fa-var-users;
 			display: block;
 			font-size: 72px;
 			line-height: 84px;
 		}
 		label.newlywed:before {
-			@include fa-icon();
-			content: $fa-var-diamond;
+			@include mixins2.fa-icon();
+			content: variables.$fa-var-diamond;
 			display: block;
 			font-size: 72px;
 			line-height: 84px;
 		}
 		label.empty-nester:before {
-			@include fa-icon();
-			content: $fa-var-user;
+			@include mixins2.fa-icon();
+			content: variables.$fa-var-user;
 			display: block;
 			font-size: 78px;
 			line-height: 84px;
 		}
 		label.retired:before {
-			@include fa-icon();
-			content: $fa-var-suitcase;
+			@include mixins2.fa-icon();
+			content: variables.$fa-var-suitcase;
 			display: block;
 			font-size: 72px;
 			line-height: 84px;
@@ -358,58 +362,58 @@ form {
 
 		// Content finder page 3, product interest
 		label.appliances:before {
-			content: $icon-appliances;
+			content: vars.$icon-appliances;
 		}
 		label.cameras:before {
-			content: $icon-cameras;
+			content: vars.$icon-cameras;
 		}
 		label.desktops-laptops:before {
-			content: $icon-desktops-laptops;
+			content: vars.$icon-desktops-laptops;
 		}
 		label.fitness-tech:before {
-			content: $icon-fitness-tech;
+			content: vars.$icon-fitness-tech;
 		}
 		label.gaming:before {
-			content: $icon-gaming;
+			content: vars.$icon-gaming;
 		}
 		label.phones-tablets:before {
-			content: $icon-phones-tablets;
+			content: vars.$icon-phones-tablets;
 		}
 		label.tv-audio:before {
-			content: $icon-tv-audio;
+			content: vars.$icon-tv-audio;
 		}
 
 		// Trainer finder page 1, exercise
 		label.aerobics:before {
-			content: $icon-Aerobics;
+			content: vars.$icon-Aerobics;
 		}
 		label.cardio:before {
-			content: $icon-fitness-tech;
+			content: vars.$icon-fitness-tech;
 		}
 		label.strength:before {
-			content: $icon-Strength;
+			content: vars.$icon-Strength;
 		}
 		label.weight-lifting {
 			overflow: hidden;
 		}
 		label.weight-lifting:before {
-			content: $icon-Weight-Lifting;
+			content: vars.$icon-Weight-Lifting;
 			font-size: 51px;
 			line-height: 84px;
 		}
 		label.yoga:before {
-			content: $icon-Yoga;
+			content: vars.$icon-Yoga;
 		}
 
 		// Trainer finder page 2, days
 		label.one-two-days:before {
-			content: $icon-2Days;
+			content: vars.$icon-2Days;
 		}
 		label.three-four-days:before {
-			content: $icon-4Days;
+			content: vars.$icon-4Days;
 		}
 		label.five-or-more:before {
-			content: $icon-days;
+			content: vars.$icon-days;
 		}
 
 		// Trainer finder page 3, intensity
@@ -417,7 +421,7 @@ form {
 			overflow: hidden;
 		}
 		label.low:before {
-			content: $icon-Low;
+			content: vars.$icon-Low;
 			font-size: 52px;
 			line-height: 84px;
 		}
@@ -425,7 +429,7 @@ form {
 			overflow: hidden;
 		}
 		label.medium:before {
-			content: $icon-Medium;
+			content: vars.$icon-Medium;
 			font-size: 52px;
 			line-height: 84px;
 		}
@@ -433,7 +437,7 @@ form {
 			overflow: hidden;
 		}
 		label.high:before {
-			content: $icon-High;
+			content: vars.$icon-High;
 			font-size: 52px;
 			line-height: 84px;
 		}
@@ -443,7 +447,7 @@ form {
 			line-height: 1.4;
 			font-weight: normal;
 			margin: 0 0 1.5em;
-			color: $text-basic;
+			color: vars.$text-basic;
 
 			&:first-child {
 				margin-top: 0;
@@ -453,7 +457,7 @@ form {
 		.help-block-subtext {
 			display: block;
 			font-size: 1.4rem;
-			color: $primary-color;
+			color: vars.$primary-color;
 		}
 	}
 }
@@ -470,7 +474,7 @@ form {
 	.btn-next,
 	.btn-previous {
 		position: relative;
-		@include btn-primary;
+		@include mixins.btn-primary;
 		transform: translateY(50%);
 		min-width: 200px;
 	}
@@ -480,12 +484,12 @@ form {
 	padding: 0;
 
 	> .component-content {
-		background: $primary-color;
+		background: vars.$primary-color;
 		width: 100%;
 		padding: 5rem;
 		border: 0px solid transparent;
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			width: 50%;
 			padding: 10rem;
 		}
@@ -496,8 +500,8 @@ form {
 		h4,
 		h5,
 		h6 {
-			@include proxima-font(bold);
-			color: $on-primary;
+			@include mixins.proxima-font(bold);
+			color: vars.$on-primary;
 			line-height: 1.4;
 		}
 
@@ -507,7 +511,7 @@ form {
 		}
 
 		p {
-			color: $on-primary;
+			color: vars.$on-primary;
 			font-size: 1.6rem;
 			text-transform: uppercase;
 			letter-spacing: 2px;
@@ -519,10 +523,10 @@ form {
 
 		img {
 			width: 100%;
-			@include object-fit;
+			@include mixins.object-fit;
 		}
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -534,15 +538,15 @@ form {
 	}
 
 	&.image-top .field-bgimage img {
-		@include object-fit(cover, top);
+		@include mixins.object-fit(cover, top);
 	}
 
 	&.image-center .field-bgimage img {
-		@include object-fit(cover, center);
+		@include mixins.object-fit(cover, center);
 	}
 
 	&.image-bottom .field-bgimage img {
-		@include object-fit(cover, bottom);
+		@include mixins.object-fit(cover, bottom);
 	}
 
 	form {
@@ -551,7 +555,7 @@ form {
 		margin: auto;
 		z-index: 2;
 
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			max-width: 660px;
 			margin: auto;
 		}
@@ -589,15 +593,15 @@ form {
 			height: 42px;
 			background-color: transparent !important;
 			box-shadow: none !important;
-			color: $on-primary;
+			color: vars.$on-primary;
 			font-size: 1.6rem;
-			border: 1px solid $on-primary;
+			border: 1px solid vars.$on-primary;
 		}
 
 		input[type="submit"] {
-			@include btn-primary-light();
+			@include mixins.btn-primary-light();
 
-			@include respond-to(tablet) {
+			@include mixins.respond-to(tablet) {
 			}
 		}
 
@@ -646,4 +650,3 @@ form {
 	}
 }
 
-@import "styles/forms/*";

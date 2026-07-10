@@ -1,3 +1,4 @@
+@use "sass:meta";
 .load-more {
-    @import "../reset/inputs";
+    @include meta.load-css("../reset/inputs");
 }

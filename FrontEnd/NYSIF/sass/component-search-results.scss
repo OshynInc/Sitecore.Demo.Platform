@@ -1,8 +1,9 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
 
 .search-results {
-	@import "base/reset/inputs";
+	@include meta.load-css("base/reset/inputs");
 
 	.search-result-list {
 		padding-top: 5px;
@@ -11,14 +12,14 @@
 		h2,
 		h3,
 		h4 {
-			@include proxima-font(bold);
+			@include mixins.proxima-font(bold);
 		}
 	}
 
 	&.detail-search-results {
 		.search-result-list {
 			> li {
-				@include border-basic();
+				@include mixins.border-basic();
 				padding: 20px 20px 20px 0;
 				margin-bottom: 20px;
 				display: grid;
@@ -44,7 +45,7 @@
 					font-size: 1.4rem;
 					text-transform: uppercase;
 					letter-spacing: 2px;
-					color: $text-passive;
+					color: vars.$text-passive;
 					margin-bottom: 5px;
 				}
 
@@ -53,13 +54,13 @@
 					font-weight: bold;
 
 					a {
-						color: $search-title-color;
+						color: vars.$search-title-color;
 					}
 				}
 
 				.summary {
 					margin-top: 15px;
-					color: $text-excerpt;
+					color: vars.$text-excerpt;
 					line-height: 1.4;
 				}
 			}
@@ -99,7 +100,7 @@
 		&:after {
 			content: "";
 			display: block;
-			@include loading-gif();
+			@include mixins.loading-gif();
 			background-size: 50% 50%;
 			height: 100px;
 		}

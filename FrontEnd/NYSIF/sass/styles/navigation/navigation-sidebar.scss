@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .navigation.navigation-sidebar {
     a {
         text-decoration: none;
@@ -17,8 +17,8 @@
                 }
             }
             >ul {
-                margin-left: $small-margin;
-                margin-top: $extrasmall-margin;
+                margin-left: vars.$small-margin;
+                margin-top: vars.$extrasmall-margin;
             }
         }
         .rel-level2 {

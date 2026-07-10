@@ -1,9 +1,9 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
+@use "../../base/fontawesome/font-awesome-mix-var";
 .navigation.navigation-fat {
-    background: $bg-basic-color;
-    @include border-basic();
+    background: vars.$bg-basic-color;
+    @include mixins.border-basic();
     a {
         text-decoration: none;
     }
@@ -13,7 +13,7 @@
         overflow: hidden;
     }
     .rel-level1 {
-        margin: $small-margin;
+        margin: vars.$small-margin;
         padding: 0;
         display: inline-block;
         vertical-align: top;
@@ -30,14 +30,14 @@
             }
         }
         >.navigation-title>a {
-            @include border-basic(top, $border-basic-color, 2px);
+            @include mixins.border-basic(top, vars.$border-basic-color, 2px);
             border-bottom: 0;
-            background: $nav-bg-root;
+            background: vars.$nav-bg-root;
             padding: 5px 10px;
             display: block;
             width: auto;
             &:hover {
-                border-color: $menu-hover-color;
+                border-color: vars.$menu-hover-color;
             }
         }
         >ul {
@@ -45,7 +45,7 @@
         }
     }
     .rel-level2 {
-        padding-left: $small-margin;
+        padding-left: vars.$small-margin;
         display: block;
     }
 }

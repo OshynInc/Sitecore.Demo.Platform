@@ -1,7 +1,8 @@
-@import "mixins";
-@import "vars";
+@use "sass:meta";
+@use "mixins";
+@use "vars";
 .field-editor {
-    background: $field-editor-bg;
+    background: vars.$field-editor-bg;
     overflow: hidden;
     .field-table {
         table {
@@ -18,19 +19,19 @@
             }
         }
         th {
-            color: $field-editor-text-header;
+            color: vars.$field-editor-text-header;
             padding: 5px 10px;
             text-align: left;
             vertical-align: middle;
         }
         td {
-            color: $field-editor-text;
+            color: vars.$field-editor-text;
             padding: 5px 10px;
             text-align: left;
             vertical-align: middle;
         }
     }
-    @import "variants/field-editor/*";
+    @include meta.load-css("variants/field-editor");
 }
 .field-editor.position-right {
     .field-table {

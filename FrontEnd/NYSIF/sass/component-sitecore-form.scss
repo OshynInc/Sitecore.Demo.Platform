@@ -1,19 +1,20 @@
-@import "vars";
-@import "mixins";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
 .sitecore-form {
-	@import "base/reset/inputs";
+	@include meta.load-css("base/reset/inputs");
 	> .component-content {
 		padding: 15px;
 		border: 1px solid transparent;
-		background-color: $form-bg;
-		color: $form-color;
+		background-color: vars.$form-bg;
+		color: vars.$form-color;
 	}
 	form {
-		color: $form-color;
+		color: vars.$form-color;
 		> div {
 			label {
 				font-family: inherit;
-				padding-right: $default-padding;
+				padding-right: vars.$default-padding;
 			}
 			input {
 				font-family: inherit;
@@ -21,31 +22,31 @@
 			label + input {
 			}
 			label + textarea {
-				margin-top: $default-padding;
+				margin-top: vars.$default-padding;
 			}
 			textarea,
 			select {
-				margin-top: $default-padding;
+				margin-top: vars.$default-padding;
 			}
 			.field-validation-error {
-				color: $text-red;
+				color: vars.$text-red;
 			}
 		}
 
 		input[type="submit"],
 		button {
-			@include btn-primary;
+			@include mixins.btn-primary;
 		}
 
 		[data-sc-field-name="Password Confirmation"] {
-			margin-right: $default-padding;
+			margin-right: vars.$default-padding;
 		}
 	}
-	@import "styles/forms/*";
+	@include meta.load-css("styles/forms");
 }
 
 form {
 	input[type="submit"] {
-		@include btn-primary();
+		@include mixins.btn-primary();
 	}
 }

@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 %cover-bg {
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,27 +12,27 @@
 .fix-background {
     >.component-content {
         @extend %cover-bg;
-        @include fixed-bg(left top);
+        @include mixins.fixed-bg(left top);
     }
 }
 .parallax-background {
     >.component-content {
         @extend %cover-bg;
-        @include fixed-bg(50% 0);
-        @include respond-to(mobile-large) {
+        @include mixins.fixed-bg(50% 0);
+        @include mixins.respond-to(mobile-large) {
             background-attachment: scroll;
         }
     }
 }
 .container-gray-background {
-    background: $bg-light-gray;
+    background: vars.$bg-light-gray;
 }
 .container-clean-background {
-    background: $bg-basic-color;
+    background: vars.$bg-basic-color;
 }
 .container-dark-background {
-    background: $bg-black-active;
+    background: vars.$bg-black-active;
 }
 .container-color-background {
-    background: $bg-blue;
+    background: vars.$bg-blue;
 }

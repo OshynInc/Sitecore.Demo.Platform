@@ -1,5 +1,6 @@
-@import "mixins";
-@import "vars";
+@use "sass:color";
+@use "mixins";
+@use "vars";
 
 /*
  * Off Canvas Sidebar
@@ -48,38 +49,38 @@ html.show-sidebar-right {
 
     .btn-group-vertical {
         button {
-            background-color: $sidebar-panel-bg !important;
-            color: $sidebar-panel;
+            background-color: vars.$sidebar-panel-bg !important;
+            color: vars.$sidebar-panel;
             text-align: left;
 
             &:hover {
-                background-color: lighten($sidebar-panel-bg, 10) !important;
+                background-color: color.adjust(vars.$sidebar-panel-bg, $lightness: 10) !important;
             }
 
             &.refresh-sidebar {
-                background-color: $sidebar-refresh-btn-bg !important;
-                color: $sidebar-refresh-btn;
+                background-color: vars.$sidebar-refresh-btn-bg !important;
+                color: vars.$sidebar-refresh-btn;
 
                 &:hover {
-                    background-color: lighten($sidebar-refresh-btn-bg, 10) !important;
+                    background-color: color.adjust(vars.$sidebar-refresh-btn-bg, $lightness: 10) !important;
                 }
             }
 
             &.end-visit {
-                background-color: $sidebar-end-btn-bg !important;
-                color: $sidebar-end-btn;
+                background-color: vars.$sidebar-end-btn-bg !important;
+                color: vars.$sidebar-end-btn;
 
                 &:hover {
-                    background-color: lighten($sidebar-end-btn-bg, 10) !important;
+                    background-color: color.adjust(vars.$sidebar-end-btn-bg, $lightness: 10) !important;
                 }
             }
 
             &.new-contact {
-                background-color: $sidebar-contact-btn-bg !important;
-                color: $sidebar-end-btn;
+                background-color: vars.$sidebar-contact-btn-bg !important;
+                color: vars.$sidebar-end-btn;
 
                 &:hover {
-                    background-color: lighten($sidebar-contact-btn-bg, 10) !important;
+                    background-color: color.adjust(vars.$sidebar-contact-btn-bg, $lightness: 10) !important;
                 }
             }
 
@@ -276,7 +277,7 @@ html.show-sidebar-right {
 }
 .sidebar .nav li > a {
     padding-left: 0;
-    color: $bg-slate;
+    color: vars.$bg-slate;
     background-color: transparent;
     font-weight: normal;
 }
@@ -320,7 +321,7 @@ html.show-sidebar-right {
 }
 .panel-body,
 .panel-heading {
-    color: $bg-slate;
+    color: vars.$bg-slate;
 }
 .panel-heading[role="tab"] .panel-title {
     transition: all 0s ease;
@@ -369,22 +370,22 @@ html.show-sidebar-right {
     color: #4d5668;
 }
 .panel-secondary {
-    border-color: $bg-slate;
+    border-color: vars.$bg-slate;
 }
 .panel-secondary > .panel-heading {
     color: #fff;
-    background-color: $bg-slate;
-    border-color: $bg-slate;
+    background-color: vars.$bg-slate;
+    border-color: vars.$bg-slate;
 }
 .panel-secondary > .panel-heading + .panel-collapse > .panel-body {
-    border-top-color: $bg-slate;
+    border-top-color: vars.$bg-slate;
 }
 .panel-secondary > .panel-heading .badge {
-    color: $bg-slate;
+    color: vars.$bg-slate;
     background-color: #fff;
 }
 .panel-secondary > .panel-footer + .panel-collapse > .panel-body {
-    border-bottom-color: $bg-slate;
+    border-bottom-color: vars.$bg-slate;
 }
 .panel-dark {
     border-color: #2e384e;
@@ -486,12 +487,12 @@ html.show-sidebar-right {
     border: 0;
 
     .media-title {
-        color: $sidebar-text;
+        color: vars.$sidebar-text;
     }
 
     .panel-body .fa,
     .panel-body .fas {
-        color: $sidebar-icon;
+        color: vars.$sidebar-icon;
     }
 
     > .panel-heading {
@@ -499,8 +500,8 @@ html.show-sidebar-right {
         border-color: transparent;
 
         a {
-            background-color: $sidebar-panel-bg;
-            color: $sidebar-panel;
+            background-color: vars.$sidebar-panel-bg;
+            color: vars.$sidebar-panel;
             padding: 20px 10px;
             display: block;
             cursor: pointer;
@@ -510,7 +511,7 @@ html.show-sidebar-right {
         }
 
         .badge {
-            color: $sidebar-panel-bg;
+            color: vars.$sidebar-panel-bg;
         }
     }
 }

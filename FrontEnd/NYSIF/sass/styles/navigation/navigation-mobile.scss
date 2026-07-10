@@ -1,6 +1,6 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
+@use "../../base/fontawesome/font-awesome-mix-var";
 .navigation.navigation-mobile {
     padding-top: 20px;
     padding-left: 30px;
@@ -12,7 +12,7 @@
     .rel-level1 {
         cursor: pointer;
         margin: 0;
-        background: $bg-basic-color;
+        background: vars.$bg-basic-color;
         >ul {
             li {
                 position: relative;
@@ -29,7 +29,7 @@
             }
             padding-left: 25px;
             display: none;
-            background: $nav-bg-submenu;
+            background: vars.$nav-bg-submenu;
         }
         &.submenu {
             &.active {
@@ -60,7 +60,7 @@
             }
         }
         >.navigation-title {
-            border-bottom: 1px solid $border-basic-color;
+            border-bottom: 1px solid vars.$border-basic-color;
             margin: 0;
             &:last-child {
                 border-bottom: none;
@@ -70,7 +70,7 @@
             padding: 10px;
             >a {
                 text-decoration: none;
-                color: $text-basic;
+                color: vars.$text-basic;
                 display: inline;
             }
         }

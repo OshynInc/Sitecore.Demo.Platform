@@ -1,11 +1,11 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 .link-list {
 	&.nysif-notice-list,
 	&.nysif-sidebar-links {
 		float: none;
-		background: $nysif-light-surface;
-		border: 1px solid $nysif-light-border;
+		background: vars-nysif.$nysif-light-surface;
+		border: 1px solid vars-nysif.$nysif-light-border;
 		border-radius: 10px;
 		padding: 24px 22px;
 		margin-bottom: 18px;
@@ -18,7 +18,7 @@
 		.field-title {
 			font-size: 17px;
 			font-weight: 700;
-			color: $nysif-text-dark;
+			color: vars-nysif.$nysif-text-dark;
 			margin-bottom: 16px;
 		}
 
@@ -30,7 +30,7 @@
 
 		li {
 			padding: 10px 0;
-			border-bottom: 1px solid $nysif-light-border;
+			border-bottom: 1px solid vars-nysif.$nysif-light-border;
 
 			&:last-child {
 				border-bottom: none;
@@ -43,7 +43,7 @@
 		}
 
 		a {
-			color: $nysif-accent-blue;
+			color: vars-nysif.$nysif-accent-blue;
 			font-size: 14.5px;
 			font-weight: 600;
 			text-decoration: none;
@@ -65,8 +65,8 @@
 				width: 20px;
 				height: 20px;
 				border-radius: 50%;
-				background: $nysif-alert-red;
-				color: $nysif-text-on-dark;
+				background: vars-nysif.$nysif-alert-red;
+				color: vars-nysif.$nysif-text-on-dark;
 				font-size: 12px;
 				font-weight: 700;
 				flex-shrink: 0;

@@ -1,15 +1,15 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 .twitter {
     h1, h2, h3, h4, h5, h6 {
         padding-bottom: 6px;
-        @include border-basic(bottom);
+        @include mixins.border-basic(bottom);
     }
     .twitter-follow-button {
         margin: 10px 0 0;
     }
     .tweet-item {
-		@include border-basic(top, $border-basic-color);
+		@include mixins.border-basic(top, vars.$border-basic-color);
         padding: 10px 10px 10px 0px;
         margin-left: 10px;
         overflow: hidden;

@@ -1,6 +1,7 @@
-@import "vars";
-@import "mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "vars";
+@use "mixins";
+@use "base/fontawesome/font-awesome-mix-var";
 main {
 	.resource-hero {
 		.field-supertitle {
@@ -27,7 +28,7 @@ main {
 				display: inline-block;
 				font-size: 0.9em;
 				a {
-					font-size: $font-basic !important;
+					font-size: vars.$font-basic !important;
 				}
 			}
 			.component-content {
@@ -94,7 +95,7 @@ main {
 			}
 		}
 		.search-results {
-			@import "base/reset/inputs";
+			@include meta.load-css("base/reset/inputs");
 			.search-result-list {
 				padding-top: 5px;
 				margin-left: 0px;
@@ -102,7 +103,7 @@ main {
 			&.resource-search-results {
 				.search-result-list {
 					> li {
-						@include border-basic();
+						@include mixins.border-basic();
 						padding: 0px 20px 0px 0;
 						margin-bottom: 20px;
 						margin-left: 0px;
@@ -133,7 +134,7 @@ main {
 							padding: 20px 0px 20px 0;
 							.field-resourcetype {
 								font-size: 14px;
-								color: $text-red;
+								color: vars.$text-red;
 								text-transform: uppercase;
 								letter-spacing: 2px;
 							}
@@ -142,19 +143,19 @@ main {
 							font-size: 0.85em;
 							text-transform: uppercase;
 							letter-spacing: 2px;
-							color: $text-passive;
+							color: vars.$text-passive;
 							margin-bottom: 5px;
 						}
 						.title {
 							font-size: 1.6em;
 							font-weight: bold;
 							a {
-								color: $search-title-color;
+								color: vars.$search-title-color;
 							}
 						}
 						.summary {
 							margin-top: 15px;
-							color: $text-excerpt;
+							color: vars.$text-excerpt;
 						}
 					}
 				}
@@ -190,7 +191,7 @@ main {
 				&:after {
 					content: "";
 					display: block;
-					@include loading-gif();
+					@include mixins.loading-gif();
 					background-size: 50% 50%;
 					height: 100px;
 				}
@@ -243,7 +244,7 @@ main {
 			.search-box-input {
 				height: 50px;
 				box-shadow: none;
-				font-size: $font-normal;
+				font-size: vars.$font-normal;
 			}
 			.search-box-button {
 				height: 50px;
@@ -251,9 +252,9 @@ main {
 		}
 		.facet-component {
 			.facet-heading {
-				font-size: $font-normal;
+				font-size: vars.$font-normal;
 				.clear-filter {
-					font-size: $font-normal;
+					font-size: vars.$font-normal;
 				}
 				.facet-title {
 					font-weight: bold;
@@ -276,37 +277,37 @@ main {
 		}
 	}
 	.resource-list {
-		@include proxima-font;
+		@include mixins.proxima-font;
 		.items {
 			display: flex;
 			flex-wrap: wrap;
 			.item {
 				max-width: 440px;
-				font-size: $font-big;
+				font-size: vars.$font-big;
 				border-bottom: none;
-				color: $text-light;
+				color: vars.$text-light;
 				margin: 20px;
 				padding: 0;
-				border: 1px solid $bg-light-gray;
+				border: 1px solid vars.$bg-light-gray;
 				border-radius: 4px;
 				box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1),
 					0 0 8px 0 rgba(0, 0, 0, 0.06);
-				@include clearfix;
+				@include mixins.clearfix;
 				div.col-text {
 					h3 {
-						color: $on-surface;
+						color: vars.$on-surface;
 						font-size: 1em;
 						margin: 15px;
 					}
 					p {
 						margin: 15px;
-						color: $text-excerpt;
+						color: vars.$text-excerpt;
 						line-height: 29px;
 					}
 					.field-publish-date {
 						font-family: "AvenirNextW05-Medium";
-						font-size: $font-normal;
-						color: $text-passive;
+						font-size: vars.$font-normal;
+						color: vars.$text-passive;
 						margin: 15px;
 						text-transform: uppercase;
 					}
@@ -314,7 +315,7 @@ main {
 						margin: 15px;
 						display: block;
 						width: auto;
-						font-size: $font-basic;
+						font-size: vars.$font-basic;
 						font-weight: 600;
 					}
 				}
@@ -329,24 +330,24 @@ main {
 		}
 	}
 	.resource-content {
-		font-size: $font-big;
+		font-size: vars.$font-big;
 		padding: 0 2em;
 		h1 {
 			font-size: 2.5em;
 		}
 		p {
-			font-size: $font-big;
+			font-size: vars.$font-big;
 		}
-		@include respond-to(tablet) {
+		@include mixins.respond-to(tablet) {
 			padding: 0 2em;
 		}
-		@include respond-to(desktop) {
+		@include mixins.respond-to(desktop) {
 			padding: 0 2em;
 		}
 		.field-resourcetype {
 			font-family: "AvenirNextW05-Medium";
-			font-size: $font-normal;
-			color: $text-red;
+			font-size: vars.$font-normal;
+			color: vars.$text-red;
 			text-transform: uppercase;
 			letter-spacing: 2px;
 		}
@@ -370,7 +371,7 @@ main {
 				}
 				.field-mediacaption {
 					font-style: italic;
-					font-size: $font-basic;
+					font-size: vars.$font-basic;
 				}
 			}
 		}
@@ -378,8 +379,8 @@ main {
 	.resource-leftbar {
 		padding: 2.5em;
 		display: flex;
-		background-color: $bg-light-gray;
-		@include respond-to(mobile-large) {
+		background-color: vars.$bg-light-gray;
+		@include mixins.respond-to(mobile-large) {
 			flex-direction: column;
 			padding: 0.75em;
 		}
@@ -391,14 +392,14 @@ main {
 		}
 		.title {
 			font-family: "AvenirNextW05-Medium";
-			font-size: $font-normal;
-			color: $text-red;
+			font-size: vars.$font-normal;
+			color: vars.$text-red;
 			text-transform: uppercase;
 			letter-spacing: 2px;
 		}
 		.field-title,
 		.field-resourcetype {
-			font-size: $font-basic;
+			font-size: vars.$font-basic;
 			display: inline-block;
 			padding-right: 7px;
 			&:not(:last-child):after {
@@ -408,11 +409,11 @@ main {
 		+ .resource-link {
 			padding: 2.5em;
 			display: flex;
-			background-color: $bg-light-gray;
+			background-color: vars.$bg-light-gray;
 			.component-content {
 				width: auto;
 			}
-			@include respond-to(mobile-large) {
+			@include mixins.respond-to(mobile-large) {
 				flex-direction: column;
 				padding: 0.75em;
 			}

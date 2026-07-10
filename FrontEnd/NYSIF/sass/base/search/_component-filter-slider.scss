@@ -1,11 +1,13 @@
+@use "vars";
+
 .ui-slider {
     position: relative;
     width: 80%;
     margin: 10px auto;
     text-align: left;
     .ui-widget-header {
-        border: 1px solid $search-filter-slider-border-active;
-        background: $search-filter-slider-bg-active;
+        border: 1px solid vars.$search-filter-slider-border-active;
+        background: vars.$search-filter-slider-bg-active;
         font-weight: bold;
     }
     .ui-widget-header a {
@@ -20,33 +22,33 @@
 ----------------------------------*/
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid $search-filter-slider-btn-border;
-    background: $search-filter-slider-btn-bg;
+    border: 1px solid vars.$search-filter-slider-btn-border;
+    background: vars.$search-filter-slider-btn-bg;
     font-weight: normal;
-    color: $search-item-color;
+    color: vars.$search-item-color;
 }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
-    color: $search-item-color;
+    color: vars.$search-item-color;
     text-decoration: none;
 }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    border: 1px solid $search-filter-slider-btn-border;
-    background: $search-filter-slider-btn-bg-active;
+    border: 1px solid vars.$search-filter-slider-btn-border;
+    background: vars.$search-filter-slider-btn-bg-active;
     font-weight: normal;
-    color: $search-item-color-active;
+    color: vars.$search-item-color-active;
 }
 .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited, .ui-state-focus a, .ui-state-focus a:hover, .ui-state-focus a:link, .ui-state-focus a:visited {
-    color: $search-item-color-active;
+    color: vars.$search-item-color-active;
     text-decoration: none;
 }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-    border: 1px solid $search-filter-slider-btn-border;
-    background: $search-filter-slider-btn-bg-active;
+    border: 1px solid vars.$search-filter-slider-btn-border;
+    background: vars.$search-filter-slider-btn-bg-active;
     font-weight: normal;
-    color: $search-item-color-active;
+    color: vars.$search-item-color-active;
 }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-    color: $search-item-color-active;
+    color: vars.$search-item-color-active;
     text-decoration: none;
 }
 .ui-slider .ui-slider-handle {

@@ -1,5 +1,5 @@
-@import "../abstracts/vars-nysif";
-@import "../base/buttons";
+@use "../abstracts/vars-nysif";
+@use "../base/buttons";
 
 .hero {
 	&.nysif-hero-homepage,
@@ -26,7 +26,7 @@
 
 		.field-herosupertitle,
 		.eyebrow {
-			color: $nysif-accent-eyebrow;
+			color: vars-nysif.$nysif-accent-eyebrow;
 			font-size: 13.5px;
 			font-weight: 700;
 			letter-spacing: 2.5px;
@@ -42,14 +42,14 @@
 			font-weight: 700;
 			letter-spacing: -0.3px;
 			margin-bottom: 16px;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 		}
 
 		.field-introduction,
 		.hero-sub {
 			font-size: 18.5px;
 			line-height: 1.55;
-			color: $nysif-text-on-dark-muted;
+			color: vars-nysif.$nysif-text-on-dark-muted;
 			max-width: 760px;
 			margin-bottom: 34px;
 		}
@@ -82,16 +82,16 @@
 		.stat-value {
 			font-size: 30px;
 			font-weight: 800;
-			color: $nysif-text-on-dark;
+			color: vars-nysif.$nysif-text-on-dark;
 			margin-bottom: 8px;
 		}
 
 		.stat-label {
 			font-size: 14.5px;
-			color: $nysif-text-on-dark-label;
+			color: vars-nysif.$nysif-text-on-dark-label;
 		}
 
-		@media (max-width: $nysif-bp-tablet) {
+		@media (max-width: vars-nysif.$nysif-bp-tablet) {
 			flex-direction: column;
 			padding-top: 40px;
 
@@ -109,7 +109,7 @@
 			}
 		}
 
-		@media (max-width: $nysif-bp-mobile) {
+		@media (max-width: vars-nysif.$nysif-bp-mobile) {
 			.field-herotitle,
 			h1 {
 				font-size: 30px;
@@ -126,7 +126,7 @@
 			}
 		}
 
-		@media (max-width: $nysif-bp-small) {
+		@media (max-width: vars-nysif.$nysif-bp-small) {
 			.field-herotitle,
 			h1 {
 				font-size: 26px;

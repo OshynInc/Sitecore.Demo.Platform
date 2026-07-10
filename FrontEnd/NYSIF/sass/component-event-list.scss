@@ -1,38 +1,42 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "mixins";
+@use "vars";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 %eventWrapper {
-    @include clearfix();
-    background: $event-list-item-bg;
+    @include mixins.clearfix();
+    background: vars.$event-list-item-bg;
     display: inline-flex;
     width: 100%;
     align-items: center;
-    color: $event-list-item-color;
+    color: vars.$event-list-item-color;
     flex-flow: row wrap;
 }
 
 .event-list {
-    @import "base/richtext/*";
-    background: $event-list-bg;
+    @include meta.load-css("base/richtext");
+    background: vars.$event-list-bg;
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        @include border-basic(bottom, $event-list-title-border);
+        @include mixins.border-basic(bottom, vars.$event-list-title-border);
     }
     ul {
-        margin: $small-margin 0;
+        margin: vars.$small-margin 0;
     }
     li {
-        @include border-basic();
+        @include mixins.border-basic();
         @extend %eventWrapper;
         margin-left: 0;
         box-sizing: border-box;
         padding: 15px 15px 40px 15px;
         position: relative;
-        margin: $small-margin 0;
+        margin: vars.$small-margin 0;
         >.scLooseFrameZone {
             @extend %eventWrapper;
             >.scEmptyPlaceholder {
@@ -66,7 +70,7 @@
         bottom: 5px;
         padding-left: 15px;
         &:before {
-            @include fa-icon();
+            @include mixins2.fa-icon();
             transform: translateY(-50%);
             position: absolute;
             top: 50%;
@@ -76,25 +80,25 @@
     .event-list-place {
         left: 10px;
         &:before {
-            content: $fa-var-map-marker;
+            content: variables.$fa-var-map-marker;
         }
     }
     .event-list-link {
         right: 10px;
         a {
             font-size: 1em;
-            color: $link-text-color;
+            color: vars.$link-text-color;
             &:hover {
-                color: $link-text-color-active;
+                color: vars.$link-text-color-active;
                 text-decoration: none;
-                border-bottom: 1px solid $link-border;
+                border-bottom: 1px solid vars.$link-border;
             }
         }
         &:before {
-            content: $fa-var-calendar-o;
+            content: variables.$fa-var-calendar-o;
         }
     }
     .scWebEditInput {
-        @include proxima-font();
+        @include mixins.proxima-font();
     }
 }

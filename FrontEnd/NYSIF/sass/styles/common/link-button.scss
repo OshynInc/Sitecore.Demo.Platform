@@ -1,5 +1,6 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "sass:meta";
+@use "../../abstracts/vars" as *;
+@use "../../abstracts/mixins" as *;
 .link-button {
-    @import "../../base/links/*";
+    @include meta.load-css("../../base/links");
 }

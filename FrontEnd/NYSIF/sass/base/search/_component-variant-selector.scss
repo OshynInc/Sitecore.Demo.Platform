@@ -1,6 +1,9 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins" as mixins2;
+@use "../../base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "variables";
+
 .variant-selector {
     &.component {
         margin: 30px 0 0 0;
@@ -15,9 +18,9 @@
         }
     }
     .variant-option {
-        @include fa-icon();
+        @include mixins.fa-icon();
         &:before {
-            content: $fa-var-th;
+            content: variables.$fa-var-th;
             display: block;
             height: 100%;
             font-size: 30px;
@@ -25,22 +28,22 @@
             text-align: center;
         }
         &.active-variant {
-            color: $serach-selector-variant-color-active;
+            color: vars.$serach-selector-variant-color-active;
         }
         &.horizontal {
             &:before {
-                content: $fa-var-th-large;
+                content: variables.$fa-var-th-large;
             }
             &.active-variant {
-                color: $serach-selector-variant-color-active;
+                color: vars.$serach-selector-variant-color-active;
             }
         }
         &.vertical {
             &:before {
-                content: $fa-var-bars;
+                content: variables.$fa-var-bars;
             }
             &.active-variant {
-                color: $serach-selector-variant-color-active;
+                color: vars.$serach-selector-variant-color-active;
             }
         }
     }

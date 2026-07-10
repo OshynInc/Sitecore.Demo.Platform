@@ -1,6 +1,6 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "../../base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
+@use "../../base/fontawesome/font-awesome-mix-var";
 .breadcrumb.triangle-separator {
     .separator {
         @include fa-icon();
@@ -8,7 +8,7 @@
         &:before {
             content: $fa-var-caret-right;
             display: block;
-            font-size: $font-medium;
+            font-size: vars.$font-medium;
         }
     }
 }

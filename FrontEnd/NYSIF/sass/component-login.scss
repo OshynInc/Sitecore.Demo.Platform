@@ -1,8 +1,9 @@
-@import "mixins";
-@import "vars";
+@use "sass:meta";
+@use "mixins";
+@use "vars";
 .login {
-    @import "base/reset/inputs";
-    background-color: $login-bg;
+    @include meta.load-css("base/reset/inputs");
+    background-color: vars.$login-bg;
     table {
         input, label{
             display: inline-block;
@@ -10,7 +11,7 @@
         }
         width: 100%;
         tr, tbody {
-            background-color: $login-bg !important;
+            background-color: vars.$login-bg !important;
         }
         td {
             padding: 5px;

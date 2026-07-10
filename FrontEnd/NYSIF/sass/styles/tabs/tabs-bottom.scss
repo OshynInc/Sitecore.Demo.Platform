@@ -1,5 +1,5 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
 .tabs.tabs-bottom {
     .tabs-container {
         margin: 0;
@@ -9,30 +9,30 @@
         margin-top: -1px;
         li {
             margin-bottom: 0;
-            border-top: 0px solid $border-white;
+            border-top: 0px solid vars.$border-white;
             a {
                 border: none;
             }
             &.active {
                 border-top: none;
-                @include border-basic(bottom, $tab-container-border, 2px);
-                @include border-basic(left);
-                @include border-basic(right);
+                @include mixins.border-basic(bottom, vars.$tab-container-border, 2px);
+                @include mixins.border-basic(left);
+                @include mixins.border-basic(right);
                 a {
                     border: none;
                     position: relative;
                 }
             }
             &:hover {
-                @include border-basic(bottom, $tab-container-border, 2px);
-                background: $tab-heading-active-bg;
+                @include mixins.border-basic(bottom, vars.$tab-container-border, 2px);
+                background: vars.$tab-heading-active-bg;
             }
         }
     }
     .tabs-container {
-        @include border-basic(bottom, $tab-container-border);
+        @include mixins.border-basic(bottom, vars.$tab-container-border);
         border-top: none;
-        background: $tab-container-bg;
+        background: vars.$tab-container-bg;
         margin-bottom: 1px;
     }
 }

@@ -1,21 +1,25 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "mixins" as mixins2;
+@use "vars";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins";
+@use "variables";
+
 %tag-style {
-    color: $tag-color;
+    color: vars.$tag-color;
     position: relative;
     padding-left: 15px;
     margin-right: 10px;
     border-bottom: 1px solid transparent;
     &:hover {
         cursor: pointer;
-        color: $tag-color-active;
-        border-bottom: 1px solid $tag-border-active;
+        color: vars.$tag-color-active;
+        border-bottom: 1px solid vars.$tag-border-active;
         text-decoration: none;
     }
     &:before {
-        content: $fa-var-tag;
-        @include fa-icon();
+        content: variables.$fa-var-tag;
+        @include mixins.fa-icon();
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -28,8 +32,8 @@
             @extend %tag-style;
         }
         >a {
-            color: $tag-color;
-            background: $tag-link-bg;
+            color: vars.$tag-color;
+            background: vars.$tag-link-bg;
             border-radius: 3px 0 0 3px;
             display: inline-block;
             height: 26px;
@@ -39,11 +43,11 @@
             margin: 0 20px 10px 0;
             text-decoration: none;
             -webkit-transition: color .2s;
-            color: $tag-link-color;
+            color: vars.$tag-link-color;
             &:hover {
-                background-color: $tag-link-bg-active;
+                background-color: vars.$tag-link-bg-active;
                 &:after {
-                    border-left: 10px solid $tag-link-bg-active;
+                    border-left: 10px solid vars.$tag-link-bg-active;
                 }
             }
             &:before {
@@ -60,7 +64,7 @@
             &:after {
                 background: transparent;
                 border-bottom: 13px solid transparent;
-                border-left: 10px solid $tag-link-bg;
+                border-left: 10px solid vars.$tag-link-bg;
                 border-top: 13px solid transparent;
                 content: '';
                 position: absolute;
@@ -70,5 +74,5 @@
             }
         }
     }
-    @import "variants/tag-list/*";
+    @include meta.load-css("variants/tag-list");
 }

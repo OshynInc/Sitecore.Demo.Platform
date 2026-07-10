@@ -1,6 +1,10 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "styles/galleria";
+@use "mixins";
+@use "vars";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 .on-page-editor {
     .gallery-inner img {
         max-width: 100%;
@@ -8,7 +12,7 @@
 }
 .gallery {
     .galleria-container {
-        background: $galleria-container-bg;
+        background: vars.$galleria-container-bg;
     }
     #galleria-loader {
         height: 1px!important;
@@ -17,46 +21,46 @@
         border: none;
     }
     .galleria-counter {
-        color: $gallery-counter-color;
-        @include proxima-font();
+        color: vars.$gallery-counter-color;
+        @include mixins.proxima-font();
     }
     .galleria-loader {
         top: 50%;
         left: 50%;
     }
     .galleria-info-text {
-        background-color: $gallery-info-bg;
-        border: 1px solid $gallery-info-border;
+        background-color: vars.$gallery-info-bg;
+        border: 1px solid vars.$gallery-info-border;
     }
     .galleria-info-title {
-        color: $gallery-info-text;
+        color: vars.$gallery-info-text;
         font-size: 12px;
         font-weight: bold;
-        @include proxima-font();
+        @include mixins.proxima-font();
     }
     .galleria-info-description {
         font-size: 12px;
         font-style: italic;
-        @include proxima-font();
-        color: $gallery-info-text;
+        @include mixins.proxima-font();
+        color: vars.$gallery-info-text;
     }
     .galleria-info-close {
         width: 13px;
         height: 12px;
         &:before {
-            content: $fa-var-close;
-            @include fa-icon();
+            content: variables.$fa-var-close;
+            @include mixins2.fa-icon();
             display: block;
             width: 100%;
         }
     }
     .galleria-info-link {
-        color: $gallery-nav;
+        color: vars.$gallery-nav;
         background: none;
-        @include fa-icon();
+        @include mixins2.fa-icon();
         font-size: 18px;
         &:before {
-            content: $fa-var-info-circle;
+            content: variables.$fa-var-info-circle;
         }
     }
     .galleria-image-nav {
@@ -70,24 +74,24 @@
         transform: translateY(-50%);
         height: 30px;
         width: 14px;
-        @include fa-icon();
+        @include mixins2.fa-icon();
         font-size: 28px;
-        color: $gallery-nav;
+        color: vars.$gallery-nav;
     }
     .galleria-image-nav-left {
         &:before {
-            content: $fa-var-chevron-left;
+            content: variables.$fa-var-chevron-left;
         }
         &:hover {
-            color: $gallery-nav-active;
+            color: vars.$gallery-nav-active;
         }
     }
     .galleria-image-nav-right {
         &:before {
-            content: $fa-var-chevron-right;
+            content: variables.$fa-var-chevron-right;
         }
         &:hover {
-            color: $gallery-nav-active;
+            color: vars.$gallery-nav-active;
         }
     }
     .galleria-thumb-nav-left, .galleria-thumb-nav-right {
@@ -99,25 +103,25 @@
         margin: 0 auto;
     }
     .galleria-thumb-nav-right {
-        @include fa-icon();
+        @include mixins2.fa-icon();
         right: 10px;
         &:before {
-            content: $fa-var-chevron-right;
-            font-size: $font-normal;
-            color: $gallery-nav;
+            content: variables.$fa-var-chevron-right;
+            font-size: vars.$font-normal;
+            color: vars.$gallery-nav;
             display: block;
         }
     }
     .galleria-thumb-nav-left {
-        @include fa-icon();
+        @include mixins2.fa-icon();
         right: auto;
         left: 10px;
         &:before {
-            content: $fa-var-chevron-left;
-            font-size: $font-normal;
-            color: $gallery-nav;
+            content: variables.$fa-var-chevron-left;
+            font-size: vars.$font-normal;
+            color: vars.$gallery-nav;
             display: block;
         }
     }
 }
-@import "styles/galleria/*";
+

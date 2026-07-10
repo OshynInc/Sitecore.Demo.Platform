@@ -1,17 +1,22 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "sass:meta";
+@use "styles/breadcrumb";
+@use "mixins";
+@use "vars";
+@use "base/fontawesome/font-awesome-mix-var";
+@use "mixins" as mixins2;
+@use "variables";
+
 .breadcrumb.component {
-    background: $breadcrumb-bg;
-    @include clearfix();
+    background: vars.$breadcrumb-bg;
+    @include mixins.clearfix();
     &.breadcrumb-navigation {
         overflow: visible;
     }
     a {
         text-decoration: none;
-        font-size: $breadcrumb-font;
+        font-size: vars.$breadcrumb-font;
         font-weight: 400;
-        color: $breadcrumb-color;
+        color: vars.$breadcrumb-color;
     }
     ol {
         list-style: none;
@@ -32,7 +37,7 @@
             display: inline-block;
             vertical-align: middle;
             >a:hover {
-                color: $breadcrumb-color-active;
+                color: vars.$breadcrumb-color-active;
             }
         }
         &.last {
@@ -60,10 +65,10 @@
             box-sizing: border-box;
             display: none;
             margin: 0;
-            background: $bg-basic-color;
-            @include border-basic();
+            background: vars.$bg-basic-color;
+            @include mixins.border-basic();
             li {
-                @include border-basic(bottom);
+                @include mixins.border-basic(bottom);
                 box-sizing: border-box;
                 display: inline-block;
                 vertical-align: middle;
@@ -78,18 +83,18 @@
                     float: left;
                 }
                 &:hover {
-                    background: $breadcrumb-dropdown-bg-active;
-                    color: $breadcrumb-dropdown-text-active;
+                    background: vars.$breadcrumb-dropdown-bg-active;
+                    color: vars.$breadcrumb-dropdown-text-active;
                     a {
-                        color: $breadcrumb-dropdown-text-active !important;
+                        color: vars.$breadcrumb-dropdown-text-active !important;
                     }
                 }
                 &:before {
-                    @include font-size(1.4);
-                    @include fa-icon();
+                    @include mixins.font-size(1.4);
+                    @include mixins2.fa-icon();
                     transform: translateY(-50%);
                     position: absolute;
-                    content: $fa-var-globe;
+                    content: variables.$fa-var-globe;
                     top: 50%;
                     left: 2px;
                 }
@@ -103,6 +108,5 @@
             }
         }
     }
-    @import "variants/breadcrumb/*";
+    @include meta.load-css("variants/breadcrumb");
 }
-@import "styles/breadcrumb/*";

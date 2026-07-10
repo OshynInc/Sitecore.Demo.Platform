@@ -1,4 +1,6 @@
-@import "mixins";
+@use "mixins" as *;
+@use "styles/divider";
+
 .divider {
     hr {
         margin: 10px 0;
@@ -7,4 +9,3 @@
         @include border-basic(top);
     }
 }
-@import "styles/divider/*"

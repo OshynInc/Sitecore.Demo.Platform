@@ -1,6 +1,6 @@
-@import "../../abstracts/vars";
+@use "../../abstracts/vars";
 .ui-datepicker-title {
     select {
-        color: $text-basic;
+        color: vars.$text-basic;
     }
 }

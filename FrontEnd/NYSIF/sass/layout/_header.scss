@@ -1,4 +1,4 @@
-@import "../abstracts/vars-nysif";
+@use "../abstracts/vars-nysif";
 
 // Flatten SXA nested column-splitters into static .header-inner:
 // logo (left) | nav (flex grow) | Login + Get a Quote (right)
@@ -88,7 +88,7 @@
 				font-size: 22px;
 				font-weight: 800;
 				letter-spacing: 0.5px;
-				color: $nysif-text-on-dark;
+				color: vars-nysif.$nysif-text-on-dark;
 				white-space: nowrap;
 				margin: 0;
 			}
@@ -140,7 +140,7 @@
 		}
 	}
 
-	@media (max-width: $nysif-bp-nav) {
+	@media (max-width: vars-nysif.$nysif-bp-nav) {
 		.component.container.row-dark {
 			.navigation.nysif-mega-nav .main-nav {
 				margin-left: 16px;

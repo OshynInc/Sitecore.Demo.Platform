@@ -1,12 +1,12 @@
-@import "../../abstracts/vars";
-@import "../../abstracts/mixins";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "../../abstracts/vars";
+@use "../../abstracts/mixins";
+@use "base/fontawesome/font-awesome-mix-var";
 .navigation.sitemap-navigation {
     .level2 a {
         position: relative;
         padding-left: 10px;
         &:before {
-            @include font-size(1.4);
+            @include mixins.font-size(1.4);
             @include fa-icon();
             transform: translateY(-50%) scale(1, -1);
             position: absolute;

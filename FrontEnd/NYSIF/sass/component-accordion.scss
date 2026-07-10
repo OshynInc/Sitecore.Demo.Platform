@@ -1,6 +1,8 @@
-@import "mixins";
-@import "vars";
-@import "base/fontawesome/font-awesome-mix-var";
+@use "styles/accordion";
+@use "mixins" as *;
+@use "vars" as *;
+@use "base/fontawesome/font-awesome-mix-var" as *;
+
 .on-page-editor {
     .accordion .toggle-content [scfieldtype="rich text"] {
         display: block;
@@ -74,4 +76,4 @@
         }
     }
 }
-@import 'styles/accordion/*';
+
