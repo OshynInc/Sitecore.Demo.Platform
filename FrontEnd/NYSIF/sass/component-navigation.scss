@@ -42,6 +42,10 @@
 		.nav-item,
 		> .component-content > ul > li {
 			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			flex: 0 0 auto;
 		}
 
 		.nav-tab,
@@ -49,9 +53,16 @@
 		> .component-content > ul > li > a {
 			display: flex;
 			align-items: center;
-			height: 100%;
+			align-self: stretch;
+			flex: 1 1 auto;
+			width: 100%;
+			min-height: 100%;
+			position: relative;
+			z-index: 2;
 			background: transparent;
 			border: none;
+			clear: none;
+			appearance: none;
 			color: vars-nysif.$nysif-text-on-dark-subtle;
 			font-family: inherit;
 			font-size: 13.5px;
@@ -85,12 +96,27 @@
 			padding: 14px 0;
 			list-style: none;
 			margin: 0;
+			pointer-events: none;
+		}
+
+		// Invisible bridge so moving from tab to panel does not drop hover
+		.nav-item::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 10px;
+			z-index: 1;
 		}
 
 		.nav-item:hover > .mega-menu,
+		.nav-tab:hover + .mega-menu,
 		.mega-menu.open,
+		.mega-menu:hover,
 		> .component-content > ul > li:hover > ul {
 			display: flex;
+			pointer-events: auto;
 		}
 
 		.mega-col-1 {
