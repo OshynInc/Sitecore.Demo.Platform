@@ -63,6 +63,8 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 			return RenderingContext.Current?.Rendering?.Item;
 		}
 
+		private static bool IsExperienceEditor => Sitecore.Context.PageMode.IsExperienceEditor;
+
 		private static string Field(Item item, string name)
 		{
 			return item == null ? string.Empty : item[name] ?? string.Empty;
@@ -175,7 +177,7 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 				{
 					var value = Field(item, "Stat" + i + "Value");
 					var label = Field(item, "Stat" + i + "Label");
-					if (!string.IsNullOrWhiteSpace(value) || !string.IsNullOrWhiteSpace(label))
+					if (IsExperienceEditor || !string.IsNullOrWhiteSpace(value) || !string.IsNullOrWhiteSpace(label))
 					{
 						model.Stats.Add(new HeroStat { Value = value, Label = label });
 					}
@@ -209,7 +211,7 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 			{
 				var date = Field(child, "Date");
 				var text = Field(child, "Text");
-				if (string.IsNullOrWhiteSpace(date) && string.IsNullOrWhiteSpace(text))
+				if (!IsExperienceEditor && string.IsNullOrWhiteSpace(date) && string.IsNullOrWhiteSpace(text))
 				{
 					continue;
 				}
@@ -380,6 +382,8 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 
 			var noticesFolder = item.Children["Important Notices"] ?? item.Axes.GetChild("Important Notices");
 			var safetyFolder = item.Children["Safety Resources"] ?? item.Axes.GetChild("Safety Resources");
+			model.NoticesFolder = noticesFolder;
+			model.SafetyFolder = safetyFolder;
 
 			if (noticesFolder != null)
 			{
@@ -391,7 +395,13 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 				foreach (Item notice in noticesFolder.Children)
 				{
 					var text = Field(notice, "Text");
-					if (string.IsNullOrWhiteSpace(text))
+					var date = Field(notice, "Date");
+					if (!IsExperienceEditor && string.IsNullOrWhiteSpace(text) && string.IsNullOrWhiteSpace(date))
+					{
+						continue;
+					}
+
+					if (!IsExperienceEditor && string.IsNullOrWhiteSpace(text))
 					{
 						text = LinkText(notice, "Link", notice.DisplayName);
 					}
@@ -422,7 +432,13 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 				foreach (Item safety in safetyFolder.Children)
 				{
 					var title = Field(safety, "Title");
-					if (string.IsNullOrWhiteSpace(title))
+					var subtitle = Field(safety, "Subtitle");
+					if (!IsExperienceEditor && string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(subtitle))
+					{
+						continue;
+					}
+
+					if (!IsExperienceEditor && string.IsNullOrWhiteSpace(title))
 					{
 						title = LinkText(safety, "Link", safety.DisplayName);
 					}
@@ -432,7 +448,7 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 						Item = safety,
 						Icon = IconGlyph(Field(safety, "Icon")),
 						Title = title,
-						Subtitle = Field(safety, "Subtitle")
+						Subtitle = subtitle
 					});
 				}
 			}

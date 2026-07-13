@@ -1,3 +1,5 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.ServiceAlertsModel
 
 <div class="component service-alerts service-alerts col-sm-12">
@@ -10,23 +12,21 @@
 			}
 			return;
 		}
+
 		<aside class="alerts">
-			@if (!string.IsNullOrWhiteSpace(Model.Badge))
+			@using (Html.BeginEditFrame(Model.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
 			{
-				<span class="alert-badge">@Model.Badge</span>
+				<span class="alert-badge">@Html.Sitecore().Field("Badge", Model.Item)</span>
 			}
 			@foreach (var alert in Model.Alerts)
 			{
-				<div class="alert-item">
-					@if (!string.IsNullOrWhiteSpace(alert.Date))
-					{
-						<div class="alert-date">@alert.Date</div>
-					}
-					@if (!string.IsNullOrWhiteSpace(alert.Text))
-					{
-						<div class="alert-text">@alert.Text</div>
-					}
-				</div>
+				using (Html.BeginEditFrame(alert.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+				{
+					<div class="alert-item">
+						<div class="alert-date">@Html.Sitecore().Field("Date", alert.Item)</div>
+						<div class="alert-text">@Html.Sitecore().Field("Text", alert.Item)</div>
+					</div>
+				}
 			}
 		</aside>
 	</div>

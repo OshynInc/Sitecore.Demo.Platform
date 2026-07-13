@@ -1,9 +1,11 @@
 @using System.Linq
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.PageListModel
 
 <div class="component page-list page-list nysif-news-featured col-sm-12">
 	<div class="component-content">
-		@if (Model.Item == null || Model.Items == null || Model.Items.Count == 0)
+		@if (Model.Item == null)
 		{
 			if (Sitecore.Context.PageMode.IsExperienceEditor)
 			{
@@ -12,59 +14,59 @@
 			return;
 		}
 
+		@if (Model.Items == null || Model.Items.Count == 0)
+		{
+			if (!Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				return;
+			}
+		}
+
 		<div class="news-main">
 			<div class="section-heading">@Model.Heading</div>
 			<p class="section-sub" style="margin-bottom:28px;">@Model.Subheading</p>
 
-			@{
+			@if (Model.Items != null && Model.Items.Count > 0)
+			{
 				var featured = Model.Items[0];
 				var rest = Model.Items.Skip(1).Take(2).ToList();
-			}
 
-			<div class="news-featured">
-				<div class="thumb"></div>
-				<div>
-					@if (!string.IsNullOrWhiteSpace(featured.Category))
-					{
-						<div class="news-category">@featured.Category</div>
-					}
-					<div class="news-title">
-						<a href="@featured.Url">@featured.Title</a>
-					</div>
-					@if (!string.IsNullOrWhiteSpace(featured.Summary))
-					{
-						<div class="news-desc">@featured.Summary</div>
-					}
-					@if (!string.IsNullOrWhiteSpace(featured.PublishDate))
-					{
-						<div class="news-meta">@featured.PublishDate</div>
-					}
-				</div>
-			</div>
-
-			@if (rest.Count > 0)
-			{
-				<div class="news-row">
-					@foreach (var item in rest)
-					{
-						<div class="news-row-item">
-							<div class="thumb-sm"></div>
-							<div>
-								@if (!string.IsNullOrWhiteSpace(item.Category))
-								{
-									<div class="news-category">@item.Category</div>
-								}
-								<div class="news-title-sm">
-									<a href="@item.Url">@item.Title</a>
-								</div>
-								@if (!string.IsNullOrWhiteSpace(item.PublishDate))
-								{
-									<div class="news-meta">@item.PublishDate</div>
-								}
+				using (Html.BeginEditFrame(featured.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+				{
+					<div class="news-featured">
+						<div class="thumb"></div>
+						<div>
+							<div class="news-category">@Html.Sitecore().Field("Category", featured.Item)</div>
+							<div class="news-title">
+								<a href="@featured.Url">@Html.Sitecore().Field("Title", featured.Item)</a>
 							</div>
+							<div class="news-desc">@Html.Sitecore().Field("Summary", featured.Item)</div>
+							<div class="news-meta">@Html.Sitecore().Field("PublishDate", featured.Item)</div>
 						</div>
-					}
-				</div>
+					</div>
+				}
+
+				if (rest.Count > 0)
+				{
+					<div class="news-row">
+						@foreach (var item in rest)
+						{
+							using (Html.BeginEditFrame(item.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+							{
+								<div class="news-row-item">
+									<div class="thumb-sm"></div>
+									<div>
+										<div class="news-category">@Html.Sitecore().Field("Category", item.Item)</div>
+										<div class="news-title-sm">
+											<a href="@item.Url">@Html.Sitecore().Field("Title", item.Item)</a>
+										</div>
+										<div class="news-meta">@Html.Sitecore().Field("PublishDate", item.Item)</div>
+									</div>
+								</div>
+							}
+						}
+					</div>
+				}
 			}
 
 			<div class="news-viewall">

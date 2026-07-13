@@ -1,3 +1,5 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.RoleCardsModel
 
 <div class="component role-cards role-cards col-sm-12">
@@ -10,27 +12,26 @@
 			}
 			return;
 		}
+
 		<section class="roles">
-			@if (!string.IsNullOrWhiteSpace(Model.Eyebrow))
+			@using (Html.BeginEditFrame(Model.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
 			{
-				<div class="roles-eyebrow">@Model.Eyebrow</div>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.Title))
-			{
-				<h2>@Model.Title</h2>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.Subtitle))
-			{
-				<p class="roles-sub">@Model.Subtitle</p>
+				<div class="roles-eyebrow">@Html.Sitecore().Field("Eyebrow", Model.Item)</div>
+				<h2>@Html.Sitecore().Field("Title", Model.Item)</h2>
+				<p class="roles-sub">@Html.Sitecore().Field("Subtitle", Model.Item)</p>
 			}
 			<div class="role-grid">
 				@foreach (var card in Model.Cards)
 				{
-					<div class="role-card">
-						<div class="role-icon">@card.Icon</div>
-						<div class="role-title">@card.Title</div>
-						<div class="role-desc">@card.Description</div>
-					</div>
+					using (Html.BeginEditFrame(card.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+					{
+						<div class="role-card">
+							@* Icon is a plain glyph key, not DAM media XML — Field() crashes Content Hub DAM. Edit via Edit Frame. *@
+							<div class="role-icon">@card.Icon</div>
+							<div class="role-title">@Html.Sitecore().Field("Title", card.Item)</div>
+							<div class="role-desc">@Html.Sitecore().Field("Description", card.Item)</div>
+						</div>
+					}
 				}
 			</div>
 		</section>

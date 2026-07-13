@@ -139,8 +139,10 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models
 	public class NewsSidebarModel
 	{
 		public Item Item { get; set; }
+		public Item NoticesFolder { get; set; }
 		public string NoticesHeading { get; set; }
 		public List<NoticeItemModel> Notices { get; set; }
+		public Item SafetyFolder { get; set; }
 		public string SafetyHeading { get; set; }
 		public List<SafetyItemModel> SafetyItems { get; set; }
 	}

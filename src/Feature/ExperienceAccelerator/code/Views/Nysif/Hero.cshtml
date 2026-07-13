@@ -1,4 +1,5 @@
 @using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.HeroModel
 
 <div class="component hero hero nysif-hero-homepage col-sm-12 nysif-hero-homepage">
@@ -11,36 +12,39 @@
 			}
 			return;
 		}
-		<div class="hero-left">
-			@if (!string.IsNullOrWhiteSpace(Model.Supertitle))
-			{
-				<div class="eyebrow">@Model.Supertitle</div>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.TitleHtml))
-			{
-				<h1>@Html.Raw(Model.TitleHtml)</h1>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.Text))
-			{
-				<p class="hero-sub">@Html.Raw(Model.Text)</p>
-			}
-			<div class="hero-ctas">
-				<a href="@Model.PrimaryCtaUrl" class="btn btn-white">@Model.PrimaryCtaText</a>
-				<a href="@Model.SecondaryCtaUrl" class="btn btn-outline">@Model.SecondaryCtaText</a>
-			</div>
-			@if (Model.Stats != null && Model.Stats.Count > 0)
-			{
+
+		@using (Html.BeginEditFrame(Model.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+		{
+			<div class="hero-left">
+				<div class="eyebrow">@Html.Sitecore().Field("HeroSupertitle", Model.Item)</div>
+				<h1>@Html.Sitecore().Field("HeroTitle", Model.Item)</h1>
+				@* Rich Text must not be wrapped in <p> — nested block tags break EE field chrome *@
+				<div class="hero-sub">@Html.Sitecore().Field("HeroText", Model.Item)</div>
+				<div class="hero-ctas">
+					@* Do not nest Field() of the same link inside BeginField — duplicate chrome breaks EE *@
+					@Html.Sitecore().BeginField("HeroLink", Model.Item, new { haschildren = true, @class = "btn btn-white" })
+					@(string.IsNullOrWhiteSpace(Model.PrimaryCtaText) ? "Get a Quote" : Model.PrimaryCtaText)
+					@Html.Sitecore().EndField()
+					<a href="@Model.SecondaryCtaUrl" class="btn btn-outline">@Model.SecondaryCtaText</a>
+				</div>
 				<hr class="hero-divider" />
 				<div class="stats">
-					@foreach (var stat in Model.Stats)
+					@for (var i = 1; i <= 4; i++)
 					{
-						<div class="stat">
-							<div class="stat-value">@stat.Value</div>
-							<div class="stat-label">@stat.Label</div>
-						</div>
+						var valueField = "Stat" + i + "Value";
+						var labelField = "Stat" + i + "Label";
+						if (Sitecore.Context.PageMode.IsExperienceEditor
+							|| !string.IsNullOrWhiteSpace(Model.Item[valueField])
+							|| !string.IsNullOrWhiteSpace(Model.Item[labelField]))
+						{
+							<div class="stat">
+								<div class="stat-value">@Html.Sitecore().Field(valueField, Model.Item)</div>
+								<div class="stat-label">@Html.Sitecore().Field(labelField, Model.Item)</div>
+							</div>
+						}
 					}
 				</div>
-			}
-		</div>
+			</div>
+		}
 	</div>
 </div>

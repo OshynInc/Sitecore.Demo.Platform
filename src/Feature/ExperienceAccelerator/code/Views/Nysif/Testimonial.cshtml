@@ -1,3 +1,5 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.TestimonialModel
 
 <div class="component testimonial testimonial col-sm-12">
@@ -10,28 +12,29 @@
 			}
 			return;
 		}
+
 		<section class="section-block">
-			@if (!string.IsNullOrWhiteSpace(Model.Eyebrow))
+			@using (Html.BeginEditFrame(Model.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
 			{
-				<div class="section-heading">@Model.Eyebrow</div>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.Title))
-			{
-				<p class="section-sub">@Model.Title</p>
+				<div class="section-heading">@Html.Sitecore().Field("Eyebrow", Model.Item)</div>
+				<p class="section-sub">@Html.Sitecore().Field("Title", Model.Item)</p>
 			}
 			<div class="testimonial-grid">
 				@foreach (var card in Model.Cards)
 				{
-					<div class="testimonial-card">
-		<p class="testimonial-quote">@card.Quote</p>
-						<div class="testimonial-person">
-							<div class="avatar">@card.Initials</div>
-							<div>
-								<div class="person-name">@card.Name</div>
-								<div class="person-role">@card.Role</div>
+					using (Html.BeginEditFrame(card.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+					{
+						<div class="testimonial-card">
+							<p class="testimonial-quote">@Html.Sitecore().Field("Quote", card.Item)</p>
+							<div class="testimonial-person">
+								<div class="avatar">@Html.Sitecore().Field("Initials", card.Item)</div>
+								<div>
+									<div class="person-name">@Html.Sitecore().Field("Name", card.Item)</div>
+									<div class="person-role">@Html.Sitecore().Field("Role", card.Item)</div>
+								</div>
 							</div>
 						</div>
-					</div>
+					}
 				}
 			</div>
 		</section>

@@ -1,8 +1,10 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.QuickActionsModel
 
 <div class="component promo nysif-quick-actions col-sm-12">
 	<div class="component-content">
-		@if (Model.Item == null || Model.Cards == null || Model.Cards.Count == 0)
+		@if (Model.Item == null)
 		{
 			if (Sitecore.Context.PageMode.IsExperienceEditor)
 			{
@@ -17,12 +19,20 @@
 			<div class="qa-grid">
 				@foreach (var card in Model.Cards)
 				{
-					<div class="qa-card">
-						<div class="qa-icon">@card.Icon</div>
-						<div class="qa-title">@card.Title</div>
-						<div class="qa-desc">@card.Description</div>
-						<a href="@card.LinkUrl" class="qa-link">@card.LinkText &rarr;</a>
-					</div>
+					using (Html.BeginEditFrame(card.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+					{
+						<div class="qa-card">
+							@* PromoIcon stores a plain glyph key (e.g. "quote"), not media XML.
+							   Field() triggers Content Hub DAM AddMMediaFieldValue and crashes. Edit via Edit Frame. *@
+							<div class="qa-icon">@card.Icon</div>
+							<div class="qa-title">@Html.Sitecore().Field("PromoText", card.Item)</div>
+							<div class="qa-desc">@Html.Sitecore().Field("PromoText2", card.Item)</div>
+							@Html.Sitecore().BeginField("PromoLink", card.Item, new { haschildren = true, @class = "qa-link" })
+							@(string.IsNullOrWhiteSpace(card.LinkText) ? "Learn more" : card.LinkText)
+							<span>&rarr;</span>
+							@Html.Sitecore().EndField()
+						</div>
+					}
 				}
 			</div>
 		</section>

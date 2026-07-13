@@ -1,8 +1,10 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.NavigationModel
 
 <div class="component link-list col-xs-12 navigation nysif-mega-nav">
 	<div class="component-content">
-		@if (Model.Item == null || Model.Tabs == null || Model.Tabs.Count == 0)
+		@if (Model.Item == null)
 		{
 			if (Sitecore.Context.PageMode.IsExperienceEditor)
 			{
@@ -11,18 +13,54 @@
 			return;
 		}
 
+		@if (Model.Tabs == null || Model.Tabs.Count == 0)
+		{
+			if (!Sitecore.Context.PageMode.IsExperienceEditor)
+			{
+				return;
+			}
+		}
+
 		<nav class="main-nav" aria-label="Main">
 			@foreach (var tab in Model.Tabs)
 			{
 				<div class="nav-item">
-					<button type="button" class="nav-tab" aria-expanded="false">@tab.Label</button>
+					@* Field chrome cannot live inside <button> — it breaks Experience Editor *@
+					@if (Sitecore.Context.PageMode.IsExperienceEditor)
+					{
+						using (Html.BeginEditFrame(tab.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+						{
+							<div class="nav-tab">@Html.Sitecore().Field("Link", tab.Item)</div>
+						}
+					}
+					else
+					{
+						<button type="button" class="nav-tab" aria-expanded="false">@tab.Label</button>
+					}
 					@if (tab.Links.Count > 0)
 					{
 						<div class="mega-menu">
 							<div class="mega-col-1">
 								@foreach (var link in tab.Links)
 								{
-									if (link.IsExpandable)
+									if (Sitecore.Context.PageMode.IsExperienceEditor)
+									{
+										using (Html.BeginEditFrame(link.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+										{
+											if (link.IsExpandable)
+											{
+												<div class="mega-link mega-link-expand" data-sub="@link.PanelKey">
+													@Html.Sitecore().Field("Link", link.Item)
+													<span class="chev">&rsaquo;</span>
+												</div>
+											}
+											else
+											{
+												@Html.Sitecore().Field("Link", link.Item, new { @class = "mega-link" })
+											}
+										}
+									}
+									else if (link.IsExpandable)
 									{
 										<button type="button" class="mega-link mega-link-expand" data-sub="@link.PanelKey">
 											@link.Label <span class="chev">&rsaquo;</span>
@@ -39,7 +77,17 @@
 								<div class="mega-col-2" data-sub-panel="@panel.Key">
 									@foreach (var link in panel.Links)
 									{
-										<a href="@link.Url" class="mega-link">@link.Label</a>
+										if (Sitecore.Context.PageMode.IsExperienceEditor)
+										{
+											using (Html.BeginEditFrame(link.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+											{
+												@Html.Sitecore().Field("Link", link.Item, new { @class = "mega-link" })
+											}
+										}
+										else
+										{
+											<a href="@link.Url" class="mega-link">@link.Label</a>
+										}
 									}
 								</div>
 							}
@@ -58,13 +106,40 @@
 				{
 					var panelId = "m-panel-" + panelIndex;
 					<div class="m-acc-item">
-						<button type="button" class="m-acc-toggle" aria-expanded="@(panelIndex == 0 ? "true" : "false")" data-target="@panelId">
-							@tab.Label <span class="caret">&rsaquo;</span>
-						</button>
+						@if (Sitecore.Context.PageMode.IsExperienceEditor)
+						{
+							using (Html.BeginEditFrame(tab.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+							{
+								<div class="m-acc-toggle">@Html.Sitecore().Field("Link", tab.Item)</div>
+							}
+						}
+						else
+						{
+							<button type="button" class="m-acc-toggle" aria-expanded="@(panelIndex == 0 ? "true" : "false")" data-target="@panelId">
+								@tab.Label <span class="caret">&rsaquo;</span>
+							</button>
+						}
 						<div class="m-acc-panel" id="@panelId" style="display:@(panelIndex == 0 ? "block" : "none");">
 							@foreach (var link in tab.Links)
 							{
-								if (link.IsExpandable)
+								if (Sitecore.Context.PageMode.IsExperienceEditor)
+								{
+									using (Html.BeginEditFrame(link.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+									{
+										if (link.IsExpandable)
+										{
+											<div class="m-link m-drill" data-drill="@link.PanelKey">
+												@Html.Sitecore().Field("Link", link.Item)
+												<span class="chev">&rsaquo;</span>
+											</div>
+										}
+										else
+										{
+											@Html.Sitecore().Field("Link", link.Item, new { @class = "m-link" })
+										}
+									}
+								}
+								else if (link.IsExpandable)
 								{
 									<button type="button" class="m-link m-drill" data-drill="@link.PanelKey">
 										@link.Label <span class="chev">&rsaquo;</span>

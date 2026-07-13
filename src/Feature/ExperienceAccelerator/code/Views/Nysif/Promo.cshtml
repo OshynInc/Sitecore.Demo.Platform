@@ -1,3 +1,5 @@
+@using Sitecore.Mvc
+@using Sitecore.Demo.Platform.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models.PromoModel
 
 <div class="component promo promo nysif-quick-action qa-card col-xs-12 nysif-quick-action">
@@ -10,9 +12,17 @@
 			}
 			return;
 		}
-		<div class="qa-icon">@Model.Icon</div>
-		<div class="qa-title">@Model.Title</div>
-		<div class="qa-desc">@Model.Description</div>
-		<a href="@Model.LinkUrl" class="qa-link">@Model.LinkText &rarr;</a>
+
+		@using (Html.BeginEditFrame(Model.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
+		{
+			@* PromoIcon is a plain glyph key, not DAM media XML — Field() crashes Content Hub DAM. Edit via Edit Frame. *@
+			<div class="qa-icon">@Model.Icon</div>
+			<div class="qa-title">@Html.Sitecore().Field("PromoText", Model.Item)</div>
+			<div class="qa-desc">@Html.Sitecore().Field("PromoText2", Model.Item)</div>
+			@Html.Sitecore().BeginField("PromoLink", Model.Item, new { haschildren = true, @class = "qa-link" })
+			@(string.IsNullOrWhiteSpace(Model.LinkText) ? "Learn more" : Model.LinkText)
+			<span>&rarr;</span>
+			@Html.Sitecore().EndField()
+		}
 	</div>
 </div>
