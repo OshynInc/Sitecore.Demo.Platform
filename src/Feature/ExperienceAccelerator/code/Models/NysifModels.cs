@@ -49,6 +49,8 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Models
 	{
 		public Item Item { get; set; }
 		public string Icon { get; set; }
+		public string IconClass { get; set; }
+		public string IconSvg { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
 	}

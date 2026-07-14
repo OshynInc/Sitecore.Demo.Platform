@@ -1,12 +1,16 @@
 @use "../abstracts/vars-nysif";
 
-// Map SXA footer partial markup to static nysif_homepage.html layout
+// Map SXA footer partial markup to nysif.oshyn.com layout (Language Access band omitted)
 #footer {
 	margin: 0;
 	padding: 0;
-	background-color: vars-nysif.$nysif-dark-bg;
+	// Same fixed wash as header/hero so the band doesn't restart at the footer
+	background-color: vars-nysif.$nysif-dark-band-bg;
+	background-image: vars-nysif.$nysif-dark-gradient;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-	// Neutralize inherited SXA demo footer theme rules
 	.image img {
 		width: auto;
 	}
@@ -26,6 +30,7 @@
 	.navigation.nysif-footer-dark.row-dark {
 		float: none;
 		padding: 56px 0 0;
+		background: transparent;
 
 		> .component-content {
 			max-width: vars-nysif.$nysif-container-max;
@@ -79,18 +84,37 @@
 				padding: 0;
 			}
 
+			img,
+			.footer-logo-img,
+			.logo-img {
+				height: 40px;
+				width: auto;
+				display: block;
+				margin-bottom: 16px;
+			}
+
+			&:has(img[src]:not([src=""])) .logo-placeholder {
+				display: none;
+			}
+
 			.logo,
+			.logo-placeholder,
 			h3.logo {
 				font-size: 22px;
 				font-weight: 800;
 				letter-spacing: 0.5px;
 				color: vars-nysif.$nysif-text-on-dark;
 				margin: 0 0 16px;
+				display: inline-block;
+			}
+
+			.logo-teal {
+				color: vars-nysif.$nysif-accent-light;
 			}
 
 			.footer-brand-text {
 				font-size: 14.5px;
-				color: #9fb0c7;
+				color: #9ab4bf;
 				line-height: 1.6;
 				margin: 0;
 			}
@@ -104,7 +128,7 @@
 			}
 
 			h3 {
-				color: #7a8ea9;
+				color: vars-nysif.$nysif-accent-light;
 				font-size: 12.5px !important;
 				font-weight: 700;
 				letter-spacing: 1.5px;
@@ -148,10 +172,11 @@
 		}
 	}
 
-	// ---- Copyright + social bottom bar ----
+	// ---- Copyright + social bottom bar (Language Access omitted) ----
 	> .row > .component.container.row-dark:not(.nysif-footer-dark) {
 		float: none;
 		border-top: 1px solid vars-nysif.$nysif-dark-border;
+		background: transparent;
 
 		> .component-content {
 			max-width: vars-nysif.$nysif-container-max;
@@ -185,7 +210,7 @@
 
 			p {
 				font-size: 13.5px;
-				color: #8593ab;
+				color: #82949c;
 				margin: 0 0 6px;
 				line-height: 1.5;
 
@@ -195,9 +220,13 @@
 			}
 
 			a {
-				color: #8593ab;
+				color: #82949c;
 				text-decoration: none;
 				margin-left: 18px;
+
+				&:hover {
+					color: vars-nysif.$nysif-text-on-dark-subtle;
+				}
 
 				&:first-child {
 					margin-left: 18px;
@@ -234,7 +263,7 @@
 				width: 34px;
 				height: 34px;
 				border-radius: 50%;
-				border: 1px solid #3a4363;
+				border: 1px solid rgba(255, 255, 255, 0.2);
 				color: vars-nysif.$nysif-text-on-dark-muted;
 				font-size: 12px;
 				font-weight: 600;
@@ -244,6 +273,12 @@
 				text-decoration: none;
 				padding: 0;
 				margin: 0;
+
+				&:hover {
+					color: vars-nysif.$nysif-text-on-dark;
+					border-color: vars-nysif.$nysif-accent-light;
+					background: rgba(119, 197, 213, 0.12);
+				}
 
 				&::before {
 					display: none !important;

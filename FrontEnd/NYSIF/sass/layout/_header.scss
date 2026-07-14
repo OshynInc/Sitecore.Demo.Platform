@@ -1,15 +1,45 @@
 @use "../abstracts/vars-nysif";
 
-// Flatten SXA nested column-splitters into static .header-inner:
-// logo (left) | nav (flex grow) | Login + Get a Quote (right)
+// Nested SXA splitters → logo | nav | actions (no display:contents)
 #header {
+	> .row {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		margin-left: 0;
+		margin-right: 0;
+
+		> [class*="col-"],
+		> .component {
+			float: none !important;
+			width: 100% !important;
+			max-width: none !important;
+			margin: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+
+	.nysif-official-website-bar {
+		order: -1;
+		position: relative;
+		z-index: 100;
+		float: none !important;
+		width: 100% !important;
+	}
+
 	.component.container.row-dark {
+		order: 1;
+		float: none !important;
+		width: 100% !important;
+
 		> .component-content {
-			padding-top: 18px;
-			padding-bottom: 0;
+			max-width: vars-nysif.$nysif-container-max;
+			margin: 0 auto;
+			padding: 0 vars-nysif.$nysif-container-padding;
+			box-sizing: border-box;
 		}
 
-		// Kill Bootstrap 50/50 col floats so flex can own the row
 		.row.column-splitter {
 			display: flex !important;
 			align-items: center;
@@ -32,11 +62,15 @@
 				flex: 0 0 auto;
 				padding-left: 0 !important;
 				padding-right: 0 !important;
+				margin: 0 !important;
+				position: relative;
 			}
 		}
 
-		// Outer: logo | (nav + actions wrapper grows)
+		// Outer: logo | (nav + actions)
 		> .component-content > .row.column-splitter {
+			min-height: 72px;
+
 			> [class*="col-"]:first-child {
 				flex: 0 0 auto;
 			}
@@ -47,18 +81,21 @@
 			}
 		}
 
-		// Middle wrapper must fill its column so the inner splitter can grow
+		// Middle wrapper fills remaining width
 		> .component-content > .row.column-splitter > [class*="col-"]:last-child > .component.container {
-			width: 100%;
-			float: none;
+			float: none !important;
+			width: 100% !important;
+			max-width: none !important;
+			margin: 0 !important;
 
 			> .component-content {
-				padding: 0;
+				padding: 0 !important;
 				width: 100%;
+				max-width: none !important;
 			}
 		}
 
-		// Inner: nav grows | actions hug trailing edge
+		// Inner: nav grows | actions hug the right
 		.component.container > .component-content > .row.column-splitter {
 			> [class*="col-"]:first-child {
 				flex: 1 1 auto;
@@ -67,23 +104,42 @@
 
 			> [class*="col-"]:last-child {
 				flex: 0 0 auto;
-				margin-left: auto;
+				margin-left: auto !important;
 			}
 		}
 
-		.component.image.logo {
-			float: none;
+		// ---- Logo ----
+		.component.image {
+			float: none !important;
+			width: auto !important;
 			margin: 0;
+			position: relative;
+			z-index: 2;
 
 			> .component-content {
 				padding: 0;
 			}
 
 			.footer-brand-text {
-				display: none;
+				display: none !important;
+			}
+
+			img {
+				height: 44px;
+				width: auto;
+				max-width: none;
+				display: block;
+			}
+
+			&:has(img[src]:not([src=""])) {
+				.logo-placeholder,
+				.image-caption {
+					display: none !important;
+				}
 			}
 
 			.logo,
+			.logo-placeholder,
 			h3.logo {
 				font-size: 22px;
 				font-weight: 800;
@@ -91,60 +147,121 @@
 				color: vars-nysif.$nysif-text-on-dark;
 				white-space: nowrap;
 				margin: 0;
-			}
-		}
-
-		.navigation.nysif-mega-nav {
-			float: none;
-			width: 100%;
-			padding-top: 0;
-
-			> .component-content {
-				padding: 0;
-			}
-
-			.main-nav {
-				margin-left: 48px;
-			}
-		}
-
-		// Actions nest: container whose direct children are Link components
-		.header-actions > .component-content,
-		.component.container > .component-content:has(> .component.link) {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			gap: 14px;
-			padding: 0;
-			flex-wrap: nowrap;
-		}
-
-		.component.link {
-			float: none;
-			margin: 0;
-			width: auto;
-
-			> .component-content {
-				padding: 0;
-			}
-
-			.btn,
-			.field-link {
 				display: inline-block;
 			}
 
+			.logo-teal {
+				color: vars-nysif.$nysif-accent-light;
+			}
+		}
+
+		// ---- Nav ----
+		.navigation.nysif-mega-nav {
+			float: none !important;
+			width: 100% !important;
+			max-width: none !important;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			z-index: 1;
+
+			> .component-content {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+			}
+
+			.main-nav {
+				display: flex;
+				align-items: stretch;
+				justify-content: flex-start;
+				flex-wrap: nowrap;
+				margin: 0 0 0 24px;
+				width: auto;
+			}
+
+			.hamburger {
+				display: none;
+			}
+		}
+
+		// ---- CTAs: keep as a horizontal cluster on the right ----
+		.header-actions,
+		.component.container > .component-content > .row.column-splitter > [class*="col-"]:last-child > .component.container {
+			float: none !important;
+			width: auto !important;
+			max-width: none !important;
+			margin: 0 !important;
+			flex: 0 0 auto;
+		}
+
+		.header-actions > .component-content,
+		.component.container > .component-content:has(> .component.link) {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 10px;
+			padding: 0 !important;
+			width: auto !important;
+			max-width: none !important;
+		}
+
+		.component.link {
+			float: none !important;
+			display: block;
+			width: auto !important;
+			max-width: none !important;
+			margin: 0 !important;
+			position: relative;
+			z-index: 2;
+			flex: 0 0 auto;
+
+			> .component-content {
+				padding: 0 !important;
+				width: auto !important;
+			}
+
+			.btn,
+			.field-link,
 			a {
+				display: inline-block;
+				white-space: nowrap;
 				color: inherit;
 				text-decoration: none;
+			}
+
+			a::before {
+				display: none !important; // kill FontAwesome caret from .link styles
 			}
 		}
 	}
 
 	@media (max-width: vars-nysif.$nysif-bp-nav) {
 		.component.container.row-dark {
-			.navigation.nysif-mega-nav .main-nav {
-				margin-left: 16px;
+			> .component-content {
+				padding-top: 16px;
+				padding-bottom: 16px;
 			}
+
+			.navigation.nysif-mega-nav {
+				.main-nav {
+					display: none;
+				}
+
+				.hamburger {
+					display: flex;
+					margin-left: auto;
+				}
+			}
+		}
+	}
+
+	@media (max-width: vars-nysif.$nysif-bp-mobile) {
+		.component.container.row-dark > .component-content {
+			padding-left: 20px;
+			padding-right: 20px;
 		}
 	}
 }

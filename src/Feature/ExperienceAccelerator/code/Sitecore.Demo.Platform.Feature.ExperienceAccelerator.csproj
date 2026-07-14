@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="Views\Link\Link.cshtml" />
     <Content Include="Views\ExpandableSearchbox\ExpandableSearchbox.cshtml" />
+    <Content Include="Views\Nysif\OfficialWebsiteBar.cshtml" />
     <Content Include="Views\Nysif\Hero.cshtml" />
     <Content Include="Views\Nysif\ServiceAlerts.cshtml" />
     <Content Include="Views\Nysif\RoleCards.cshtml" />

@@ -26,12 +26,13 @@ Serialized header/footer deploy with `./up.ps1` or `dotnet sitecore ser push -n 
 
 ```
 header
+├─ NYSIF Official Website Bar (uneditable)
 └─ Container [id=1, Styles: row-dark]
    └─ Column Splitter [id=2]
       ├─ column-1-2 → Image (logo)
       └─ column-2-2 → Container [id=4]
          └─ Column Splitter [id=5]
-            ├─ column-1-5 → Link List (nav)
+            ├─ column-1-5 → NYSIF Navigation
             └─ column-2-5 → Container [id=7]
                ├─ Link (Login)
                └─ Link (Get a Quote)
@@ -41,6 +42,7 @@ header
 
 | Step | Placeholder (type exactly) | Control | Edit → key parameters |
 |------|----------------------------|---------|------------------------|
+| H0 | `header` | NYSIF Official Website Bar | No datasource — hard-coded NY.gov chrome |
 | H1 | `header` | Container | **DynamicPlaceholderId:** `1` · **Styles:** `row-dark` |
 | H2 | `/header/container-1` | Column Splitter | **DynamicPlaceholderId:** `2` · set **Column 1** / **Column 2** grid per viewport (logo \| actions split; copy from another header or use equal widths on desktop) |
 | H3 | `/header/container-1/column-1-2` | Image | **Datasource:** `/sitecore/content/Demo SXA Sites/NYSIF/Data/Header/Logo` |

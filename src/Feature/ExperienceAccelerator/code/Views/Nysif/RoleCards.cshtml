@@ -26,8 +26,8 @@
 					using (Html.BeginEditFrame(card.Item.ID.ToString(), "/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Default"))
 					{
 						<div class="role-card">
-							@* Icon is a plain glyph key, not DAM media XML — Field() crashes Content Hub DAM. Edit via Edit Frame. *@
-							<div class="role-icon">@card.Icon</div>
+							@* Icon key maps to static-style stroke SVG — Field() on Icon crashes Content Hub DAM. *@
+							<div class="role-icon @card.IconClass">@Html.Raw(card.IconSvg)</div>
 							<div class="role-title">@Html.Sitecore().Field("Title", card.Item)</div>
 							<div class="role-desc">@Html.Sitecore().Field("Description", card.Item)</div>
 						</div>

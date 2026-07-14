@@ -1,8 +1,12 @@
 @use "abstracts/vars-nysif";
 @use "layout/container";
+@use "layout/official-website-bar";
 @use "layout/header";
 @use "layout/footer";
 @use "base/buttons";
+
+// Google Fonts @import is prepended to pre-optimized-min.css by build-themes.ps1
+// (browsers ignore @import unless it is the first rule in the stylesheet).
 
 * {
 	box-sizing: border-box;
@@ -10,11 +14,20 @@
 
 html {
 	overflow-x: hidden;
-	font-size: 62.5%;
+	font-size: 100%;
+}
+
+html,
+body,
+#wrapper,
+#wrapper #content,
+#wrapper #header,
+#wrapper #footer,
+.component {
+	font-family: vars-nysif.$nysif-font-stack;
 }
 
 body {
-	font-family: vars-nysif.$nysif-font-stack;
 	background: vars-nysif.$nysif-light-bg;
 	color: vars-nysif.$nysif-text-dark;
 	-webkit-font-smoothing: antialiased;
@@ -31,11 +44,18 @@ img {
 	max-width: 100%;
 }
 
-// Page band backgrounds (applied via row styles or section wrappers)
+// Page band backgrounds — fixed attachment keeps header/hero/footer as one continuous wash
 .nysif-band-dark,
 .row-dark > .component-content,
-.row-dark {
-	background: vars-nysif.$nysif-dark-bg;
+.row-dark,
+#header .component.container.row-dark,
+#content .component.container.row-dark,
+#footer {
+	background-color: vars-nysif.$nysif-dark-band-bg;
+	background-image: vars-nysif.$nysif-dark-gradient;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: vars-nysif.$nysif-text-on-dark;
 }
 
@@ -54,7 +74,11 @@ img {
 }
 
 .dark {
-	background: vars-nysif.$nysif-dark-bg;
+	background-color: vars-nysif.$nysif-dark-band-bg;
+	background-image: vars-nysif.$nysif-dark-gradient;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: vars-nysif.$nysif-text-on-dark;
 }
 

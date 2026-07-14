@@ -20,13 +20,18 @@
 			border: 1px solid vars-nysif.$nysif-light-border;
 			border-radius: 10px;
 			padding: 24px 22px 26px;
+
+			&:hover {
+				border-color: vars-nysif.$nysif-accent-blue;
+				box-shadow: 0 8px 22px rgba(1, 66, 106, 0.09);
+			}
 		}
 
 		.qa-icon {
 			width: 44px;
 			height: 44px;
 			border-radius: 8px;
-			background: #eef1f5;
+			background: #e9eef0;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -53,6 +58,10 @@
 			font-size: 14.5px;
 			font-weight: 600;
 			text-decoration: none;
+
+			&:hover {
+				color: vars-nysif.$nysif-accent-deep;
+			}
 		}
 
 		@media (max-width: vars-nysif.$nysif-bp-nav) {
@@ -86,7 +95,7 @@
 			width: 44px;
 			height: 44px;
 			border-radius: 8px;
-			background: #eef1f5;
+			background: #e9eef0;
 			display: flex;
 			align-items: center;
 			justify-content: center;

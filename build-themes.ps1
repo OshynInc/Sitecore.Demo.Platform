@@ -178,7 +178,10 @@ function Build-ThemeWithDartSass {
     throw "Sass compile failed for: $($failedFiles -join ', ')"
   }
 
-  [IO.File]::WriteAllText($cssOut, ($cssParts -join "`n"))
+  # Browsers ignore @import unless it is the first rule — prepend Montserrat here
+  $fontImport = '@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");'
+  $joined = ($cssParts -join "`n") -replace '(?m)^@import url\("https://fonts\.googleapis\.com[^"]+"\);\r?\n?', ''
+  [IO.File]::WriteAllText($cssOut, "$fontImport`n$joined")
 
   $jsOut = Join-Path $scriptsDir "pre-optimized-min.js"
   $jsFiles = Get-ChildItem $scriptsDir -Filter "*.js" |

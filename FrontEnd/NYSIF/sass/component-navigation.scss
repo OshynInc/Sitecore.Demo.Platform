@@ -7,7 +7,7 @@
 	&.nysif-mega-nav,
 	&.nysif-header-dark {
 		position: relative;
-		padding-top: 18px;
+		padding-top: 0;
 
 		.component-content {
 			padding: 0;
@@ -33,10 +33,12 @@
 		.navigation-main {
 			display: flex;
 			align-items: stretch;
-			gap: 2px;
-			flex: 1;
+			gap: 0;
+			flex: 0 1 auto;
+			width: auto;
 			min-width: 0;
-			margin-left: 48px;
+			margin-left: 20px;
+			justify-content: flex-start;
 		}
 
 		.nav-item,
@@ -67,17 +69,17 @@
 			font-family: inherit;
 			font-size: 13.5px;
 			font-weight: 700;
-			letter-spacing: 0.6px;
+			letter-spacing: 0.4px;
 			text-transform: uppercase;
 			white-space: nowrap;
-			padding: 24px 16px 22px;
+			padding: 24px 9px 22px;
 			cursor: pointer;
 			text-decoration: none;
 
 			&:hover,
 			&[aria-expanded="true"] {
 				color: vars-nysif.$nysif-text-on-dark;
-				background: #232c48;
+				background: vars-nysif.$nysif-nav-hover;
 			}
 		}
 
@@ -88,7 +90,7 @@
 			top: 100%;
 			left: 0;
 			background: vars-nysif.$nysif-dark-surface;
-			box-shadow: 0 18px 34px rgba(6, 10, 24, 0.4);
+			box-shadow: 0 18px 34px rgba(1, 20, 34, 0.45);
 			border-radius: 0 0 10px 10px;
 			overflow: hidden;
 			z-index: 80;
@@ -162,7 +164,7 @@
 
 			&:hover,
 			&.active-sub {
-				background: rgba(111, 159, 216, 0.14);
+				background: rgba(119, 197, 213, 0.16);
 				color: vars-nysif.$nysif-text-on-dark;
 			}
 		}
@@ -174,7 +176,7 @@
 			align-items: center;
 			justify-content: center;
 			background: transparent;
-			border: 1.5px solid #5f7a9c;
+			border: 1.5px solid rgba(255, 255, 255, 0.38);
 			border-radius: 8px;
 			color: vars-nysif.$nysif-text-on-dark;
 			font-size: 18px;
@@ -184,7 +186,7 @@
 		.header-actions {
 			display: flex;
 			align-items: center;
-			gap: 14px;
+			gap: 10px;
 		}
 
 		.mobile-menu-panel {
@@ -196,8 +198,8 @@
 			width: 100vw;
 			max-height: calc(100vh - 70px);
 			overflow-y: auto;
-			background: #182036;
-			box-shadow: 0 18px 34px rgba(6, 10, 24, 0.45);
+			background: vars-nysif.$nysif-mobile-panel;
+			box-shadow: 0 18px 34px rgba(1, 20, 34, 0.5);
 			z-index: 90;
 
 			&.open {
@@ -232,7 +234,7 @@
 			}
 
 			&[aria-expanded="true"] {
-				background: #223055;
+				background: vars-nysif.$nysif-dark-surface;
 
 				.caret {
 					transform: rotate(90deg);
@@ -242,7 +244,7 @@
 
 		.m-acc-panel {
 			display: none;
-			background: #1c2846;
+			background: vars-nysif.$nysif-mobile-panel-alt;
 			padding: 6px 0 12px;
 		}
 
@@ -255,7 +257,7 @@
 			background: none;
 			border: none;
 			font-family: inherit;
-			color: #cfd9e6;
+			color: #cfdde5;
 			font-size: 14.5px;
 			text-align: left;
 			text-decoration: none;
@@ -264,7 +266,7 @@
 
 			&:hover {
 				color: vars-nysif.$nysif-text-on-dark;
-				background: rgba(111, 159, 216, 0.12);
+				background: rgba(119, 197, 213, 0.14);
 			}
 		}
 
@@ -281,9 +283,9 @@
 			align-items: center;
 			gap: 8px;
 			width: 100%;
-			background: #223055;
+			background: vars-nysif.$nysif-dark-surface;
 			border: none;
-			color: #cfd9e6;
+			color: #cfdde5;
 			font-family: inherit;
 			font-size: 14px;
 			font-weight: 600;
@@ -292,7 +294,7 @@
 		}
 
 		.mobile-drilldown-title {
-			color: vars-nysif.$nysif-accent-eyebrow;
+			color: vars-nysif.$nysif-accent-light;
 			font-size: 12.5px;
 			font-weight: 700;
 			letter-spacing: 1px;
@@ -318,7 +320,7 @@
 			padding: 16px 10px;
 
 			&:hover {
-				background: #223055;
+				background: vars-nysif.$nysif-dark-surface;
 				color: vars-nysif.$nysif-text-on-dark;
 			}
 		}
@@ -363,7 +365,7 @@
 
 			p {
 				font-size: 14.5px;
-				color: #9fb0c7;
+				color: #9ab4bf;
 				line-height: 1.6;
 			}
 		}
@@ -377,7 +379,7 @@
 		}
 
 		.footer-col-title {
-			color: #7a8ea9;
+			color: vars-nysif.$nysif-accent-light;
 			font-size: 12.5px;
 			font-weight: 700;
 			letter-spacing: 1.5px;
@@ -404,10 +406,10 @@
 
 		.footer-bottom-links {
 			font-size: 13.5px;
-			color: #8593ab;
+			color: #82949c;
 
 			a {
-				color: #8593ab;
+				color: #82949c;
 				text-decoration: none;
 				margin-left: 18px;
 			}
@@ -422,7 +424,7 @@
 			width: 34px;
 			height: 34px;
 			border-radius: 50%;
-			border: 1px solid #3a4363;
+			border: 1px solid rgba(255, 255, 255, 0.2);
 			color: vars-nysif.$nysif-text-on-dark-muted;
 			font-size: 12px;
 			font-weight: 600;

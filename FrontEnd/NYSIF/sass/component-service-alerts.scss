@@ -4,7 +4,8 @@
 	width: 100%;
 	max-width: 350px;
 	flex-shrink: 0;
-	background: vars-nysif.$nysif-dark-surface;
+	background: vars-nysif.$nysif-alerts-bg;
+	border: 1px solid rgba(119, 197, 213, 0.18);
 	border-radius: 12px;
 	padding: 26px 26px 22px;
 	margin-top: 6px;
@@ -30,7 +31,7 @@
 	.alert-item,
 	.field-alert-item {
 		padding: 14px 0;
-		border-bottom: 1px solid vars-nysif.$nysif-dark-border-soft;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 
 		&:last-child {
 			border-bottom: none;
@@ -52,7 +53,7 @@
 
 	.alert-text,
 	.field-text {
-		color: #cfd9e6;
+		color: #cfdde5;
 		font-size: 15.5px;
 		line-height: 1.45;
 	}

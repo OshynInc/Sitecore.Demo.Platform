@@ -14,4 +14,4 @@ Languages:
     - ID: "dd05144a-bd66-4ea3-956a-4b7104daaba3"
       Hint: Link
       Value: |
-        <link text="Login" linktype="external" url="https://www.nysif.com" anchor="" title="Login" class="" target="_blank" />
+        <link text="Log In" linktype="external" url="https://www.nysif.com" anchor="" title="Log In" class="" target="_blank" />

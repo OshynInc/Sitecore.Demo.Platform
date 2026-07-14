@@ -13,6 +13,11 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 {
 	public class NysifController : StandardController
 	{
+		public ActionResult OfficialWebsiteBar()
+		{
+			return View("~/Views/Nysif/OfficialWebsiteBar.cshtml");
+		}
+
 		public ActionResult Hero()
 		{
 			return View("~/Views/Nysif/Hero.cshtml", BuildHeroModel());
@@ -127,12 +132,14 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 				case "injured":
 					return "🩹";
 				case "tie":
+				case "suit":
 				case "broker":
 					return "👔";
 				case "medical":
 				case "stethoscope":
 					return "🩺";
 				case "scales":
+				case "legal":
 				case "attorney":
 					return "⚖️";
 				case "document":
@@ -152,6 +159,76 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 					return "🎓";
 				default:
 					return key.Length <= 2 ? key : "📄";
+			}
+		}
+
+		// Stroke SVGs + tint classes match nysif.oshyn.com role cards
+		private static string RoleIconClass(string key)
+		{
+			if (string.IsNullOrWhiteSpace(key))
+			{
+				return "ic-teal";
+			}
+
+			switch (key.Trim().ToLowerInvariant())
+			{
+				case "bandage":
+				case "injured":
+					return "ic-green";
+				case "tie":
+				case "suit":
+				case "broker":
+					return "ic-lblue";
+				case "medical":
+				case "stethoscope":
+					return "ic-purple";
+				case "scales":
+				case "legal":
+				case "attorney":
+					return "ic-yellow";
+				case "document":
+				case "hr":
+				case "clipboard":
+					return "ic-blue";
+				case "briefcase":
+				default:
+					return "ic-teal";
+			}
+		}
+
+		private static string RoleIconSvg(string key)
+		{
+			const string attrs =
+				"viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"";
+
+			if (string.IsNullOrWhiteSpace(key))
+			{
+				key = "briefcase";
+			}
+
+			switch (key.Trim().ToLowerInvariant())
+			{
+				case "bandage":
+				case "injured":
+					return "<svg " + attrs + "><path d=\"M22 12h-5l-2 6-4-12-2 6H3\"></path></svg>";
+				case "tie":
+				case "suit":
+				case "broker":
+					return "<svg " + attrs + "><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"></path><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path></svg>";
+				case "medical":
+				case "stethoscope":
+					return "<svg " + attrs + "><path d=\"M9 3h6v6h6v6h-6v6H9v-6H3V9h6z\"></path></svg>";
+				case "scales":
+				case "legal":
+				case "attorney":
+					return "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 4v16\"></path><path d=\"M8 20h8\"></path><path d=\"M6 6h12\"></path><path d=\"M6 6l-3 6a3 3 0 0 0 6 0z\"></path><path d=\"M18 6l-3 6a3 3 0 0 0 6 0z\"></path></svg>";
+				case "document":
+				case "hr":
+				case "clipboard":
+					return "<svg " + attrs + "><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"></rect><path d=\"M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9z\"></path><path d=\"M9 12h6M9 16h4\"></path></svg>";
+				case "briefcase":
+				default:
+					return "<svg " + attrs + "><rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"></rect><path d=\"M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"></path><path d=\"M2 13h20\"></path></svg>";
 			}
 		}
 
@@ -246,10 +323,13 @@ namespace Sitecore.Demo.Platform.Feature.ExperienceAccelerator.Controllers
 
 			foreach (Item child in item.Children)
 			{
+				var iconKey = Field(child, "Icon");
 				model.Cards.Add(new RoleCardItem
 				{
 					Item = child,
-					Icon = IconGlyph(Field(child, "Icon")),
+					Icon = IconGlyph(iconKey),
+					IconClass = RoleIconClass(iconKey),
+					IconSvg = RoleIconSvg(iconKey),
 					Title = Field(child, "Title"),
 					Description = Field(child, "Description")
 				});

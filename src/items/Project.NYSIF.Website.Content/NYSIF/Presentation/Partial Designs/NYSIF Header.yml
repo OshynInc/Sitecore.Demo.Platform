@@ -72,8 +72,15 @@ SharedFields:
           s:par="ColumnWidth1=%7BFB140AEF-DE33-4088-9F1D-406C6BA32A8E%7D&amp;ColumnWidth2=%7BFB140AEF-DE33-4088-9F1D-406C6BA32A8E%7D&amp;EnabledPlaceholders=1%2C2&amp;SplitterSize=2&amp;Reset Caching Options&amp;DynamicPlaceholderId=2&amp;Styles1&amp;Styles2&amp;Styles3&amp;Styles4&amp;Styles5&amp;Styles6&amp;Styles7&amp;Styles8&amp;ColumnWidth3&amp;ColumnWidth4&amp;ColumnWidth5&amp;ColumnWidth6&amp;ColumnWidth7&amp;ColumnWidth8&amp;CSSStyles"
           s:ph="/header/container-1" />
         <r
+          uid="{F0E1D2C3-B4A5-4967-8901-ABCDEF234567}"
+          p:before="*"
+          s:ds=""
+          s:id="{A1B2C3D4-E5F6-4A01-B001-00000000F006}"
+          s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;Styles&amp;RenderingIdentifier&amp;DynamicPlaceholderId=10"
+          s:ph="header" />
+        <r
           uid="{E6F5A4B3-C2D1-4EEE-A210-543210ABCDEF}"
-          p:after="*[1=2]"
+          p:after="r[@uid='{F0E1D2C3-B4A5-4967-8901-ABCDEF234567}']"
           s:ds=""
           s:id="{896A2C68-1362-4E88-8BA0-1805AE6D4837}"
           s:par="Reset Caching Options&amp;GridParameters=%7BF2FCE948-4F77-44AF-A188-B2030061F793%7D&amp;BackgroundImage&amp;Styles=%7Bfdd06d09-fa96-4e4b-b1e8-f8a0a3f61c28%7D&amp;RenderingIdentifier&amp;DynamicPlaceholderId=1"
@@ -87,4 +94,4 @@ Languages:
     Fields:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c8d9e0f1-a2b3-4c5d-9e0f-123456789abc"
+      Value: "nysif-header-bar-order-002"

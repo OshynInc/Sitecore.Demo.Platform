@@ -1,6 +1,10 @@
 @use "../../abstracts/vars-nysif";
 
 .row-dark {
-	background: vars-nysif.$nysif-dark-bg;
+	background-color: vars-nysif.$nysif-dark-band-bg;
+	background-image: vars-nysif.$nysif-dark-gradient;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: vars-nysif.$nysif-text-on-dark;
 }

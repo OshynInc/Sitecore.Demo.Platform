@@ -1,36 +1,49 @@
-// NYSIF brand tokens (from Static/nysif_homepage.html)
+// NYSIF brand tokens (from nysif.oshyn.com static redesign)
 
-$nysif-dark-bg: #171b2e;
-$nysif-dark-surface: #203150;
-$nysif-dark-surface-alt: #263a63;
-$nysif-dark-border: #2b3350;
-$nysif-dark-border-soft: #33476b;
+$nysif-dark-bg: #012a41;
+// Single shared wash so header + hero bands read as one continuous surface
+$nysif-dark-gradient: linear-gradient(118deg, #005a63 0%, #013d4c 40%, #012a41 100%);
+$nysif-dark-band-bg: $nysif-dark-bg;
+$nysif-dark-surface: #01426a;
+$nysif-dark-surface-alt: #025c85;
+$nysif-dark-border: rgba(255, 255, 255, 0.1);
+$nysif-dark-border-soft: rgba(255, 255, 255, 0.14);
+$nysif-nav-hover: #00606b;
+$nysif-alerts-bg: #01505a;
+$nysif-mobile-panel: #012a45;
+$nysif-mobile-panel-alt: #012f4c;
 
 $nysif-light-bg: #f5f8fa;
 $nysif-light-surface: #fff;
-$nysif-light-border: #dde4ec;
-$nysif-light-sidebar: #eef2f6;
+$nysif-light-border: #dbe5e8;
+$nysif-light-sidebar: #eaf2f4;
 
-$nysif-text-dark: #16202e;
-$nysif-text-muted: #5c6b7d;
-$nysif-text-muted-light: #8492a3;
+$nysif-text-dark: #142a35;
+$nysif-text-muted: #566671;
+$nysif-text-muted-light: #7d8b93;
 $nysif-text-on-dark: #fff;
-$nysif-text-on-dark-muted: #c9d4e2;
-$nysif-text-on-dark-subtle: #d8e2ee;
-$nysif-text-on-dark-label: #8fb2da;
-$nysif-accent-blue: #1b5ea6;
-$nysif-accent-light: #6f9fd8;
-$nysif-accent-eyebrow: #7fa8d6;
-$nysif-alert-red: #cf3f2c;
+$nysif-text-on-dark-muted: #c6d8de;
+$nysif-text-on-dark-subtle: #cfe3ea;
+$nysif-text-on-dark-label: #77c5d5;
+
+$nysif-accent-blue: #007680;
+$nysif-accent-hover: #00a3ae;
+$nysif-accent-deep: #005a63;
+$nysif-accent-light: #77c5d5;
+$nysif-accent-eyebrow: #77c5d5;
+$nysif-alert-red: #c8452e;
 $nysif-notice-orange: #d97b2e;
-$nysif-notice-green: #3f9e6e;
+$nysif-notice-green: #228848;
+
+$nysif-globalbar-bg: #00131f;
+$nysif-brandbar-gradient: linear-gradient(90deg, #007680 0%, #77c5d5 100%);
 
 $nysif-container-max: 1225px;
 $nysif-container-padding: 24px;
 
-$nysif-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$nysif-font-stack: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
-$nysif-bp-nav: 1130px;
+$nysif-bp-nav: 1300px;
 $nysif-bp-tablet: 900px;
 $nysif-bp-mobile: 760px;
 $nysif-bp-small: 480px;

@@ -14,30 +14,74 @@
 
 .btn-login {
 	color: vars-nysif.$nysif-text-on-dark;
-	border: 1.5px solid #5f7a9c;
+	border: 1.5px solid rgba(255, 255, 255, 0.42);
 	padding: 9px 22px;
 	background: transparent;
+
+	&:hover {
+		color: vars-nysif.$nysif-text-on-dark;
+		background: rgba(255, 255, 255, 0.08);
+	}
 }
 
 .btn-quote-header {
 	background: vars-nysif.$nysif-accent-blue;
 	color: vars-nysif.$nysif-text-on-dark;
 	padding: 10.5px 22px;
+
+	&:hover {
+		color: vars-nysif.$nysif-text-on-dark;
+		background: vars-nysif.$nysif-accent-hover;
+	}
+}
+
+.btn-search {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 8px;
+	border: 1.5px solid rgba(255, 255, 255, 0.42);
+	color: vars-nysif.$nysif-text-on-dark;
+	background: transparent;
+	flex-shrink: 0;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.08);
+		color: vars-nysif.$nysif-text-on-dark;
+	}
+
+	svg {
+		width: 18px;
+		height: 18px;
+	}
 }
 
 .btn-white {
-	background: vars-nysif.$nysif-text-on-dark;
-	color: #12233b;
+	background: vars-nysif.$nysif-accent-blue;
+	color: vars-nysif.$nysif-text-on-dark;
 	padding: 16.5px 34px;
 	font-size: 17px;
+
+	&:hover {
+		color: vars-nysif.$nysif-text-on-dark;
+		background: vars-nysif.$nysif-accent-hover;
+	}
 }
 
 .btn-outline {
 	background: transparent;
 	color: vars-nysif.$nysif-text-on-dark;
-	border: 1.5px solid vars-nysif.$nysif-text-on-dark;
+	border: 1.5px solid rgba(119, 197, 213, 0.7);
 	padding: 15px 32px;
 	font-size: 17px;
+
+	&:hover {
+		color: vars-nysif.$nysif-dark-bg;
+		background: vars-nysif.$nysif-accent-light;
+		border-color: vars-nysif.$nysif-accent-light;
+	}
 }
 
 @media (max-width: vars-nysif.$nysif-bp-mobile) {

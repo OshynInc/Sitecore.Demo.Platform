@@ -1,0 +1,93 @@
+@use "../abstracts/vars-nysif";
+
+.nysif-official-website-bar {
+	float: none !important;
+	width: 100% !important;
+	max-width: none !important;
+	margin: 0;
+	padding: 0;
+	clear: both;
+
+	> .component-content {
+		padding: 0;
+		max-width: none;
+	}
+}
+
+.nys-globalbar {
+	background: vars-nysif.$nysif-globalbar-bg;
+
+	.nys-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: vars-nysif.$nysif-container-max;
+		margin: 0 auto;
+		padding: 15px vars-nysif.$nysif-container-padding;
+		gap: 14px;
+	}
+}
+
+.nys-official {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #9fb6c2;
+	font-size: 12.5px;
+	font-weight: 600;
+
+	svg {
+		width: 15px;
+		height: 15px;
+		color: vars-nysif.$nysif-accent-light;
+		flex-shrink: 0;
+	}
+}
+
+.nys-right {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.nys-officials {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+}
+
+.nys-off {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.15;
+}
+
+.no-name {
+	color: #dbe8ef;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.no-title {
+	color: #7f9aa7;
+	font-size: 10.5px;
+	font-weight: 600;
+}
+
+.brandbar {
+	height: 4px;
+	background: vars-nysif.$nysif-brandbar-gradient;
+}
+
+@media (max-width: vars-nysif.$nysif-bp-tablet) {
+	.nys-officials {
+		display: none;
+	}
+}
+
+@media (max-width: vars-nysif.$nysif-bp-mobile) {
+	.nys-globalbar .nys-inner {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
