@@ -84,6 +84,16 @@
 				padding: 0;
 			}
 
+			.logo-container {
+				min-height: 0;
+				display: block;
+			}
+
+			.logo-holder {
+				display: block;
+				line-height: 0;
+			}
+
 			img,
 			.footer-logo-img,
 			.logo-img {
@@ -91,25 +101,6 @@
 				width: auto;
 				display: block;
 				margin-bottom: 16px;
-			}
-
-			&:has(img[src]:not([src=""])) .logo-placeholder {
-				display: none;
-			}
-
-			.logo,
-			.logo-placeholder,
-			h3.logo {
-				font-size: 22px;
-				font-weight: 800;
-				letter-spacing: 0.5px;
-				color: vars-nysif.$nysif-text-on-dark;
-				margin: 0 0 16px;
-				display: inline-block;
-			}
-
-			.logo-teal {
-				color: vars-nysif.$nysif-accent-light;
 			}
 
 			.footer-brand-text {
