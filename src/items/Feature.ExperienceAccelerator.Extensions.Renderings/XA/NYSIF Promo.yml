@@ -6,7 +6,7 @@ Path: /sitecore/layout/Renderings/Feature/Demo Shared/XA/NYSIF Promo
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: Office/32x32/document_into.png
+  Value: Office/32x32/megaphone.png
 - ID: "13f89250-ad6b-4548-882e-118a12c18094"
   Hint: Parameters Template
   Value: "{0D00A090-B7CA-4296-9B6D-B0FCC0C34BB4}"
